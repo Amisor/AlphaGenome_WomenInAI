@@ -1,0 +1,13 @@
+{
+  "status": "FALLBACK_SELECTED",
+  "variant": {
+    "gene": "BRCA1",
+    "chrom": "chr17",
+    "pos": 43070927,
+    "chrom_start": 43070926,
+    "chrom_end": 43070927,
+    "hgvs": "NM_007294.4:c.4986+1G>T",
+    "score": 3,
+    "splicing_label": "Splice-altering"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "is_mock": false,
+  "timestamp_utc": "2026-11-03T23:39:34.778765+00:00",
+  "model_metadata": {
+    "model_name": "AlphaGenome",
+    "provider": "Google DeepMind",
+    "api_endpoint": "gdmscience.googleapis.com",
+    "package_version": "alphagenome-0.10.0",
+    "citation": "Nature 649, 1206-1218 (2026), DOI: 10.1038/s41586-025-10014-0"
+  },
+  "variant": {
+    "gene": "BRCA1",
+    "hgvs": "NM_007294.4:c.4986+1G>T",
+    "chrom": "chr17",
+    "pos": 43070927,
+    "ref": "C",
+    "alt": "A",
+    "splicevardb_label": "Splice-altering",
+    "splicevardb_score": 3,
+    "description": "Canonical splice donor site (+1 position) at exon 16 / intron 16 boundary"
+  },
+  "interval": {
+    "chromosome": "chr17",
+    "start": 43005391,
+    "end": 43136463,
+    "length_bp": 131072,
+    "context_setting": "100KB"
+  },
+  "splicing_metrics": {
+    "max_delta_splice_sites": 0.9956760406494141,
+    "max_delta_splice_site_usage": 0.9090194702148438,
+    "max_delta_splice_junctions": 1.9607889652252197,
+    "combined_splicing_score": 2.2968533039093018,
+    "predicted_effect": "Disrupted splice donor site"
+  },
+  "splicing_prediction_summary": {
+    "splice_sites": {
+      "track_resolution_bp": 1,
+      "num_tracks": 4,
+      "max_abs_delta": 0.9956760406494141,
+      "mean_abs_delta": 8.287634045700543e-06,
+      "variant_position_ref_scores": [
+        8.881092071533203e-06,
+        3.314018249511719e-05,
+        0.99609375,
+        0.0004482269287109375
+      ],
+      "variant_position_alt_scores": [
+        2.3245811462402344e-06,
+        1.2218952178955078e-05,
+        0.0004177093505859375,
+        3.528594970703125e-05
+      ],
+      "channel_names": [
+        "donor",
+        "acceptor",
+        "donor",
+        "acceptor"
+      ]
+    },
+    "splice_site_usage": {
+      "track_resolution_bp": 1,
+      "num_tracks": 734,
+      "max_abs_delta": 0.9090194702148438,
+      "mean_abs_delta": 7.810558599885553e-06
+    },
+    "splice_junctions": {
+      "num_junctions": 2035,
+      "num_tracks": 367,
+      "max_abs_delta": 1.9607889652252197,
+      "mean_abs_delta": 0.0006383803556673229
+    }
+  },
+  "raw_track_metadata": {
+    "splice_sites": {
+      "ref_shape": [
+        131072,
+        4
+      ],
+      "ref_min": 2.8230715543031693e-09,
+      "ref_max": 1.0,
+      "alt_min": 2.648448571562767e-09,
+      "alt_max": 1.0
+    },
+    "splice_site_usage": {
+      "ref_shape": [
+        131072,
+        734
+      ],
+      "ref_min": 1.2514647096395493e-09,
+      "ref_max": 0.9921875,
+      "alt_min": 1.2514647096395493e-09,
+      "alt_max": 0.9921875
+    },
+    "splice_junctions": {
+      "ref_shape": [
+        2035,
+        367
+      ],
+      "ref_min": 1.8959910903504351e-06,
+      "ref_max": 2.938037395477295,
+      "alt_min": 2.027199570875382e-06,
+      "alt_max": 2.6824734210968018
+    }
+  }
+}

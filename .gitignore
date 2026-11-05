@@ -1,2 +1,4 @@
-DISCOVERY.md
-INSTRUCTIONS.md
+.venv/
+.env
+__pycache__/
+*.pyc

@@ -1,0 +1,30 @@
+{
+  "is_mock": true,
+  "mock_disclaimer": "SYNTHETIC PLACEHOLDER ONLY. DO NOT USE FOR CLINICAL OR SCIENTIFIC INFERENCE.",
+  "timestamp_utc": "2026-11-03T22:59:52.410778+00:00",
+  "model_metadata": {
+    "model_name": "AlphaGenome (Synthetic Mock)",
+    "provider": "Mock / Local Pipeline Test",
+    "version": "mock-v1"
+  },
+  "variant": {
+    "gene": "BRCA1",
+    "hgvs": "NM_007294.4:c.4986+1G>T",
+    "chrom": "chr17",
+    "pos": 43070927,
+    "ref": "C",
+    "alt": "A",
+    "splicevardb_label": "Splice-altering",
+    "splicevardb_score": 3,
+    "description": "Canonical splice donor site (+1 position) at exon 16 / intron 16 boundary"
+  },
+  "prediction_results": {
+    "splicing": {
+      "mock_delta_splice_sites": 0.884,
+      "mock_delta_splice_site_usage": 0.742,
+      "mock_delta_splice_junctions": 0.915,
+      "mock_combined_splicing_score": 0.915,
+      "mock_predicted_effect": "Disrupted splice donor site at exon 16 (+1 position)"
+    }
+  }
+}
