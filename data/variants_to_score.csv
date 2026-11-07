@@ -1,0 +1,447 @@
+variant_id,chrom,pos,ref,alt,hgvs,splicing_label,label,label_incl_lowfreq,region,intron_offset
+chr17-43104264-G-C,chr17,43104264,G,C,NM_007294.4:c.302-3C>G,Splice-altering,1,1,intronic,3
+chr17-43071246-G-C,chr17,43071246,G,C,NM_007294.4:c.4676-8C>G,Not splice-altering,0,0,intronic,8
+chr17-43071148-C-T,chr17,43071148,C,T,NM_007294.4:c.4766G>A,Not splice-altering,0,0,exonic,
+chr17-43051118-C-A,chr17,43051118,C,A,NM_007294.4:c.5278-1G>T,Splice-altering,1,1,intronic,1
+chr17-43076473-A-G,chr17,43076473,A,G,NM_007294.4:c.4484+15T>C,Not splice-altering,0,0,intronic,15
+chr17-43094044-C-T,chr17,43094044,C,T,NM_007294.4:c.1487G>A,Not splice-altering,0,0,exonic,
+chr17-43092484-T-C,chr17,43092484,T,C,NM_007294.4:c.3047A>G,Not splice-altering,0,0,exonic,
+chr17-43099883-A-C,chr17,43099883,A,C,NM_007294.4:c.442-3T>G,Splice-altering,1,1,intronic,3
+chr17-43124061-T-C,chr17,43124061,T,C,NM_007294.4:c.36A>G,Not splice-altering,0,0,exonic,
+chr17-43049120-C-T,chr17,43049120,C,T,NM_007294.4:c.5406+1G>A,Splice-altering,1,1,intronic,1
+chr17-43074522-C-G,chr17,43074522,C,G,NM_007294.4:c.4485-1G>C,Splice-altering,1,1,intronic,1
+chr17-43093750-A-G,chr17,43093750,A,G,NM_007294.4:c.1781T>C,Not splice-altering,0,0,exonic,
+chr17-43095904-C-G,chr17,43095904,C,G,NM_007294.4:c.612G>C,Not splice-altering,0,0,exonic,
+chr17-43091504-C-G,chr17,43091504,C,G,NM_007294.4:c.4027G>C,Not splice-altering,0,0,exonic,
+chr17-43070925-C-G,chr17,43070925,C,G,NM_007294.4:c.4986+3G>C,Splice-altering,1,1,intronic,3
+chr17-43091983-T-C,chr17,43091983,T,C,NM_007294.4:c.3548A>G,Not splice-altering,0,0,exonic,
+chr17-43074324-A-G,chr17,43074324,A,G,NM_007294.4:c.4675+7T>C,Not splice-altering,0,0,intronic,7
+chr17-43115785-A-G,chr17,43115785,A,G,NM_007294.4:c.81-6T>C,Not splice-altering,0,0,intronic,6
+chr17-43097240-T-C,chr17,43097240,T,C,NM_007294.4:c.593+4A>G,Splice-altering,1,1,intronic,4
+chr17-43047643-C-T,chr17,43047643,C,T,NM_007294.4:c.5467G>A,Splice-altering,1,1,exonic,
+chr17-43104120-A-C,chr17,43104120,A,C,NM_007294.4:c.441+2T>G,Splice-altering,1,1,intronic,2
+chr17-43057147-C-T,chr17,43057147,C,T,NM_007294.4:c.5194-12G>A,Splice-altering,1,1,intronic,12
+chr17-43091814-A-T,chr17,43091814,A,T,NM_007294.4:c.3717T>A,Not splice-altering,0,0,exonic,
+chr17-43074328-T-A,chr17,43074328,T,A,NM_007294.4:c.4675+3A>T,Splice-altering,1,1,intronic,3
+chr17-43091032-C-T,chr17,43091032,C,T,NM_007294.4:c.4097G>A,Not splice-altering,0,0,exonic,
+chr17-43067610-G-A,chr17,43067610,G,A,NM_007294.4:c.5072C>T,Splice-altering,1,1,exonic,
+chr17-43070924-T-C,chr17,43070924,T,C,NM_007294.4:c.4986+4A>G,Splice-altering,1,1,intronic,4
+chr17-43093560-T-C,chr17,43093560,T,C,NM_007294.4:c.1971A>G,Not splice-altering,0,0,exonic,
+chr17-43086839-G-A,chr17,43086839,G,A,NM_007294.4:c.4185+4105C>T,Splice-altering,1,1,intronic,4105
+chr17-43106539-A-C,chr17,43106539,A,C,NM_007294.4:c.135-6T>G,Splice-altering,1,1,intronic,6
+chr17-43092229-C-T,chr17,43092229,C,T,NM_007294.4:c.3302G>A,Not splice-altering,0,0,exonic,
+chr17-43051063-C-T,chr17,43051063,C,T,NM_007294.4:c.5332G>A,Splice-altering,1,1,exonic,
+chr17-43067715-T-C,chr17,43067715,T,C,NM_007294.4:c.4987-20A>G,Not splice-altering,0,0,intronic,20
+chr17-43115720-A-C,chr17,43115720,A,C,NM_007294.4:c.134+6T>G,Splice-altering,1,1,intronic,6
+chr17-43063951-T-A,chr17,43063951,T,A,NM_007294.4:c.5075A>T,Splice-altering,1,1,exonic,
+chr17-43047634-G-T,chr17,43047634,G,T,NM_007294.4:c.5467+9C>A,Not splice-altering,0,0,intronic,9
+chr17-43104968-T-C,chr17,43104968,T,C,NM_007294.4:c.213-12A>G,Splice-altering,1,1,intronic,12
+chr17-43115792-G-C,chr17,43115792,G,C,NM_007294.4:c.81-13C>G,Not splice-altering,0,0,intronic,13
+chr17-43070927-C-A,chr17,43070927,C,A,NM_007294.4:c.4986+1G>T,Splice-altering,1,1,intronic,1
+chr17-43063929-C-T,chr17,43063929,C,T,NM_007294.4:c.5097G>A,Not splice-altering,0,0,exonic,
+chr17-43064058-T-C,chr17,43064058,T,C,NM_007294.4:c.5075-107A>G,Not splice-altering,0,0,intronic,107
+chr17-43045810-C-T,chr17,43045810,C,T,NM_007294.4:c.5468-8G>A,Not splice-altering,0,0,intronic,8
+chr17-43091598-G-T,chr17,43091598,G,T,NM_007294.4:c.3933C>A,Not splice-altering,0,0,exonic,
+chr17-43093960-G-A,chr17,43093960,G,A,NM_007294.4:c.1571C>T,Not splice-altering,0,0,exonic,
+chr17-43057051-C-T,chr17,43057051,C,T,NM_007294.4:c.5277+1G>A,Splice-altering,1,1,intronic,1
+chr17-43106553-A-C,chr17,43106553,A,C,NM_007294.4:c.135-20T>G,Not splice-altering,0,0,intronic,20
+chr17-43104813-C-T,chr17,43104813,C,T,NM_007294.4:c.301+55G>A,Not splice-altering,0,0,intronic,55
+chr17-43104957-C-T,chr17,43104957,C,T,NM_007294.4:c.213-1G>A,Splice-altering,1,1,intronic,1
+chr17-43063902-C-T,chr17,43063902,C,T,NM_007294.4:c.5124G>A,Not splice-altering,0,0,exonic,
+chr17-43049200-A-C,chr17,43049200,A,C,NM_007294.4:c.5333-6T>G,Splice-altering,1,1,intronic,6
+chr17-43115725-C-T,chr17,43115725,C,T,NM_007294.4:c.134+1G>A,Splice-altering,1,1,intronic,1
+chr17-43092507-C-A,chr17,43092507,C,A,NM_007294.4:c.3024G>T,Not splice-altering,0,0,exonic,
+chr17-43093255-T-C,chr17,43093255,T,C,NM_007294.4:c.2276A>G,Not splice-altering,0,0,exonic,
+chr17-43063960-T-A,chr17,43063960,T,A,NM_007294.4:c.5075-9A>T,Not splice-altering,0,0,intronic,9
+chr17-43063372-C-A,chr17,43063372,C,A,NM_007294.4:c.5154G>T,Not splice-altering,0,0,exonic,
+chr17-43093028-G-A,chr17,43093028,G,A,NM_007294.4:c.2503C>T,Not splice-altering,0,0,exonic,
+chr17-43057161-C-T,chr17,43057161,C,T,NM_007294.4:c.5194-26G>A,Not splice-altering,0,0,intronic,26
+chr17-43115828-T-G,chr17,43115828,T,G,NM_007294.4:c.81-49A>C,Not splice-altering,0,0,intronic,49
+chr17-43124016-C-T,chr17,43124016,C,T,NM_007294.4:c.80+1G>A,Splice-altering,1,1,intronic,1
+chr17-43057046-C-G,chr17,43057046,C,G,NM_007294.4:c.5277+6G>C,Not splice-altering,0,0,intronic,6
+chr17-43106454-A-G,chr17,43106454,A,G,NM_007294.4:c.212+2T>C,Splice-altering,1,1,intronic,2
+chr17-43106455-C-A,chr17,43106455,C,A,NM_007294.4:c.212+1G>T,Splice-altering,1,1,intronic,1
+chr17-43115721-C-A,chr17,43115721,C,A,NM_007294.4:c.134+5G>T,Splice-altering,1,1,intronic,5
+chr17-43092113-T-C,chr17,43092113,T,C,NM_007294.4:c.3418A>G,Not splice-altering,0,0,exonic,
+chr17-43093454-C-T,chr17,43093454,C,T,NM_007294.4:c.2077G>A,Not splice-altering,0,0,exonic,
+chr17-43063873-C-G,chr17,43063873,C,G,NM_007294.4:c.5152+1G>C,Splice-altering,1,1,intronic,1
+chr17-43063909-C-G,chr17,43063909,C,G,NM_007294.4:c.5117G>C,Not splice-altering,0,0,exonic,
+chr17-43047698-G-A,chr17,43047698,G,A,NM_007294.4:c.5412C>T,Not splice-altering,0,0,exonic,
+chr17-43063379-G-T,chr17,43063379,G,T,NM_007294.4:c.5153-6C>A,Not splice-altering,0,0,intronic,6
+chr17-43071156-C-A,chr17,43071156,C,A,NM_007294.4:c.4758G>T,Not splice-altering,0,0,exonic,
+chr17-43047641-A-G,chr17,43047641,A,G,NM_007294.4:c.5467+2T>C,Splice-altering,1,1,intronic,2
+chr17-43082418-C-T,chr17,43082418,C,T,NM_007294.4:c.4343G>A,Not splice-altering,0,0,exonic,
+chr17-43115791-G-C,chr17,43115791,G,C,NM_007294.4:c.81-12C>G,Not splice-altering,0,0,intronic,12
+chr17-43106433-A-T,chr17,43106433,A,T,NM_007294.4:c.212+23T>A,Not splice-altering,0,0,intronic,23
+chr17-43104961-A-C,chr17,43104961,A,C,NM_007294.4:c.213-5T>G,Splice-altering,1,1,intronic,5
+chr17-43063946-C-A,chr17,43063946,C,A,NM_007294.4:c.5080G>T,Splice-altering,1,1,exonic,
+chr17-43091034-T-C,chr17,43091034,T,C,NM_007294.4:c.4097-2A>G,Splice-altering,1,1,intronic,2
+chr17-43093033-A-C,chr17,43093033,A,C,NM_007294.4:c.2498T>G,Not splice-altering,0,0,exonic,
+chr17-43094776-C-T,chr17,43094776,C,T,NM_007294.4:c.755G>A,Not splice-altering,0,0,exonic,
+chr17-43063331-A-C,chr17,43063331,A,C,NM_007294.4:c.5193+2T>G,Splice-altering,1,1,intronic,2
+chr17-43067700-A-G,chr17,43067700,A,G,NM_007294.4:c.4987-5T>C,Splice-altering,1,1,intronic,5
+chr17-43099768-C-T,chr17,43099768,C,T,NM_007294.4:c.547+7G>A,Not splice-altering,0,0,intronic,7
+chr17-43067660-G-A,chr17,43067660,G,A,NM_007294.4:c.5022C>T,Splice-altering,1,1,exonic,
+chr17-43093043-T-C,chr17,43093043,T,C,NM_007294.4:c.2488A>G,Not splice-altering,0,0,exonic,
+chr17-43091047-A-G,chr17,43091047,A,G,NM_007294.4:c.4097-15T>C,Not splice-altering,0,0,intronic,15
+chr17-43047702-C-G,chr17,43047702,C,G,NM_007294.4:c.5408G>C,Splice-altering,1,1,exonic,
+chr17-43049119-A-C,chr17,43049119,A,C,NM_007294.4:c.5406+2T>G,Splice-altering,1,1,intronic,2
+chr17-43099773-A-G,chr17,43099773,A,G,NM_007294.4:c.547+2T>C,Splice-altering,1,1,intronic,2
+chr17-43090944-C-G,chr17,43090944,C,G,NM_007294.4:c.4185G>C,Splice-altering,1,1,exonic,
+chr17-43093760-T-G,chr17,43093760,T,G,NM_007294.4:c.1771A>C,Not splice-altering,0,0,exonic,
+chr17-43094585-T-C,chr17,43094585,T,C,NM_007294.4:c.946A>G,Not splice-altering,0,0,exonic,
+chr17-43097280-G-T,chr17,43097280,G,T,NM_007294.4:c.557C>A,Splice-altering,1,1,exonic,
+chr17-43093572-T-G,chr17,43093572,T,G,NM_007294.4:c.1959A>C,Not splice-altering,0,0,exonic,
+chr17-43094530-G-A,chr17,43094530,G,A,NM_007294.4:c.1001C>T,Not splice-altering,0,0,exonic,
+chr17-43091485-G-C,chr17,43091485,G,C,NM_007294.4:c.4046C>G,Not splice-altering,0,0,exonic,
+chr17-43093462-T-C,chr17,43093462,T,C,NM_007294.4:c.2069A>G,Not splice-altering,0,0,exonic,
+chr17-43047705-T-C,chr17,43047705,T,C,NM_007294.4:c.5407-2A>G,Splice-altering,1,1,intronic,2
+chr17-43092965-A-G,chr17,43092965,A,G,NM_007294.4:c.2566T>C,Not splice-altering,0,0,exonic,
+chr17-43063953-T-C,chr17,43063953,T,C,NM_007294.4:c.5075-2A>G,Splice-altering,1,1,intronic,2
+chr17-43115728-G-A,chr17,43115728,G,A,NM_007294.4:c.132C>T,Splice-altering,1,1,exonic,
+chr17-43047703-C-A,chr17,43047703,C,A,NM_007294.4:c.5407G>T,Not splice-altering,0,0,exonic,
+chr17-43090924-C-T,chr17,43090924,C,T,NM_007294.4:c.4185+20G>A,Not splice-altering,0,0,intronic,20
+chr17-43115753-G-T,chr17,43115753,G,T,NM_007294.4:c.107C>A,Not splice-altering,0,0,exonic,
+chr17-43049196-T-C,chr17,43049196,T,C,NM_007294.4:c.5333-2A>G,Splice-altering,1,1,intronic,2
+chr17-43094394-A-C,chr17,43094394,A,C,NM_007294.4:c.1137T>G,Not splice-altering,0,0,exonic,
+chr17-43094104-T-C,chr17,43094104,T,C,NM_007294.4:c.1427A>G,Not splice-altering,0,0,exonic,
+chr17-43091783-C-T,chr17,43091783,C,T,NM_007294.4:c.3748G>A,Not splice-altering,0,0,exonic,
+chr17-43094510-C-T,chr17,43094510,C,T,NM_007294.4:c.1021G>A,Not splice-altering,0,0,exonic,
+chr17-43091432-T-C,chr17,43091432,T,C,NM_007294.4:c.4096+3A>G,Splice-altering,1,1,intronic,3
+chr17-43092235-G-A,chr17,43092235,G,A,NM_007294.4:c.3296C>T,Not splice-altering,0,0,exonic,
+chr17-43057171-G-C,chr17,43057171,G,C,NM_007294.4:c.5194-36C>G,Not splice-altering,0,0,intronic,36
+chr17-43070929-A-G,chr17,43070929,A,G,NM_007294.4:c.4985T>C,Not splice-altering,0,0,exonic,
+chr17-43076579-T-C,chr17,43076579,T,C,NM_007294.4:c.4393A>G,Not splice-altering,0,0,exonic,
+chr17-43047684-A-G,chr17,43047684,A,G,NM_007294.4:c.5426T>C,Not splice-altering,0,0,exonic,
+chr17-43047638-C-G,chr17,43047638,C,G,NM_007294.4:c.5467+5G>C,Splice-altering,1,1,intronic,5
+chr17-43104958-T-C,chr17,43104958,T,C,NM_007294.4:c.213-2A>G,Splice-altering,1,1,intronic,2
+chr17-43093666-G-A,chr17,43093666,G,A,NM_007294.4:c.1865C>T,Not splice-altering,0,0,exonic,
+chr17-43067658-G-A,chr17,43067658,G,A,NM_007294.4:c.5024C>T,Not splice-altering,0,0,exonic,
+chr17-43049195-C-A,chr17,43049195,C,A,NM_007294.4:c.5333-1G>T,Splice-altering,1,1,intronic,1
+chr17-43049117-T-C,chr17,43049117,T,C,NM_007294.4:c.5406+4A>G,Splice-altering,1,1,intronic,4
+chr17-43104862-A-G,chr17,43104862,A,G,NM_007294.4:c.301+6T>C,Splice-altering,1,1,intronic,6
+chr17-43104967-A-C,chr17,43104967,A,C,NM_007294.4:c.213-11T>G,Splice-altering,1,1,intronic,11
+chr17-43057153-C-T,chr17,43057153,C,T,NM_007294.4:c.5194-18G>A,Not splice-altering,0,0,intronic,18
+chr17-43092596-G-A,chr17,43092596,G,A,NM_007294.4:c.2935C>T,Not splice-altering,0,0,exonic,
+chr17-43047656-G-A,chr17,43047656,G,A,NM_007294.4:c.5454C>T,Not splice-altering,0,0,exonic,
+chr17-43093969-G-A,chr17,43093969,G,A,NM_007294.4:c.1562C>T,Not splice-altering,0,0,exonic,
+chr17-43094287-A-G,chr17,43094287,A,G,NM_007294.4:c.1244T>C,Not splice-altering,0,0,exonic,
+chr17-43063959-A-C,chr17,43063959,A,C,NM_007294.4:c.5075-8T>G,Splice-altering,1,1,intronic,8
+chr17-43115779-A-G,chr17,43115779,A,G,NM_007294.4:c.81T>C,Not splice-altering,0,0,exonic,
+chr17-43093220-A-G,chr17,43093220,A,G,NM_007294.4:c.2311T>C,Not splice-altering,0,0,exonic,
+chr17-43094045-G-A,chr17,43094045,G,A,NM_007294.4:c.1486C>T,Not splice-altering,0,0,exonic,
+chr17-43091823-A-C,chr17,43091823,A,C,NM_007294.4:c.3708T>G,Not splice-altering,0,0,exonic,
+chr17-43093732-A-G,chr17,43093732,A,G,NM_007294.4:c.1799T>C,Not splice-altering,0,0,exonic,
+chr17-43092412-C-T,chr17,43092412,C,T,NM_007294.4:c.3119G>A,Not splice-altering,0,0,exonic,
+chr17-43067635-C-A,chr17,43067635,C,A,NM_007294.4:c.5047G>T,Splice-altering,1,1,exonic,
+chr17-43063869-C-G,chr17,43063869,C,G,NM_007294.4:c.5152+5G>C,Splice-altering,1,1,intronic,5
+chr17-43094268-T-G,chr17,43094268,T,G,NM_007294.4:c.1263A>C,Not splice-altering,0,0,exonic,
+chr17-43067694-A-T,chr17,43067694,A,T,NM_007294.4:c.4988T>A,Splice-altering,1,1,exonic,
+chr17-43104266-A-G,chr17,43104266,A,G,NM_007294.4:c.302-5T>C,Not splice-altering,0,0,intronic,5
+chr17-43067695-T-A,chr17,43067695,T,A,NM_007294.4:c.4987A>T,Splice-altering,1,1,exonic,
+chr17-43092418-T-C,chr17,43092418,T,C,NM_007294.4:c.3113A>G,Not splice-altering,0,0,exonic,
+chr17-43063868-A-G,chr17,43063868,A,G,NM_007294.4:c.5152+6T>C,Splice-altering,1,1,intronic,6
+chr17-43049118-T-A,chr17,43049118,T,A,NM_007294.4:c.5406+3A>T,Splice-altering,1,1,intronic,3
+chr17-43051061-A-T,chr17,43051061,A,T,NM_007294.4:c.5332+2T>A,Splice-altering,1,1,intronic,2
+chr17-43074332-T-C,chr17,43074332,T,C,NM_007294.4:c.4674A>G,Splice-altering,1,1,exonic,
+chr17-43063399-T-C,chr17,43063399,T,C,NM_007294.4:c.5153-26A>G,Splice-altering,1,1,intronic,26
+chr17-43097306-C-A,chr17,43097306,C,A,NM_007294.4:c.548-17G>T,Not splice-altering,0,0,intronic,17
+chr17-43091492-T-C,chr17,43091492,T,C,NM_007294.4:c.4039A>G,Not splice-altering,0,0,exonic,
+chr17-43074531-T-C,chr17,43074531,T,C,NM_007294.4:c.4485-10A>G,Not splice-altering,0,0,intronic,10
+chr17-43091043-A-G,chr17,43091043,A,G,NM_007294.4:c.4097-11T>C,Not splice-altering,0,0,intronic,11
+chr17-43093009-C-T,chr17,43093009,C,T,NM_007294.4:c.2522G>A,Not splice-altering,0,0,exonic,
+chr17-43067603-T-A,chr17,43067603,T,A,NM_007294.4:c.5074+5A>T,Not splice-altering,0,0,intronic,5
+chr17-43104848-T-C,chr17,43104848,T,C,NM_007294.4:c.301+20A>G,Not splice-altering,0,0,intronic,20
+chr17-43094536-C-T,chr17,43094536,C,T,NM_007294.4:c.995G>A,Not splice-altering,0,0,exonic,
+chr17-43104861-C-T,chr17,43104861,C,T,NM_007294.4:c.301+7G>A,Not splice-altering,0,0,intronic,7
+chr17-43091553-A-G,chr17,43091553,A,G,NM_007294.4:c.3978T>C,Not splice-altering,0,0,exonic,
+chr17-43094862-T-G,chr17,43094862,T,G,NM_007294.4:c.671-2A>C,Splice-altering,1,1,intronic,2
+chr17-43091891-C-T,chr17,43091891,C,T,NM_007294.4:c.3640G>A,Not splice-altering,0,0,exonic,
+chr17-43094075-A-G,chr17,43094075,A,G,NM_007294.4:c.1456T>C,Not splice-altering,0,0,exonic,
+chr17-43104970-G-C,chr17,43104970,G,C,NM_007294.4:c.213-14C>G,Splice-altering,1,1,intronic,14
+chr17-43094838-C-A,chr17,43094838,C,A,NM_007294.4:c.693G>T,Not splice-altering,0,0,exonic,
+chr17-43076485-T-G,chr17,43076485,T,G,NM_007294.4:c.4484+3A>C,Splice-altering,1,1,intronic,3
+chr17-43051062-C-T,chr17,43051062,C,T,NM_007294.4:c.5332+1G>A,Splice-altering,1,1,intronic,1
+chr17-43094818-T-G,chr17,43094818,T,G,NM_007294.4:c.713A>C,Splice-altering,1,1,exonic,
+chr17-43094281-T-C,chr17,43094281,T,C,NM_007294.4:c.1250A>G,Not splice-altering,0,0,exonic,
+chr17-43092199-T-G,chr17,43092199,T,G,NM_007294.4:c.3332A>C,Not splice-altering,0,0,exonic,
+chr17-43071046-G-C,chr17,43071046,G,C,NM_007294.4:c.4868C>G,Splice-altering,1,1,exonic,
+chr17-43099772-T-A,chr17,43099772,T,A,NM_007294.4:c.547+3A>T,Splice-altering,1,1,intronic,3
+chr17-43093930-T-C,chr17,43093930,T,C,NM_007294.4:c.1601A>G,Not splice-altering,0,0,exonic,
+chr17-43074320-T-C,chr17,43074320,T,C,NM_007294.4:c.4675+11A>G,Not splice-altering,0,0,intronic,11
+chr17-43115723-T-A,chr17,43115723,T,A,NM_007294.4:c.134+3A>T,Splice-altering,1,1,intronic,3
+chr17-43115790-A-G,chr17,43115790,A,G,NM_007294.4:c.81-11T>C,Not splice-altering,0,0,intronic,11
+chr17-43094372-A-T,chr17,43094372,A,T,NM_007294.4:c.1159T>A,Not splice-altering,0,0,exonic,
+chr17-43106456-C-A,chr17,43106456,C,A,NM_007294.4:c.212G>T,Splice-altering,1,1,exonic,
+chr17-43091784-G-A,chr17,43091784,G,A,NM_007294.4:c.3747C>T,Not splice-altering,0,0,exonic,
+chr17-43093010-G-A,chr17,43093010,G,A,NM_007294.4:c.2521C>T,Not splice-altering,0,0,exonic,
+chr17-43093800-T-C,chr17,43093800,T,C,NM_007294.4:c.1731A>G,Not splice-altering,0,0,exonic,
+chr17-43091495-C-T,chr17,43091495,C,T,NM_007294.4:c.4036G>A,Not splice-altering,0,0,exonic,
+chr17-43093883-T-G,chr17,43093883,T,G,NM_007294.4:c.1648A>C,Not splice-altering,0,0,exonic,
+chr17-43045807-A-T,chr17,43045807,A,T,NM_007294.4:c.5468-5T>A,Not splice-altering,0,0,intronic,5
+chr17-43071232-G-A,chr17,43071232,G,A,NM_007294.4:c.4682C>T,Not splice-altering,0,0,exonic,
+chr17-43092509-T-C,chr17,43092509,T,C,NM_007294.4:c.3022A>G,Not splice-altering,0,0,exonic,
+chr17-43093808-C-T,chr17,43093808,C,T,NM_007294.4:c.1723G>A,Not splice-altering,0,0,exonic,
+chr17-43074330-C-G,chr17,43074330,C,G,NM_007294.4:c.4675+1G>C,Splice-altering,1,1,intronic,1
+chr17-43095924-T-G,chr17,43095924,T,G,NM_007294.4:c.594-2A>C,Splice-altering,1,1,intronic,2
+chr17-43104928-G-A,chr17,43104928,G,A,NM_007294.4:c.241C>T,Splice-altering,1,1,exonic,
+chr17-43076474-T-C,chr17,43076474,T,C,NM_007294.4:c.4484+14A>G,Not splice-altering,0,0,intronic,14
+chr17-43063903-G-T,chr17,43063903,G,T,NM_007294.4:c.5123C>A,Splice-altering,1,1,exonic,
+chr17-43049194-T-C,chr17,43049194,T,C,NM_007294.4:c.5333A>G,Not splice-altering,0,0,exonic,
+chr17-43063968-A-T,chr17,43063968,A,T,NM_007294.4:c.5075-17T>A,Not splice-altering,0,0,intronic,17
+chr17-43104140-T-C,chr17,43104140,T,C,NM_007294.4:c.423A>G,Not splice-altering,0,0,exonic,
+chr17-43070923-C-A,chr17,43070923,C,A,NM_007294.4:c.4986+5G>T,Splice-altering,1,1,intronic,5
+chr17-43092947-T-C,chr17,43092947,T,C,NM_007294.4:c.2584A>G,Not splice-altering,0,0,exonic,
+chr17-43099887-A-T,chr17,43099887,A,T,NM_007294.4:c.442-7T>A,Splice-altering,1,1,intronic,7
+chr17-43076593-C-T,chr17,43076593,C,T,NM_007294.4:c.4379G>A,Splice-altering,1,1,exonic,
+chr17-43092510-T-C,chr17,43092510,T,C,NM_007294.4:c.3021A>G,Not splice-altering,0,0,exonic,
+chr17-43094464-T-C,chr17,43094464,T,C,NM_007294.4:c.1067A>G,Not splice-altering,0,0,exonic,
+chr17-43057035-G-C,chr17,43057035,G,C,NM_007294.4:c.5277+17C>G,Not splice-altering,0,0,intronic,17
+chr17-43106534-C-G,chr17,43106534,C,G,NM_007294.4:c.135-1G>C,Splice-altering,1,1,intronic,1
+chr17-43063374-C-T,chr17,43063374,C,T,NM_007294.4:c.5153-1G>A,Splice-altering,1,1,intronic,1
+chr17-43094695-T-G,chr17,43094695,T,G,NM_007294.4:c.836A>C,Not splice-altering,0,0,exonic,
+chr17-43067602-G-C,chr17,43067602,G,C,NM_007294.4:c.5074+6C>G,Not splice-altering,0,0,intronic,6
+chr17-43092600-T-C,chr17,43092600,T,C,NM_007294.4:c.2931A>G,Not splice-altering,0,0,exonic,
+chr17-43063870-T-A,chr17,43063870,T,A,NM_007294.4:c.5152+4A>T,Splice-altering,1,1,intronic,4
+chr17-43091641-G-A,chr17,43091641,G,A,NM_007294.4:c.3890C>T,Not splice-altering,0,0,exonic,
+chr17-43047676-G-C,chr17,43047676,G,C,NM_007294.4:c.5434C>G,Splice-altering,1,1,exonic,
+chr17-43051048-C-G,chr17,43051048,C,G,NM_007294.4:c.5332+15G>C,Not splice-altering,0,0,intronic,15
+chr17-43049193-A-G,chr17,43049193,A,G,NM_007294.4:c.5334T>C,Not splice-altering,0,0,exonic,
+chr17-43091923-C-T,chr17,43091923,C,T,NM_007294.4:c.3608G>A,Not splice-altering,0,0,exonic,
+chr17-43090941-T-A,chr17,43090941,T,A,NM_007294.4:c.4185+3A>T,Splice-altering,1,1,intronic,3
+chr17-43094466-C-T,chr17,43094466,C,T,NM_007294.4:c.1065G>A,Not splice-altering,0,0,exonic,
+chr17-43076488-C-A,chr17,43076488,C,A,NM_007294.4:c.4484G>T,Splice-altering,1,1,exonic,
+chr17-43099818-C-T,chr17,43099818,C,T,NM_007294.4:c.504G>A,Not splice-altering,0,0,exonic,
+chr17-43057122-A-C,chr17,43057122,A,C,NM_007294.4:c.5207T>G,Not splice-altering,0,0,exonic,
+chr17-43067690-G-A,chr17,43067690,G,A,NM_007294.4:c.4992C>T,Splice-altering,1,1,exonic,
+chr17-43095848-T-C,chr17,43095848,T,C,NM_007294.4:c.668A>G,Splice-altering,1,1,exonic,
+chr17-43092388-C-T,chr17,43092388,C,T,NM_007294.4:c.3143G>A,Not splice-altering,0,0,exonic,
+chr17-43093364-T-C,chr17,43093364,T,C,NM_007294.4:c.2167A>G,Not splice-altering,0,0,exonic,
+chr17-43074404-C-T,chr17,43074404,C,T,NM_007294.4:c.4602G>A,Not splice-altering,0,0,exonic,
+chr17-43051071-A-C,chr17,43051071,A,C,NM_007294.4:c.5324T>G,Not splice-altering,0,0,exonic,
+chr17-43067608-C-A,chr17,43067608,C,A,NM_007294.4:c.5074G>T,Splice-altering,1,1,exonic,
+chr17-43097236-T-C,chr17,43097236,T,C,NM_007294.4:c.593+8A>G,Not splice-altering,0,0,intronic,8
+chr17-43093448-C-A,chr17,43093448,C,A,NM_007294.4:c.2083G>T,Not splice-altering,0,0,exonic,
+chr17-43082403-C-A,chr17,43082403,C,A,NM_007294.4:c.4357+1G>T,Splice-altering,1,1,intronic,1
+chr17-43049150-T-A,chr17,43049150,T,A,NM_007294.4:c.5377A>T,Not splice-altering,0,0,exonic,
+chr17-43115844-C-G,chr17,43115844,C,G,NM_007294.4:c.81-65G>C,Not splice-altering,0,0,intronic,65
+chr17-43090935-G-A,chr17,43090935,G,A,NM_007294.4:c.4185+9C>T,Not splice-altering,0,0,intronic,9
+chr17-43104262-C-T,chr17,43104262,C,T,NM_007294.4:c.302-1G>A,Splice-altering,1,1,intronic,1
+chr17-43045812-G-T,chr17,43045812,G,T,NM_007294.4:c.5468-10C>A,Not splice-altering,0,0,intronic,10
+chr17-43045803-C-T,chr17,43045803,C,T,NM_007294.4:c.5468-1G>A,Splice-altering,1,1,intronic,1
+chr17-43106453-T-C,chr17,43106453,T,C,NM_007294.4:c.212+3A>G,Splice-altering,1,1,intronic,3
+chr17-43104867-C-G,chr17,43104867,C,G,NM_007294.4:c.301+1G>C,Splice-altering,1,1,intronic,1
+chr17-43115780-C-G,chr17,43115780,C,G,NM_007294.4:c.81-1G>C,Splice-altering,1,1,intronic,1
+chr17-43067698-G-C,chr17,43067698,G,C,NM_007294.4:c.4987-3C>G,Splice-altering,1,1,intronic,3
+chr17-43093900-T-G,chr17,43093900,T,G,NM_007294.4:c.1631A>C,Not splice-altering,0,0,exonic,
+chr17-43092935-G-A,chr17,43092935,G,A,NM_007294.4:c.2596C>T,Not splice-altering,0,0,exonic,
+chr17-43104883-C-G,chr17,43104883,C,G,NM_007294.4:c.286G>C,Not splice-altering,0,0,exonic,
+chr17-43093665-C-T,chr17,43093665,C,T,NM_007294.4:c.1866G>A,Not splice-altering,0,0,exonic,
+chr17-43093604-T-C,chr17,43093604,T,C,NM_007294.4:c.1927A>G,Not splice-altering,0,0,exonic,
+chr17-43067706-A-G,chr17,43067706,A,G,NM_007294.4:c.4987-11T>C,Not splice-altering,0,0,intronic,11
+chr17-43091952-G-A,chr17,43091952,G,A,NM_007294.4:c.3579C>T,Not splice-altering,0,0,exonic,
+chr17-43067696-C-T,chr17,43067696,C,T,NM_007294.4:c.4987-1G>A,Splice-altering,1,1,intronic,1
+chr17-43051050-C-A,chr17,43051050,C,A,NM_007294.4:c.5332+13G>T,Not splice-altering,0,0,intronic,13
+chr17-43093647-A-C,chr17,43093647,A,C,NM_007294.4:c.1884T>G,Not splice-altering,0,0,exonic,
+chr17-43063368-T-C,chr17,43063368,T,C,NM_007294.4:c.5158A>G,Not splice-altering,0,0,exonic,
+chr17-43091439-G-C,chr17,43091439,G,C,NM_007294.4:c.4092C>G,Not splice-altering,0,0,exonic,
+chr17-43057052-C-A,chr17,43057052,C,A,NM_007294.4:c.5277G>T,Not splice-altering,0,0,exonic,
+chr17-43049197-A-C,chr17,43049197,A,C,NM_007294.4:c.5333-3T>G,Splice-altering,1,1,intronic,3
+chr17-43104121-C-T,chr17,43104121,C,T,NM_007294.4:c.441+1G>A,Splice-altering,1,1,intronic,1
+chr17-43047657-T-C,chr17,43047657,T,C,NM_007294.4:c.5453A>G,Splice-altering,1,1,exonic,
+chr17-43124022-G-A,chr17,43124022,G,A,NM_007294.4:c.75C>T,Not splice-altering,0,0,exonic,
+chr17-43093103-T-A,chr17,43093103,T,A,NM_007294.4:c.2428A>T,Not splice-altering,0,0,exonic,
+chr17-43106439-A-G,chr17,43106439,A,G,NM_007294.4:c.212+17T>C,Not splice-altering,0,0,intronic,17
+chr17-43049192-G-C,chr17,43049192,G,C,NM_007294.4:c.5335C>G,Not splice-altering,0,0,exonic,
+chr17-43097241-C-T,chr17,43097241,C,T,NM_007294.4:c.593+3G>A,Not splice-altering,0,0,intronic,3
+chr17-43094550-T-C,chr17,43094550,T,C,NM_007294.4:c.981A>G,Not splice-altering,0,0,exonic,
+chr17-43093997-G-C,chr17,43093997,G,C,NM_007294.4:c.1534C>G,Not splice-altering,0,0,exonic,
+chr17-43091748-T-C,chr17,43091748,T,C,NM_007294.4:c.3783A>G,Not splice-altering,0,0,exonic,
+chr17-43104866-A-C,chr17,43104866,A,C,NM_007294.4:c.301+2T>G,Splice-altering,1,1,intronic,2
+chr17-43082585-C-T,chr17,43082585,C,T,NM_007294.4:c.4186-10G>A,Not splice-altering,0,0,intronic,10
+chr17-43063369-C-A,chr17,43063369,C,A,NM_007294.4:c.5157G>T,Not splice-altering,0,0,exonic,
+chr17-43082398-A-G,chr17,43082398,A,G,NM_007294.4:c.4357+6T>C,Splice-altering,1,1,intronic,6
+chr17-43076483-C-G,chr17,43076483,C,G,NM_007294.4:c.4484+5G>C,Splice-altering,1,1,intronic,5
+chr17-43047642-C-T,chr17,43047642,C,T,NM_007294.4:c.5467+1G>A,Splice-altering,1,1,intronic,1
+chr17-43063373-C-A,chr17,43063373,C,A,NM_007294.4:c.5153G>T,Not splice-altering,0,0,exonic,
+chr17-43047681-A-C,chr17,43047681,A,C,NM_007294.4:c.5429T>G,Splice-altering,1,1,exonic,
+chr17-43091520-G-A,chr17,43091520,G,A,NM_007294.4:c.4011C>T,Not splice-altering,0,0,exonic,
+chr17-43051063-C-G,chr17,43051063,C,G,NM_007294.4:c.5332G>C,Splice-altering,1,1,exonic,
+chr17-43106533-T-A,chr17,43106533,T,A,NM_007294.4:c.135A>T,Splice-altering,1,1,exonic,
+chr17-43115727-T-G,chr17,43115727,T,G,NM_007294.4:c.133A>C,Not splice-altering,0,0,exonic,
+chr17-43093653-T-C,chr17,43093653,T,C,NM_007294.4:c.1878A>G,Not splice-altering,0,0,exonic,
+chr17-43104938-C-A,chr17,43104938,C,A,NM_007294.4:c.231G>T,Splice-altering,1,1,exonic,
+chr17-43094147-C-T,chr17,43094147,C,T,NM_007294.4:c.1384G>A,Not splice-altering,0,0,exonic,
+chr17-43093449-G-A,chr17,43093449,G,A,NM_007294.4:c.2082C>T,Not splice-altering,0,0,exonic,
+chr17-43093597-G-T,chr17,43093597,G,T,NM_007294.4:c.1934C>A,Not splice-altering,0,0,exonic,
+chr17-43106479-T-A,chr17,43106479,T,A,NM_007294.4:c.189A>T,Not splice-altering,0,0,exonic,
+chr17-43094596-C-G,chr17,43094596,C,G,NM_007294.4:c.935G>C,Not splice-altering,0,0,exonic,
+chr17-43115793-G-A,chr17,43115793,G,A,NM_007294.4:c.81-14C>T,Not splice-altering,0,0,intronic,14
+chr17-43106503-C-T,chr17,43106503,C,T,NM_007294.4:c.165G>A,Splice-altering,1,1,exonic,
+chr17-43097285-A-G,chr17,43097285,A,G,NM_007294.4:c.552T>C,Not splice-altering,0,0,exonic,
+chr17-43093216-A-G,chr17,43093216,A,G,NM_007294.4:c.2315T>C,Not splice-altering,0,0,exonic,
+chr17-43091708-T-C,chr17,43091708,T,C,NM_007294.4:c.3823A>G,Not splice-altering,0,0,exonic,
+chr17-43051131-G-C,chr17,43051131,G,C,NM_007294.4:c.5278-14C>G,Not splice-altering,0,0,intronic,14
+chr17-43093654-A-C,chr17,43093654,A,C,NM_007294.4:c.1877T>G,Not splice-altering,0,0,exonic,
+chr17-43092919-G-A,chr17,43092919,G,A,NM_007294.4:c.2612C>T,Not splice-altering,0,0,exonic,
+chr17-43095838-G-A,chr17,43095838,G,A,NM_007294.4:c.670+8C>T,Not splice-altering,0,0,intronic,8
+chr17-43070909-T-C,chr17,43070909,T,C,NM_007294.4:c.4986+19A>G,Not splice-altering,0,0,intronic,19
+chr17-43057136-C-A,chr17,43057136,C,A,NM_007294.4:c.5194-1G>T,Splice-altering,1,1,intronic,1
+chr17-43045804-T-C,chr17,43045804,T,C,NM_007294.4:c.5468-2A>G,Splice-altering,1,1,intronic,2
+chr17-43057114-C-A,chr17,43057114,C,A,NM_007294.4:c.5215G>T,Not splice-altering,0,0,exonic,
+chr17-43063957-G-T,chr17,43063957,G,T,NM_007294.4:c.5075-6C>A,Not splice-altering,0,0,intronic,6
+chr17-43093408-G-C,chr17,43093408,G,C,NM_007294.4:c.2123C>G,Not splice-altering,0,0,exonic,
+chr17-43049202-G-A,chr17,43049202,G,A,NM_007294.4:c.5333-8C>T,Not splice-altering,0,0,intronic,8
+chr17-43095926-T-C,chr17,43095926,T,C,NM_007294.4:c.594-4A>G,Not splice-altering,0,0,intronic,4
+chr17-43067616-A-G,chr17,43067616,A,G,NM_007294.4:c.5066T>C,Not splice-altering,0,0,exonic,
+chr17-43057131-T-C,chr17,43057131,T,C,NM_007294.4:c.5198A>G,Not splice-altering,0,0,exonic,
+chr17-43095937-C-G,chr17,43095937,C,G,NM_007294.4:c.594-15G>C,Not splice-altering,0,0,intronic,15
+chr17-43094385-A-G,chr17,43094385,A,G,NM_007294.4:c.1146T>C,Not splice-altering,0,0,exonic,
+chr17-43047679-G-T,chr17,43047679,G,T,NM_007294.4:c.5431C>A,Not splice-altering,0,0,exonic,
+chr17-43067607-C-A,chr17,43067607,C,A,NM_007294.4:c.5074+1G>T,Splice-altering,1,1,intronic,1
+chr17-43099769-C-T,chr17,43099769,C,T,NM_007294.4:c.547+6G>A,Not splice-altering,0,0,intronic,6
+chr17-43091818-G-A,chr17,43091818,G,A,NM_007294.4:c.3713C>T,Not splice-altering,0,0,exonic,
+chr17-43124012-C-T,chr17,43124012,C,T,NM_007294.4:c.80+5G>A,Splice-altering,1,1,intronic,5
+chr17-43076624-G-A,chr17,43076624,G,A,NM_007294.4:c.4358-10C>T,Not splice-altering,0,0,intronic,10
+chr17-43115788-G-C,chr17,43115788,G,C,NM_007294.4:c.81-9C>G,Splice-altering,1,1,intronic,9
+chr17-43094424-A-C,chr17,43094424,A,C,NM_007294.4:c.1107T>G,Not splice-altering,0,0,exonic,
+chr17-43057141-A-G,chr17,43057141,A,G,NM_007294.4:c.5194-6T>C,Not splice-altering,0,0,intronic,6
+chr17-43057122-A-G,chr17,43057122,A,G,NM_007294.4:c.5207T>C,Not splice-altering,0,0,exonic,
+chr17-43092172-A-T,chr17,43092172,A,T,NM_007294.4:c.3359T>A,Not splice-altering,0,0,exonic,
+chr17-43092911-T-G,chr17,43092911,T,G,NM_007294.4:c.2620A>C,Not splice-altering,0,0,exonic,
+chr17-43124078-G-A,chr17,43124078,G,A,NM_007294.4:c.19C>T,Not splice-altering,0,0,exonic,
+chr17-43092748-C-T,chr17,43092748,C,T,NM_007294.4:c.2783G>A,Not splice-altering,0,0,exonic,
+chr17-43091895-T-C,chr17,43091895,T,C,NM_007294.4:c.3636A>G,Not splice-altering,0,0,exonic,
+chr17-43057165-A-G,chr17,43057165,A,G,NM_007294.4:c.5194-30T>C,Not splice-altering,0,0,intronic,30
+chr17-43057069-C-G,chr17,43057069,C,G,NM_007294.4:c.5260G>C,Not splice-altering,0,0,exonic,
+chr17-43094141-T-C,chr17,43094141,T,C,NM_007294.4:c.1390A>G,Not splice-altering,0,0,exonic,
+chr17-43094677-T-C,chr17,43094677,T,C,NM_007294.4:c.854A>G,Not splice-altering,0,0,exonic,
+chr17-43049116-C-G,chr17,43049116,C,G,NM_007294.4:c.5406+5G>C,Splice-altering,1,1,intronic,5
+chr17-43106538-A-G,chr17,43106538,A,G,NM_007294.4:c.135-5T>C,Not splice-altering,0,0,intronic,5
+chr17-43091686-T-A,chr17,43091686,T,A,NM_007294.4:c.3845A>T,Not splice-altering,0,0,exonic,
+chr17-43099813-C-T,chr17,43099813,C,T,NM_007294.4:c.509G>A,Not splice-altering,0,0,exonic,
+chr17-43092934-C-T,chr17,43092934,C,T,NM_007294.4:c.2597G>A,Not splice-altering,0,0,exonic,
+chr17-43104921-A-C,chr17,43104921,A,C,NM_007294.4:c.248T>G,Not splice-altering,0,0,exonic,
+chr17-43094839-G-A,chr17,43094839,G,A,NM_007294.4:c.692C>T,Not splice-altering,0,0,exonic,
+chr17-43106478-A-C,chr17,43106478,A,C,NM_007294.4:c.190T>G,Splice-altering,1,1,exonic,
+chr17-43091434-C-T,chr17,43091434,C,T,NM_007294.4:c.4096+1G>A,Splice-altering,1,1,intronic,1
+chr17-43076487-C-A,chr17,43076487,C,A,NM_007294.4:c.4484+1G>T,Splice-altering,1,1,intronic,1
+chr17-43091470-T-C,chr17,43091470,T,C,NM_007294.4:c.4061A>G,Not splice-altering,0,0,exonic,
+chr17-43067697-T-C,chr17,43067697,T,C,NM_007294.4:c.4987-2A>G,Splice-altering,1,1,intronic,2
+chr17-43067605-T-C,chr17,43067605,T,C,NM_007294.4:c.5074+3A>G,Splice-altering,1,1,intronic,3
+chr17-43093620-A-G,chr17,43093620,A,G,NM_007294.4:c.1911T>C,Not splice-altering,0,0,exonic,
+chr17-43074331-C-G,chr17,43074331,C,G,NM_007294.4:c.4675G>C,Splice-altering,1,1,exonic,
+chr17-43124125-A-G,chr17,43124125,A,G,NM_007294.4:c.-19-10T>C,Not splice-altering,0,0,intronic,10
+chr17-43049113-A-G,chr17,43049113,A,G,NM_007294.4:c.5406+8T>C,Not splice-altering,0,0,intronic,8
+chr17-43092798-T-C,chr17,43092798,T,C,NM_007294.4:c.2733A>G,Not splice-altering,0,0,exonic,
+chr17-43063871-T-G,chr17,43063871,T,G,NM_007294.4:c.5152+3A>C,Splice-altering,1,1,intronic,3
+chr17-43070922-A-C,chr17,43070922,A,C,NM_007294.4:c.4986+6T>G,Splice-altering,1,1,intronic,6
+chr17-43097304-C-T,chr17,43097304,C,T,NM_007294.4:c.548-15G>A,Splice-altering,1,1,intronic,15
+chr17-43067701-A-G,chr17,43067701,A,G,NM_007294.4:c.4987-6T>C,Splice-altering,1,1,intronic,6
+chr17-43097246-G-A,chr17,43097246,G,A,NM_007294.4:c.591C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43049172-C-A,chr17,43049172,C,A,NM_007294.4:c.5355G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43047685-C-A,chr17,43047685,C,A,NM_007294.4:c.5425G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43115730-A-T,chr17,43115730,A,T,NM_007294.4:c.130T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43067685-T-C,chr17,43067685,T,C,NM_007294.4:c.4997A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43067628-G-A,chr17,43067628,G,A,NM_007294.4:c.5054C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43057075-C-G,chr17,43057075,C,G,NM_007294.4:c.5254G>C,Low-frequency splice-altering,,1,exonic,
+chr17-43057128-A-G,chr17,43057128,A,G,NM_007294.4:c.5201T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43106514-G-A,chr17,43106514,G,A,NM_007294.4:c.154C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43049174-G-A,chr17,43049174,G,A,NM_007294.4:c.5353C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43097280-G-A,chr17,43097280,G,A,NM_007294.4:c.557C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43057167-A-C,chr17,43057167,A,C,NM_007294.4:c.5194-32T>G,Low-frequency splice-altering,,1,intronic,32
+chr17-43047661-C-A,chr17,43047661,C,A,NM_007294.4:c.5449G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43104877-C-G,chr17,43104877,C,G,NM_007294.4:c.292G>C,Low-frequency splice-altering,,1,exonic,
+chr17-43051088-A-T,chr17,43051088,A,T,NM_007294.4:c.5307T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43115771-A-T,chr17,43115771,A,T,NM_007294.4:c.89T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43063898-C-A,chr17,43063898,C,A,NM_007294.4:c.5128G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43097266-C-T,chr17,43097266,C,T,NM_007294.4:c.571G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43067624-A-T,chr17,43067624,A,T,NM_007294.4:c.5058T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43057116-C-T,chr17,43057116,C,T,NM_007294.4:c.5213G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43049179-A-G,chr17,43049179,A,G,NM_007294.4:c.5348T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43057087-C-T,chr17,43057087,C,T,NM_007294.4:c.5242G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43067629-T-C,chr17,43067629,T,C,NM_007294.4:c.5053A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43057063-G-A,chr17,43057063,G,A,NM_007294.4:c.5266C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43057026-T-C,chr17,43057026,T,C,NM_007294.4:c.5277+26A>G,Low-frequency splice-altering,,1,intronic,26
+chr17-43057077-C-T,chr17,43057077,C,T,NM_007294.4:c.5252G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43063917-A-C,chr17,43063917,A,C,NM_007294.4:c.5109T>G,Low-frequency splice-altering,,1,exonic,
+chr17-43106529-A-C,chr17,43106529,A,C,NM_007294.4:c.139T>G,Low-frequency splice-altering,,1,exonic,
+chr17-43049188-A-G,chr17,43049188,A,G,NM_007294.4:c.5339T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43057126-C-T,chr17,43057126,C,T,NM_007294.4:c.5203G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43106480-A-T,chr17,43106480,A,T,NM_007294.4:c.188T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43106478-A-G,chr17,43106478,A,G,NM_007294.4:c.190T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43049164-C-A,chr17,43049164,C,A,NM_007294.4:c.5363G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43057083-G-C,chr17,43057083,G,C,NM_007294.4:c.5246C>G,Low-frequency splice-altering,,1,exonic,
+chr17-43067677-C-A,chr17,43067677,C,A,NM_007294.4:c.5005G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43115744-C-T,chr17,43115744,C,T,NM_007294.4:c.116G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43057070-T-C,chr17,43057070,T,C,NM_007294.4:c.5259A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43057112-A-C,chr17,43057112,A,C,NM_007294.4:c.5217T>G,Low-frequency splice-altering,,1,exonic,
+chr17-43047696-T-G,chr17,43047696,T,G,NM_007294.4:c.5414A>C,Low-frequency splice-altering,,1,exonic,
+chr17-43063888-A-G,chr17,43063888,A,G,NM_007294.4:c.5138T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43104949-G-A,chr17,43104949,G,A,NM_007294.4:c.220C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43057107-A-C,chr17,43057107,A,C,NM_007294.4:c.5222T>G,Low-frequency splice-altering,,1,exonic,
+chr17-43057086-C-T,chr17,43057086,C,T,NM_007294.4:c.5243G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43051071-A-T,chr17,43051071,A,T,NM_007294.4:c.5324T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43104883-C-T,chr17,43104883,C,T,NM_007294.4:c.286G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43057084-G-C,chr17,43057084,G,C,NM_007294.4:c.5245C>G,Low-frequency splice-altering,,1,exonic,
+chr17-43049145-C-A,chr17,43049145,C,A,NM_007294.4:c.5382G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43057117-C-T,chr17,43057117,C,T,NM_007294.4:c.5212G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43067616-A-C,chr17,43067616,A,C,NM_007294.4:c.5066T>G,Low-frequency splice-altering,,1,exonic,
+chr17-43115777-A-G,chr17,43115777,A,G,NM_007294.4:c.83T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43057069-C-A,chr17,43057069,C,A,NM_007294.4:c.5260G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43051098-A-C,chr17,43051098,A,C,NM_007294.4:c.5297T>G,Low-frequency splice-altering,,1,exonic,
+chr17-43115729-C-T,chr17,43115729,C,T,NM_007294.4:c.131G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43106496-G-C,chr17,43106496,G,C,NM_007294.4:c.172C>G,Low-frequency splice-altering,,1,exonic,
+chr17-43057055-T-C,chr17,43057055,T,C,NM_007294.4:c.5274A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43067551-G-A,chr17,43067551,G,A,NM_007294.4:c.5074+57C>T,Low-frequency splice-altering,,1,intronic,57
+chr17-43063347-T-A,chr17,43063347,T,A,NM_007294.4:c.5179A>T,Low-frequency splice-altering,,1,exonic,
+chr17-43049181-C-T,chr17,43049181,C,T,NM_007294.4:c.5346G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43057052-C-T,chr17,43057052,C,T,NM_007294.4:c.5277G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43047679-G-A,chr17,43047679,G,A,NM_007294.4:c.5431C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43051078-T-A,chr17,43051078,T,A,NM_007294.4:c.5317A>T,Low-frequency splice-altering,,1,exonic,
+chr17-43057093-G-T,chr17,43057093,G,T,NM_007294.4:c.5236C>A,Low-frequency splice-altering,,1,exonic,
+chr17-43049162-C-T,chr17,43049162,C,T,NM_007294.4:c.5365G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43106456-C-T,chr17,43106456,C,T,NM_007294.4:c.212G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43047699-A-T,chr17,43047699,A,T,NM_007294.4:c.5411T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43067683-T-A,chr17,43067683,T,A,NM_007294.4:c.4999A>T,Low-frequency splice-altering,,1,exonic,
+chr17-43106501-T-C,chr17,43106501,T,C,NM_007294.4:c.167A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43106465-A-T,chr17,43106465,A,T,NM_007294.4:c.203T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43063890-C-T,chr17,43063890,C,T,NM_007294.4:c.5136G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43063373-C-T,chr17,43063373,C,T,NM_007294.4:c.5153G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43090946-G-A,chr17,43090946,G,A,NM_007294.4:c.4183C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43057131-T-A,chr17,43057131,T,A,NM_007294.4:c.5198A>T,Low-frequency splice-altering,,1,exonic,
+chr17-43090957-A-G,chr17,43090957,A,G,NM_007294.4:c.4172T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43063941-A-T,chr17,43063941,A,T,NM_007294.4:c.5085T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43115746-C-A,chr17,43115746,C,A,NM_007294.4:c.114G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43106457-T-C,chr17,43106457,T,C,NM_007294.4:c.211A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43057113-T-C,chr17,43057113,T,C,NM_007294.4:c.5216A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43063931-G-A,chr17,43063931,G,A,NM_007294.4:c.5095C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43057169-G-A,chr17,43057169,G,A,NM_007294.4:c.5194-34C>T,Low-frequency splice-altering,,1,intronic,34
+chr17-43115750-G-C,chr17,43115750,G,C,NM_007294.4:c.110C>G,Low-frequency splice-altering,,1,exonic,
+chr17-43063928-T-C,chr17,43063928,T,C,NM_007294.4:c.5098A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43091013-A-T,chr17,43091013,A,T,NM_007294.4:c.4116T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43057078-G-A,chr17,43057078,G,A,NM_007294.4:c.5251C>T,Low-frequency splice-altering,,1,exonic,
+chr17-43115738-T-C,chr17,43115738,T,C,NM_007294.4:c.122A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43063937-A-G,chr17,43063937,A,G,NM_007294.4:c.5089T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43067614-T-G,chr17,43067614,T,G,NM_007294.4:c.5068A>C,Low-frequency splice-altering,,1,exonic,
+chr17-43106486-C-T,chr17,43106486,C,T,NM_007294.4:c.182G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43057088-T-G,chr17,43057088,T,G,NM_007294.4:c.5241A>C,Low-frequency splice-altering,,1,exonic,
+chr17-43057071-C-T,chr17,43057071,C,T,NM_007294.4:c.5258G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43106528-C-A,chr17,43106528,C,A,NM_007294.4:c.140G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43047665-C-T,chr17,43047665,C,T,NM_007294.4:c.5445G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43063883-T-G,chr17,43063883,T,G,NM_007294.4:c.5143A>C,Low-frequency splice-altering,,1,exonic,
+chr17-43051104-A-G,chr17,43051104,A,G,NM_007294.4:c.5291T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43047678-T-C,chr17,43047678,T,C,NM_007294.4:c.5432A>G,Low-frequency splice-altering,,1,exonic,
+chr17-43057037-G-A,chr17,43057037,G,A,NM_007294.4:c.5277+15C>T,Low-frequency splice-altering,,1,intronic,15
+chr17-43106477-C-T,chr17,43106477,C,T,NM_007294.4:c.191G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43115726-T-G,chr17,43115726,T,G,NM_007294.4:c.134A>C,Low-frequency splice-altering,,1,exonic,
+chr17-43091012-C-A,chr17,43091012,C,A,NM_007294.4:c.4117G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43106467-A-C,chr17,43106467,A,C,NM_007294.4:c.201T>G,Low-frequency splice-altering,,1,exonic,
+chr17-43104953-G-T,chr17,43104953,G,T,NM_007294.4:c.216C>A,Low-frequency splice-altering,,1,exonic,
+chr17-43051102-C-A,chr17,43051102,C,A,NM_007294.4:c.5293G>T,Low-frequency splice-altering,,1,exonic,
+chr17-43063939-A-T,chr17,43063939,A,T,NM_007294.4:c.5087T>A,Low-frequency splice-altering,,1,exonic,
+chr17-43067686-A-G,chr17,43067686,A,G,NM_007294.4:c.4996T>C,Low-frequency splice-altering,,1,exonic,
+chr17-43049182-C-T,chr17,43049182,C,T,NM_007294.4:c.5345G>A,Low-frequency splice-altering,,1,exonic,
+chr17-43106500-T-A,chr17,43106500,T,A,NM_007294.4:c.168A>T,Low-frequency splice-altering,,1,exonic,
+chr17-43063878-A-C,chr17,43063878,A,C,NM_007294.4:c.5148T>G,Low-frequency splice-altering,,1,exonic,
+chr17-43115745-A-G,chr17,43115745,A,G,NM_007294.4:c.115T>C,Low-frequency splice-altering,,1,exonic,

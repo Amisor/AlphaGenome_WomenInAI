@@ -1,0 +1,30 @@
+gene,chrom,pos,chrom_start,chrom_end,hgvs,score,splicing_label,ref,alt,reason
+BRCA1,chr17,43045802,43045801,43045802,NM_007294.4:c.5468-1_5468delinsTT,3,Splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43051120,43051119,43051120,NM_007294.4:c.5278-6_5278-4del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43063330,43063329,43063330,NM_007294.4:c.5193+2del,3,Splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43063788,43063787,43063788,NM_007294.4:c.5152+85del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43067617,43067616,43067617,NM_007294.4:c.5062_5064del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43070958,43070957,43070958,NM_007294.4:c.4955_4956delinsAA,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43076615,43076614,43076615,NM_007294.4:c.4358-2del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43076640,43076639,43076640,NM_007294.4:c.4358-31_4358-27del,3,Splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43081882,43081881,43081882,NM_007294.4:c.4357+518_4357+521del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43082402,43082401,43082402,NM_007294.4:c.4357+1_4357+2insG,3,Splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43090905,43090904,43090905,NM_007294.4:c.4185+37_4185+38del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43090922,43090921,43090922,NM_007294.4:c.4185+2_4185+21del,3,Splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43091637,43091636,43091637,NM_007294.4:c.3891_3893del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43092201,43092200,43092201,NM_007294.4:c.3327_3329del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43095844,43095843,43095844,NM_007294.4:c.670+1del,3,Splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43097291,43097290,43097291,NM_007294.4:c.548-3del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43097346,43097345,43097346,NM_007294.4:c.548-58del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43099892,43099891,43099892,NM_007294.4:c.442-22_442-13del,3,Splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43104160,43104159,43104160,NM_007294.4:c.400_402del,3,Splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43104282,43104281,43104282,NM_007294.4:c.302-24_302-22del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43115735,43115734,43115735,NM_007294.4:c.124del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43115789,43115788,43115789,NM_007294.4:c.81-11del,1,Not splice-altering,,,not a single-base substitution (indel)
+BRCA1,chr17,43063881,43063880,43063881,NM_007294.4:c.5145C>A,0,Conflicting,G,T,conflicting label
+BRCA1,chr17,43063882,43063881,43063882,NM_007294.4:c.5144G>A,0,Conflicting,C,T,conflicting label
+BRCA1,chr17,43063909,43063908,43063909,NM_007294.4:c.5117G>A,0,Conflicting,C,T,conflicting label
+BRCA1,chr17,43063930,43063929,43063930,NM_007294.4:c.5096G>A,0,Conflicting,C,T,conflicting label
+BRCA1,chr17,43106469,43106468,43106469,NM_007294.4:c.199G>T,0,Conflicting,C,A,conflicting label
+BRCA1,chr17,43106487,43106486,43106487,NM_007294.4:c.181T>G,0,Conflicting,A,C,conflicting label
+BRCA1,chr17,43106490,43106489,43106490,NM_007294.4:c.178C>T,0,Conflicting,G,A,conflicting label

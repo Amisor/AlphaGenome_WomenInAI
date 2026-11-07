@@ -1,0 +1,2 @@
+variant_id,status,error,score,max_delta_splice_sites,max_delta_splice_site_usage,max_delta_splice_junctions,context
+chr17-43070927-C-A,ok,,2.2973390102386477,0.995676040649414,0.9089126586914062,1.963751554489136,100KB
