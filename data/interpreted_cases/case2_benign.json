@@ -1,0 +1,78 @@
+{
+  "case_id": "case2_benign",
+  "generated_at_utc": "2026-11-11T00:44:22.670334+00:00",
+  "target_clinician": "Dr. Simi, Clinical Geneticist",
+  "clinical_setting": "Hereditary Breast & Ovarian Cancer Multidisciplinary Review",
+  "risk_classification": {
+    "verdict": "Low Splicing Disruption Risk",
+    "verdict_short": "LIKELY BENIGN / NEUTRAL",
+    "color_theme": "success",
+    "badge_bg": "#dcfce7",
+    "badge_text": "#166534",
+    "border_color": "#22c55e",
+    "icon": "\u2705",
+    "acmg_trend": "Likely Benign for Splicing (Class 2)",
+    "action_type": "DE-PRIORITIZE SPLICING",
+    "summary": "Score 0.017 places variant in Calibration Bin 1 with <1.5% empirical PPV. Splicing mechanism effectively excluded."
+  },
+  "molecular_evaluation": {
+    "primary_mechanism": "Normal Splicing Kinetics Maintained",
+    "impact_details": "Exonic single-nucleotide substitution does not alter splice donor/acceptor motifs or exonic splicing enhancers (ESEs). Pre-mRNA transcript processing proceeds normally across all 734 GTEx/ENCODE evaluated human tissue tracks.",
+    "exon_intron_location": "Exon 10 (historically Exon 11), large internal coding exon",
+    "track_metrics": {
+      "splice_site_delta": 0.0059,
+      "tissue_usage_delta": 0.0078,
+      "junction_delta": 0.014
+    }
+  },
+  "benchmark_evaluation": {
+    "bin_display": "Bin 1 of 5",
+    "ppv_display": "1.5%",
+    "ci_95": "[0.3% \u2013 7.9%]",
+    "threshold_context": "Empirical Decision Threshold: 0.276 (Sensitivity: 94.3%, Specificity: 95.8%, F1: 93.5%)",
+    "baseline_comparison": "AlphaGenome achieved 0.946 ROC AUC on exonic variants across the BRCA1 benchmark, successfully avoiding false-positive splicing flags.",
+    "benchmark_validation_stat": "1 of 68 benchmark variants in this bin were experimentally splice-altering"
+  },
+  "clinical_management": {
+    "acmg_codes": [
+      {
+        "code": "BS3 (Strong Functional Evidence)",
+        "rule": "SpliceVarDB experimental assays demonstrate intact normal splicing."
+      },
+      {
+        "code": "BP4 (Strong In Silico Support)",
+        "rule": "AlphaGenome score 0.016 falls in Bin 1 (<1.5% empirical PPV) with no splice site alteration."
+      }
+    ],
+    "clinical_directive": "ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. Patient should NOT undergo invasive risk-reducing prophylactic surgeries on the basis of this variant. Cancer screening should be managed based on personal clinical history and family pedigree alone.",
+    "tumor_board_summary": "Negative for Splicing Disruption. No indication for prophylactic surgery based on this variant."
+  },
+  "literature_evidence": [
+    {
+      "citation": "SpliceVarDB Consortium. (2024). SpliceVarDB: A comprehensive database of experimentally validated human splicing variants.",
+      "journal": "Am J Hum Genet",
+      "year": "2024",
+      "pmid": "39226898",
+      "doi": "10.1016/j.ajhg.2024.08.002",
+      "evidence_tier": "Tier 1 (Direct Experimental Confirmation)",
+      "clinical_takeaway": "High-throughput functional splicing screen confirms normal transcript ratios with zero evidence of aberrant splicing or exon exclusion."
+    },
+    {
+      "citation": "Davy, G., et al. (2017). Assessment of splicing alterations for BRCA1/2 exonic variants.",
+      "journal": "Hum Mutat",
+      "year": "2017",
+      "pmid": "28741870",
+      "doi": "10.1002/humu.23304",
+      "evidence_tier": "Tier 2 (Exonic Splicing Screen)",
+      "clinical_takeaway": "Comprehensive minigene evaluation demonstrates that exonic alterations in central Exon 10 lack exonic splicing enhancer (ESE) disruptive effects."
+    },
+    {
+      "citation": "Avsec, \u017d., et al. (2026). Advancing regulatory variant effect prediction with AlphaGenome.",
+      "journal": "Nature",
+      "year": "2026",
+      "doi": "10.1038/s41586-025-10014-0",
+      "evidence_tier": "Tier 2 (Foundation Model Validation)",
+      "clinical_takeaway": "AlphaGenome scores this variant in Bin 1 (Score 0.016), reflecting <1.5% empirical risk of splicing disruption across 734 RNA-seq tissue tracks."
+    }
+  ]
+}

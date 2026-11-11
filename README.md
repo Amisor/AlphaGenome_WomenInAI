@@ -1,24 +1,55 @@
-# AlphaGenome × SpliceVarDB BRCA1 Integration Proof
+# AlphaGenome × SpliceVarDB: BRCA1 Clinical Decision Support System
 
-A reproducible research-engineering integration proving that **SpliceVarDB** experimental splicing data and **AlphaGenome** AI predictions can meet on a single *BRCA1* variant using local Python scripts.
-
----
-
-## Final Integration Summary
-
-- **Target Variant:** `NM_007294.4:c.4986+1G>T` (GRCh38 `chr17:43070927:C>A`)
-- **Biological Location:** Canonical splice donor site at the *BRCA1* exon 16 / intron 16 boundary.
-- **SpliceVarDB Experimental Ground Truth:** **`Splice-altering`** (Score `3`).
-- **AlphaGenome Live Prediction:**
-  - Donor site probability on the minus strand collapses from **`0.9961` (Reference)** down to **`0.0004` (Alternate)**.
-  - **Max Delta Splice Sites:** `0.9957` (near-complete disruption).
-  - **Max Delta Splice Site Usage:** `0.9090` across 734 tissue tracks.
-  - **Max Delta Splice Junctions:** `1.9608` across 367 tissue tracks.
-  - **Combined Splicing Score:** `2.2969` (Strong disruption).
+A reproducible research-engineering platform that connects **Google DeepMind's AlphaGenome foundation model**, **SpliceVarDB experimental splicing evidence**, and an **empirical 446-variant BRCA1 benchmark** into an executive clinical decision tool and automated patient letter generator for Variants of Uncertain Significance (VUS).
 
 ---
 
-## Quickstart (Clean Environment)
+## 🌟 Hackathon Final Deliverable Overview
+
+Designed for **Dr. Simi**, a clinical geneticist evaluating hereditary cancer VUS reports, this platform provides:
+1. **Interactive Clinical Dossiers (`reports/*.html`)**: Self-contained, responsive medical dashboards with multi-head signal attribution, ACMG/AMP evidence code assignments, and tumor board recommendations.
+2. **Empirical Reliability Calibration**: Translates raw foundation model scores into 5 statistical confidence bins with calibrated Positive Predictive Values (PPV) and 95% Confidence Intervals.
+3. **Plain-Language Patient Letter Generator**: Empathetic, clear patient communication translating complex molecular genomics into non-technical language.
+4. **Master Showcase Dashboard (`reports/index.html`)**: Interactive landing page comparing three distinct clinical archetypes with side-by-side benchmark metrics.
+
+```mermaid
+flowchart LR
+    A["Patient Variant (VUS)"] --> B["SpliceVarDB Lab Evidence"]
+    A --> C["AlphaGenome 100 kb Prediction"]
+    B --> D["Clinical Interpretation Agent<br/>(clinical_agent.py)"]
+    C --> D
+    E["446-Variant Calibration Table<br/>(PPV Bins 1–5)"] --> D
+    D --> F["Interactive HTML Dossier<br/>&amp; Patient Letter (reports/)"]
+```
+
+---
+
+## 📊 Benchmark Performance Summary (446 BRCA1 Variants)
+
+Across 446 single nucleotide variants in *BRCA1* evaluated against experimental SpliceVarDB ground truth:
+
+| Metric | Value | 95% Confidence Interval | Clinical Context |
+| :--- | :---: | :---: | :--- |
+| **Overall ROC AUC (Primary)** | **`0.980`** | `[0.962 – 0.993]` | High-fidelity global classification ($n=339$). |
+| **Intronic ROC AUC** | **`0.993`** | `[0.983 – 0.999]` | **Beats distance-to-splice heuristic** (`0.914`), capturing deep-intronic cryptic activation. |
+| **Exonic ROC AUC** | **`0.946`** | `[0.888 – 0.987]` | Accurately identifies silent/missense splicing neutral mutations. |
+| **Optimal Threshold Sensitivity** | **`94.3%`** | — | At cutoff `0.276` ($116 / 123$ true positives detected). |
+| **Optimal Threshold Specificity** | **`95.8%`** | — | At cutoff `0.276` ($207 / 216$ true negatives verified). |
+| **Bin 5 Positive Predictive Value** | **`100%`** | `[94.7% – 100%]` | $68 / 68$ variants with score $> 2.164$ were experimentally splice-altering. |
+
+---
+
+## 🧬 Three Clinical Archetype Demonstrations
+
+| Case | Variant | Biological Scenario | AlphaGenome Score | Reliability Calibration | Clinical Action |
+| :--- | :--- | :--- | :---: | :---: | :--- |
+| **[Case 1: Canonical Pathogenic](reports/case1_pathogenic.html)** | `NM_007294.4:c.4986+1G>T` | Exon 16 invariant donor site destruction | `2.297` | **Bin 5: 100% PPV** | Reclassify VUS to **Likely Pathogenic**; initiate high-risk breast/ovarian surveillance. |
+| **[Case 2: Benign Splice Mimic](reports/case2_benign.html)** | `NM_007294.4:c.2077G>A` | Exonic substitution near splice junction | `0.016` | **Bin 1: <1.5% PPV** | **De-prioritize splicing**; rule out splicing defect; avoid unnecessary prophylactic surgery. |
+| **[Case 3: Deep-Intronic Cryptic](reports/case3_deep_intronic.html)** | `NM_007294.4:c.4185+4105C>T` | **4,105 bp deep inside intron** (missed by distance tools) | `0.950` | **Bin 4: 72.1% PPV** | **Priority for Functional Assay**; expedite RNA-seq minigene validation. |
+
+---
+
+## 🚀 Quickstart & Pipeline Execution
 
 ### 1. Prerequisites
 - Python 3.11 or 3.12 (macOS / Linux / Windows)
@@ -33,82 +64,54 @@ cd /path/to/AlphaGenome_WomenInAI
 python3 -m venv .venv
 source .venv/bin/activate
 
-# Upgrade pip and install pinned dependencies
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 3. Configure API Key
-Set your AlphaGenome API key using either:
+### 3. Run the Clinical Pipeline End-to-End
+To stage case data, run the Clinical Interpretation Agent, and generate all interactive HTML dossiers in one command:
 ```bash
-# Method A: Local .env file (recommended, ignored by git)
-echo "ALPHAGENOME_API_KEY=your_alphagenome_api_key_here" > .env
+python run_clinical_pipeline.py
+```
 
-# Method B: Export in your active terminal shell
-export ALPHAGENOME_API_KEY="your_alphagenome_api_key_here"
+### 4. View the Reports
+Open the generated master dashboard in any browser:
+```bash
+# On macOS:
+open reports/index.html
+
+# On Linux:
+xdg-open reports/index.html
 ```
 
 ---
 
-## Running the Pipeline
+## 🛠️ Repository File Structure
 
-### Step 1: Extract SpliceVarDB Data for BRCA1
-```bash
-python fetch_splicevardb.py
 ```
-**What this does:**
-- Downloads or loads cached SpliceVarDB variant tracks from the UCSC Genome Browser API for the *BRCA1* locus (`chr17:43,044,295-43,170,245`, GRCh38).
-- Parses genomic positions, HGVS annotations, and standardized splicing labels.
-- Evaluates the primary test case (`c.4986_4986+1insT` / `rs1555580601`) and fallbacks.
-- Outputs `brca1_variants.csv` (475 variants).
-
-### Step 2: Predict Splicing Effects with AlphaGenome
-```bash
-# Live prediction (default 100KB context, ~15s execution):
-python predict_alphagenome.py
-
-# Live prediction with full 1MB context window (~2.5 min execution):
-python predict_alphagenome.py --context 1MB
-
-# Live prediction passing key directly:
-python predict_alphagenome.py --api-key "your_api_key_here"
-
-# Offline test using synthetic mock placeholder:
-python predict_alphagenome.py --mock
+├── reports/
+│   ├── index.html                  # Master Judge Showcase Dashboard
+│   ├── case1_pathogenic.html       # Case 1: Canonical donor disruption
+│   ├── case2_benign.html           # Case 2: Benign exonic mimic
+│   └── case3_deep_intronic.html    # Case 3: Deep-intronic cryptic splice
+├── clinical_agent.py               # Phase B: Genomic Interpretation Agent
+├── generate_clinical_report.py     # Phase C: Self-contained HTML/CSS generator
+├── stage_case_data.py              # Case data staging from benchmark CSVs
+├── run_clinical_pipeline.py        # Master pipeline orchestrator
+├── predict_alphagenome.py          # AlphaGenome live API client & scorer
+├── fetch_splicevardb.py            # SpliceVarDB UCSC track downloader
+├── data/
+│   ├── alphagenome_scores.csv      # AlphaGenome scores for 446 variants
+│   ├── benchmark_reliability.csv   # 5-bin empirical calibration table
+│   ├── variants_to_score.csv       # Filtered BRCA1 SNVs with region & offsets
+│   ├── splicevardb.csv             # SpliceVarDB experimental ground truth
+│   └── staged_cases.json           # Structured JSON for the 3 cases
+├── results/
+│   ├── benchmark_metrics.csv       # ROC AUC and CI for all model heads
+│   ├── benchmark_threshold_metrics.csv # Sensitivity, specificity, precision, F1
+│   ├── roc_curve.png               # ROC curves plot
+│   └── score_by_label.png          # Score distribution plot
+├── CLINICAL_REPORT_PLAN.md         # Full project execution plan
+├── DISCOVERY.md                    # Phase 0 discovery report
+└── requirements.txt                # Pinned dependencies
 ```
-**What this does:**
-- Constructs the target variant (`NM_007294.4:c.4986+1G>T`, `chr17:43070927:C>A` GRCh38) and extracts a genomic context interval.
-- Submits the variant to DeepMind's AlphaGenome API requesting splicing modalities:
-  1. `SPLICE_SITES`
-  2. `SPLICE_SITE_USAGE`
-  3. `SPLICE_JUNCTIONS`
-- Writes full structured results to `sample_prediction.json` (or `sample_prediction.mock.json`).
-
----
-
-## Test Case & Variant Documentation
-
-### Primary Test Variant: `BRCA1 c.4986_4986+1insT` (`rs1555580601`)
-- **Status in SpliceVarDB:** **Absent**.
-- **Evidence:** The SpliceVarDB track hosted on UCSC contains 475 *BRCA1* records, 472 of which are single nucleotide variants (SNVs) and 3 are delins indels. The specific insertion `c.4986_4986+1insT` was not curated in the source datasets compiled by SpliceVarDB.
-
-### Selected Fallback Variant: `NM_007294.4:c.4986+1G>T`
-- **Location:** Exon 16 / Intron 16 boundary (+1 canonical splice donor site).
-- **Genomic Position (GRCh38):** `chr17:43070927`
-- **Genomic Alleles:** Reference `C`, Alternate `A` (genomic plus strand; reverse complement of cDNA `G>T` on minus strand).
-- **SpliceVarDB Label:** **`Splice-altering`** (Score `3`).
-- **Justification for Fallback:** Directly tests the exact same canonical splice donor junction targeted by the primary test case, carrying definitive experimental confirmation of splicing disruption.
-
----
-
-## What Worked & What Did Not
-
-### ✅ What Worked
-1. **SpliceVarDB Access via UCSC Genome Browser API:** Zero authentication friction, fast programmatic retrieval of all 475 *BRCA1* variants with genomic coordinates, HGVS IDs, and experimental spliceogenicity scores.
-2. **Official AlphaGenome Python Client:** `alphagenome` v0.10.0 installed cleanly via PyPI with full support for `predict_variant`, sequence context windows (`100KB` and `1MB`), and native splicing output modalities (`SPLICE_SITES`, `SPLICE_SITE_USAGE`, `SPLICE_JUNCTIONS`).
-3. **Genomic Coordinate Harmonization:** Direct alignment on GRCh38 (1-based coordinate `chr17:43070927`), bridging cDNA/HGVS transcript notations to genomic references.
-4. **Live Model Execution:** AlphaGenome returned live predictions confirming the dramatic collapse of the donor splice site (`0.9961` -> `0.0004`), aligning with SpliceVarDB.
-
-### ⚠️ What Did Not Work / Blockers Overcome
-1. **SpliceVarDB Direct REST API:** `https://compbio.ccia.org.au/splicevardb-api/variants/filter` returned `HTTP 401 Unauthorized ("Token is missing")` requiring account registration. This was resolved by routing through the UCSC Genome Browser API track (`track=spliceVarDb`).
-2. **EvoEval Parquet Subset:** The Arc Institute `evoeval/splicevar` benchmark subset contained 4,119 human genes but 0 *BRCA1* variants.
-3. **Primary Insertion Variant:** `c.4986_4986+1insT` is not in SpliceVarDB, successfully handled by selecting the documented fallback variant at the same donor splice site (`c.4986+1G>T`).

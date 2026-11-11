@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlphaGenome × SpliceVarDB — Clinical Decision Support Showcase</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 56px 20px;
+      text-align: center;
+    }
+    .hero-tag {
+      background: rgba(37, 99, 235, 0.25);
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      color: #93c5fd;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .hero h1 { font-size: 34px; font-weight: 800; max-width: 820px; margin: 0 auto 12px; line-height: 1.25; }
+    .hero p { font-size: 16px; color: #94a3b8; max-width: 680px; margin: 0 auto; }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+    /* Benchmark Stats Row */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: -32px;
+      margin-bottom: 40px;
+    }
+    .stat-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .stat-val { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+    .stat-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; }
+    .stat-sub { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+
+    /* Section Headers */
+    .section-title { font-size: 22px; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+    .section-sub { font-size: 14px; color: #64748b; margin-bottom: 24px; }
+
+    /* Case Cards Grid */
+    .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
+    .case-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .case-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .case-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .case-badge { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .case-score { font-size: 14px; font-weight: 800; }
+    .case-title { font-size: 17px; font-weight: 800; color: #0f172a; margin-bottom: 12px; line-height: 1.35; }
+    .case-meta { font-size: 12px; color: #475569; margin-bottom: 14px; line-height: 1.7; background: #f8fafc; padding: 10px; border-radius: 6px; }
+    .case-desc { font-size: 13px; color: #334155; line-height: 1.6; margin-bottom: 20px; }
+    .case-action {
+      background: #0f172a;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      padding: 10px 16px;
+      border-radius: 6px;
+      display: block;
+      transition: background 0.15s;
+    }
+    .case-action:hover { background: #2563eb; }
+
+    /* Clinical Context Table */
+    .benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .benchmark-table th { background: #f8fafc; text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+    .benchmark-table td { padding: 12px 16px; font-size: 13px; color: #334155; border-bottom: 1px solid var(--border); }
+    .benchmark-table tr:last-child td { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-tag">Hackathon Final Deliverable &bull; Dr. Simi Decision Copilot</div>
+    <h1>AlphaGenome &times; SpliceVarDB Clinical Decision System</h1>
+    <p>Bridging Google DeepMind's DNA foundation model, verified experimental splicing evidence, and empirical BRCA1 calibration into an actionable clinical workflow.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Benchmark Statistics Overview -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-val">0.980</div>
+        <div class="stat-label">Overall ROC AUC</div>
+        <div class="stat-sub">95% CI: [0.962 – 0.993] (n=339)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #2563eb;">0.993</div>
+        <div class="stat-label">Intronic ROC AUC</div>
+        <div class="stat-sub">Beats distance baseline (0.914)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #16a34a;">94.3%</div>
+        <div class="stat-label">Sensitivity</div>
+        <div class="stat-sub">At optimal threshold 0.276</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #dc2626;">100%</div>
+        <div class="stat-label">Bin 5 Precision (PPV)</div>
+        <div class="stat-sub">68 / 68 True Positives</div>
+      </div>
+    </section>
+
+    <!-- 3 Clinical Archetypes Showcase -->
+    <section>
+      <h2 class="section-title">Clinical Archetype Patient Demonstrations</h2>
+      <p class="section-sub">Explore how Dr. Simi evaluates three distinct VUS clinical scenarios using AlphaGenome prediction, empirical calibration, and automated patient communication.</p>
+      
+      <div class="cases-grid">
+        
+        <div class="case-card">
+          <div class="case-top">
+            <span class="case-badge" style="background:#fee2e2; color:#991b1b;">Canonical Splice Donor Disruption</span>
+            <span class="case-score" style="color:#ef4444;">Score 2.297</span>
+          </div>
+          <h2 class="case-title">Case 1: Canonical Splice Site Destruction (Likely Pathogenic)</h2>
+          <div class="case-meta">
+            <div><strong>Variant:</strong> NM_007294.4:c.4986+1G>T</div>
+            <div><strong>Coordinates:</strong> chr17:43070927 C&gt;A</div>
+            <div><strong>SpliceVarDB:</strong> Splice-altering</div>
+            <div><strong>Reliability Calibration:</strong> Bin 5 of 5 (<strong>100.0% PPV</strong>)</div>
+          </div>
+          <p class="case-desc">Obliterates canonical splice donor consensus 'GT', causing complete failure of intron excision and premature termination.</p>
+          <a href="case1_pathogenic.html" class="case-action">Open Clinical Dossier &amp; Patient Letter &rarr;</a>
+        </div>
+        
+        <div class="case-card">
+          <div class="case-top">
+            <span class="case-badge" style="background:#dcfce7; color:#166534;">Benign Splicing Mimic</span>
+            <span class="case-score" style="color:#22c55e;">Score 0.017</span>
+          </div>
+          <h2 class="case-title">Case 2: Exonic Silent Variant near Splice Junction (Likely Benign)</h2>
+          <div class="case-meta">
+            <div><strong>Variant:</strong> NM_007294.4:c.2077G>A</div>
+            <div><strong>Coordinates:</strong> chr17:43093454 C&gt;T</div>
+            <div><strong>SpliceVarDB:</strong> Not splice-altering</div>
+            <div><strong>Reliability Calibration:</strong> Bin 1 of 5 (<strong>1.5% PPV</strong>)</div>
+          </div>
+          <p class="case-desc">Does not disrupt splice donor/acceptor machinery or create de novo cryptic splice signals; splicing kinetics remain intact.</p>
+          <a href="case2_benign.html" class="case-action">Open Clinical Dossier &amp; Patient Letter &rarr;</a>
+        </div>
+        
+        <div class="case-card">
+          <div class="case-top">
+            <span class="case-badge" style="background:#fef3c7; color:#92400e;">Deep-Intronic 'Dark Matter' Splicing Disruption</span>
+            <span class="case-score" style="color:#f59e0b;">Score 0.950</span>
+          </div>
+          <h2 class="case-title">Case 3: Deep-Intronic Cryptic Splice Activation (Priority Candidate)</h2>
+          <div class="case-meta">
+            <div><strong>Variant:</strong> NM_007294.4:c.4185+4105C>T</div>
+            <div><strong>Coordinates:</strong> chr17:43086839 G&gt;A</div>
+            <div><strong>SpliceVarDB:</strong> Splice-altering</div>
+            <div><strong>Reliability Calibration:</strong> Bin 4 of 5 (<strong>72.1% PPV</strong>)</div>
+          </div>
+          <p class="case-desc">Activates a de novo pseudoexon / cryptic splice site 4,105 bp deep inside the intron. Undetectable by standard proximity heuristics (1/distance = 0.00024), but captured by AlphaGenome's 100 kb context window.</p>
+          <a href="case3_deep_intronic.html" class="case-action">Open Clinical Dossier &amp; Patient Letter &rarr;</a>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Benchmark Table Context -->
+    <section>
+      <h2 class="section-title">Verified Empirical Performance Matrix</h2>
+      <p class="section-sub">Detailed statistical metrics from the 446-variant BRCA1 benchmark powering this clinical decision tool.</p>
+
+      <table class="benchmark-table">
+        <thead>
+          <tr>
+            <th>Analysis Target</th>
+            <th>Sample (n)</th>
+            <th>Positive (n)</th>
+            <th>ROC AUC</th>
+            <th>95% Confidence Interval</th>
+            <th>Clinical Significance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Combined Splicing Score (Primary)</strong></td>
+            <td>339</td>
+            <td>123</td>
+            <td><strong style="color: #2563eb;">0.980</strong></td>
+            <td>[0.962 – 0.993]</td>
+            <td>High-fidelity global performance across all single nucleotide variants.</td>
+          </tr>
+          <tr>
+            <td><strong>Intronic Variants Only</strong></td>
+            <td>152</td>
+            <td>90</td>
+            <td><strong style="color: #16a34a;">0.993</strong></td>
+            <td>[0.983 – 0.999]</td>
+            <td>Detects both canonical boundary collapse and deep intronic cryptic activation.</td>
+          </tr>
+          <tr>
+            <td><em>Baseline Distance Heuristic (1/distance)</em></td>
+            <td>152</td>
+            <td>90</td>
+            <td>0.914</td>
+            <td>[0.863 – 0.955]</td>
+            <td>Standard distance heuristics miss cryptic sites far from exons.</td>
+          </tr>
+          <tr>
+            <td><strong>Exonic Variants Only</strong></td>
+            <td>187</td>
+            <td>33</td>
+            <td><strong>0.946</strong></td>
+            <td>[0.888 – 0.987]</td>
+            <td>Rules out splicing defects for exonic silent/missense alterations.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+</body>
+</html>
