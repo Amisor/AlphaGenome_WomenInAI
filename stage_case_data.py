@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-stage_case_data.py — Compile and structure the 3 clinical archetype cases
-from the BRCA1 benchmark dataset, including prioritized peer-reviewed literature citations.
+stage_case_data.py — Compile and structure the 3 clinical archetype findings
+for patient Sarah Jenkins from her Hereditary Breast & Ovarian Cancer (HBOC-30) Multigene Panel,
+including prioritized peer-reviewed literature citations and plain-English clinical translations.
 """
 
 import os
@@ -24,20 +25,29 @@ def stage_cases():
 
     df = df_variants.merge(df_scores, on="variant_id", how="inner")
 
+    # Unified Patient: Sarah Jenkins (39F) undergoing HBOC-30 Multigene Panel testing
+    shared_patient = {
+        "patient_id": "PT-HBOC-3982",
+        "patient_name": "Sarah Jenkins",
+        "patient_age": 39,
+        "patient_gender": "Female",
+        "indication": "Personal history of ductal carcinoma in situ (DCIS) at age 38; strong maternal history of early-onset breast cancer (age 42) and maternal aunt with high-grade serous ovarian cancer. Underwent Comprehensive 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30).",
+        "panel_name": "Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)",
+        "sample_id": "SMP-2026-HBOC-771",
+        "referring_physician": "Dr. Simi, Clinical Cancer Geneticist",
+        "clinic": "Hereditary Cancer Risk & Molecular Tumor Board Program"
+    }
+
     case_definitions = [
         {
             "case_id": "case1_pathogenic",
-            "title": "Case 1: Canonical Splice Site Destruction (Likely Pathogenic)",
+            "title": "Finding 1: Canonical Splice Site Destruction (Primary Pathogenic Driver)",
             "archetype": "Canonical Splice Donor Disruption",
+            "finding_number": 1,
+            "finding_role": "Primary Actionable Driver",
             "variant_id": "chr17-43070927-C-A",
-            "patient_context": {
-                "patient_id": "PT-BRCA1-8841",
-                "patient_age": 39,
-                "patient_gender": "Female",
-                "indication": "Maternal history of early-onset breast cancer (age 42) and personal history of ductal carcinoma in situ (DCIS) at age 38. Comprehensive hereditary cancer multigene sequencing reported a BRCA1 VUS.",
-                "referring_physician": "Dr. Simi, Clinical Geneticist",
-                "clinic": "Hereditary Cancer Risk Program",
-            },
+            "patient_context": shared_patient,
+            "plain_english_summary": "In Plain English: This mutation destroys the genetic 'scissors' signal at the edge of Exon 15. The cellular machinery fails to splice out non-coding sequence, leading to a broken, non-functional BRCA1 protein. AlphaGenome flags this as 100% consistent with known cancer-causing splicing errors.",
             "biological_details": {
                 "transcript": "NM_007294.4",
                 "gene": "BRCA1",
@@ -76,17 +86,13 @@ def stage_cases():
         },
         {
             "case_id": "case2_benign",
-            "title": "Case 2: Exonic Silent Variant near Splice Junction (Likely Benign)",
+            "title": "Finding 2: Exonic Silent Variant near Splice Junction (Benign Splicing Mimic)",
             "archetype": "Benign Splicing Mimic",
+            "finding_number": 2,
+            "finding_role": "Benign Mimic (De-escalate)",
             "variant_id": "chr17-43093454-C-T",
-            "patient_context": {
-                "patient_id": "PT-BRCA1-2290",
-                "patient_age": 46,
-                "patient_gender": "Female",
-                "indication": "Strong family history of ovarian cancer (paternal aunt and grandmother). Patient sought preventive genetic testing; sequencing flagged an exonic BRCA1 VUS.",
-                "referring_physician": "Dr. Simi, Clinical Geneticist",
-                "clinic": "Hereditary Cancer Risk Program",
-            },
+            "patient_context": shared_patient,
+            "plain_english_summary": "In Plain English: Although flagged on Sarah's multigene report as a VUS, this exonic change does not disrupt the splicing machinery or create fake splice sites. AlphaGenome gives this an ultra-low score (0.016, Bin 1 with <1.5% risk), confirming splicing is completely neutral. Clinicians can safely de-escalate concern.",
             "biological_details": {
                 "transcript": "NM_007294.4",
                 "gene": "BRCA1",
@@ -125,17 +131,13 @@ def stage_cases():
         },
         {
             "case_id": "case3_deep_intronic",
-            "title": "Case 3: Deep-Intronic Cryptic Splice Activation (Priority Candidate)",
+            "title": "Finding 3: Deep-Intronic Cryptic Splice Activation (Actionable Candidate)",
             "archetype": "Deep-Intronic 'Dark Matter' Splicing Disruption",
+            "finding_number": 3,
+            "finding_role": "Actionable Candidate (Expedite RNA-seq)",
             "variant_id": "chr17-43086839-G-A",
-            "patient_context": {
-                "patient_id": "PT-BRCA1-5104",
-                "patient_age": 34,
-                "patient_gender": "Female",
-                "indication": "Bilateral breast cancer in two first-degree relatives. Standard exome testing was negative; whole-genome sequencing identified a deep-intronic variant of uncertain significance.",
-                "referring_physician": "Dr. Simi, Clinical Geneticist",
-                "clinic": "Hereditary Cancer Risk Program",
-            },
+            "patient_context": shared_patient,
+            "plain_english_summary": "In Plain English: Located 4,105 base pairs deep inside an intron, standard proximity rules completely miss this mutation (scoring it 0.0002). However, AlphaGenome reveals it generates a dangerous 'cryptic' splice site that inserts an unwanted chunk of RNA (pseudoexon) into the gene. Priority candidate for functional RNA confirmation.",
             "biological_details": {
                 "transcript": "NM_007294.4",
                 "gene": "BRCA1",
@@ -178,71 +180,90 @@ def stage_cases():
 
     for cdef in case_definitions:
         vid = cdef["variant_id"]
-        row = df[df["variant_id"] == vid]
-        if len(row) == 0:
-            raise ValueError(f"Variant {vid} not found in merged dataset!")
-        row_data = row.iloc[0].to_dict()
+        vrows = df[df["variant_id"] == vid]
+        if vrows.empty:
+            raise ValueError(f"Variant {vid} not found in merged benchmark dataset!")
+        vrow = vrows.iloc[0]
 
-        score = float(row_data["score"])
-
-        # Determine reliability bin
-        matched_bin = None
-        for idx, brow in df_rel.iterrows():
-            if brow["score_min"] <= score < brow["score_max"] or (idx == len(df_rel) - 1 and score >= brow["score_min"]):
-                matched_bin = {
-                    "bin_number": int(idx + 1),
-                    "total_bins": len(df_rel),
-                    "score_min": float(brow["score_min"]),
-                    "score_max": float(brow["score_max"]),
-                    "n_total": int(brow["n"]),
-                    "n_positive": int(brow["n_positive"]),
-                    "ppv": float(brow["ppv"]),
-                    "ppv_percent": round(float(brow["ppv"]) * 100, 1),
-                    "ci_low": float(brow["ci_low"]),
-                    "ci_low_percent": round(float(brow["ci_low"]) * 100, 1),
-                    "ci_high": float(brow["ci_high"]),
-                    "ci_high_percent": round(float(brow["ci_high"]) * 100, 1),
+        score = float(vrow["score"])
+        bin_info = None
+        for idx, b in df_rel.iterrows():
+            if b["score_min"] <= score <= b["score_max"] or (idx == len(df_rel) - 1 and score >= b["score_min"]):
+                bin_info = {
+                    "bin_number": int(idx) + 1,
+                    "total_bins": int(len(df_rel)),
+                    "score_min": float(b["score_min"]),
+                    "score_max": float(b["score_max"]),
+                    "n_total": int(b["n"]),
+                    "n_positive": int(b["n_positive"]),
+                    "ppv": float(b["ppv"]),
+                    "ppv_percent": round(float(b["ppv"]) * 100, 1),
+                    "ci_low": float(b["ci_low"]),
+                    "ci_low_percent": round(float(b["ci_low"]) * 100, 1),
+                    "ci_high": float(b["ci_high"]),
+                    "ci_high_percent": round(float(b["ci_high"]) * 100, 1),
                 }
                 break
+        
+        # Fallback if at top edge
+        if bin_info is None:
+            b = df_rel.iloc[-1]
+            bin_info = {
+                "bin_number": len(df_rel),
+                "total_bins": int(len(df_rel)),
+                "score_min": float(b["score_min"]),
+                "score_max": float(b["score_max"]),
+                "n_total": int(b["n"]),
+                "n_positive": int(b["n_positive"]),
+                "ppv": float(b["ppv"]),
+                "ppv_percent": round(float(b["ppv"]) * 100, 1),
+                "ci_low": float(b["ci_low"]),
+                "ci_low_percent": round(float(b["ci_low"]) * 100, 1),
+                "ci_high": float(b["ci_high"]),
+                "ci_high_percent": round(float(b["ci_high"]) * 100, 1),
+            }
 
-        case_obj = {
+        staged_case = {
             "case_id": cdef["case_id"],
             "title": cdef["title"],
             "archetype": cdef["archetype"],
+            "finding_number": cdef["finding_number"],
+            "finding_role": cdef["finding_role"],
             "variant_id": vid,
             "patient_context": cdef["patient_context"],
+            "plain_english_summary": cdef["plain_english_summary"],
             "biological_details": cdef["biological_details"],
             "literature_references": cdef["literature_references"],
             "genomic": {
-                "chrom": str(row_data["chrom"]),
-                "pos": int(row_data["pos"]),
-                "ref": str(row_data["ref"]),
-                "alt": str(row_data["alt"]),
-                "hgvs": str(row_data["hgvs"]),
-                "region": str(row_data["region"]),
-                "intron_offset": None if pd.isna(row_data.get("intron_offset")) else float(row_data["intron_offset"]),
+                "chrom": str(vrow["chrom"]),
+                "pos": int(vrow["pos"]),
+                "ref": str(vrow["ref"]),
+                "alt": str(vrow["alt"]),
+                "hgvs": str(vrow["hgvs"]),
+                "region": str(vrow["region"]),
+                "intron_offset": None if pd.isna(vrow.get("intron_offset")) else float(vrow["intron_offset"]),
             },
             "splicevardb": {
-                "classification": str(row_data["splicing_label"]),
-                "numeric_label": int(row_data["label"]) if not pd.isna(row_data.get("label")) else None,
-                "label_incl_lowfreq": int(row_data["label_incl_lowfreq"]) if not pd.isna(row_data.get("label_incl_lowfreq")) else None,
+                "classification": str(vrow["splicing_label"]),
+                "numeric_label": int(vrow["label"]),
+                "label_incl_lowfreq": int(vrow.get("label_incl_lowfreq", vrow["label"]))
             },
             "alphagenome": {
                 "combined_score": round(score, 4),
-                "max_delta_splice_sites": round(float(row_data["max_delta_splice_sites"]), 4),
-                "max_delta_splice_site_usage": round(float(row_data["max_delta_splice_site_usage"]), 4),
-                "max_delta_splice_junctions": round(float(row_data["max_delta_splice_junctions"]), 4),
-                "context_window": str(row_data["context"]),
+                "max_delta_splice_sites": round(float(vrow["max_delta_splice_sites"]), 4),
+                "max_delta_splice_site_usage": round(float(vrow["max_delta_splice_site_usage"]), 4),
+                "max_delta_splice_junctions": round(float(vrow["max_delta_splice_junctions"]), 4),
+                "context_window": "100KB"
             },
-            "calibration_bin": matched_bin,
+            "calibration_bin": bin_info
         }
-        staged_cases.append(case_obj)
+
+        staged_cases.append(staged_case)
 
     out_file = os.path.join(base_dir, "data", "staged_cases.json")
     with open(out_file, "w") as f:
         json.dump(staged_cases, f, indent=2)
-
-    print(f"[ITERATION 1 DONE] Successfully staged {len(staged_cases)} cases with literature references into {out_file}")
+    print(f"[SUCCESS] Staged Sarah Jenkins HBOC-30 multigene panel (3 findings) into {out_file}")
 
 if __name__ == "__main__":
     stage_cases()

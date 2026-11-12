@@ -47,11 +47,25 @@ class ClinicalInterpretationAgent:
         # 4. ACMG/AMP Evidence Codes & Clinical Action Plan
         clinical_actions = self._formulate_clinical_actions(case_data, risk_info)
 
+        # 5. Formulate Ready-to-Copy Tumor Board Note
+        patient = case_data.get("patient_context", {})
+        gen = case_data.get("genomic", {})
+        finding_num = case_data.get("finding_number", 1)
+        tb_note = (
+            f"MOLECULAR TUMOR BOARD SUMMARY — PATIENT: {patient.get('patient_name', 'Sarah Jenkins')} (Age {patient.get('patient_age', 39)})\n"
+            f"Test: {patient.get('panel_name', 'HBOC-30 Multigene Panel')} | Finding #{finding_num}: {gen.get('hgvs', '')}\n"
+            f"AlphaGenome Score: {score:.3f} | Calibration: {benchmark_eval['bin_display']} ({benchmark_eval['ppv_display']} PPV, 95% CI: {benchmark_eval['ci_95']})\n"
+            f"Assessment: {risk_info['verdict']} ({risk_info['action_type']})\n"
+            f"Directive: {clinical_actions['clinical_directive']}"
+        )
+
         interpretation = {
             "case_id": case_id,
             "generated_at_utc": datetime.now(timezone.utc).isoformat(),
             "target_clinician": "Dr. Simi, Clinical Geneticist",
             "clinical_setting": "Hereditary Breast & Ovarian Cancer Multidisciplinary Review",
+            "plain_english_verdict": case_data.get("plain_english_summary", ""),
+            "tumor_board_clipboard_note": tb_note,
             "risk_classification": risk_info,
             "molecular_evaluation": molecular_eval,
             "benchmark_evaluation": benchmark_eval,

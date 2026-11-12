@@ -1,25 +1,29 @@
-# AlphaGenome × SpliceVarDB: BRCA1 Clinical Decision Support System
+# AlphaGenome × SpliceVarDB: BRCA1 Clinical Decision Cockpit & AI Copilot
 
-A reproducible research-engineering platform that connects **Google DeepMind's AlphaGenome foundation model**, **SpliceVarDB experimental splicing evidence**, and an **empirical 446-variant BRCA1 benchmark** into an executive clinical decision tool and automated patient letter generator for Variants of Uncertain Significance (VUS).
+A research-grade clinical decision support platform connecting **Google DeepMind's AlphaGenome foundation model**, **SpliceVarDB experimental splicing ground truth**, and an **empirical 446-variant *BRCA1* benchmark** into an executive clinical decision cockpit and interactive AI Copilot (**Dr. Simi**) for evaluating Variants of Uncertain Significance (VUS).
 
 ---
 
-## 🌟 Hackathon Final Deliverable Overview
+## 🌟 Executive Overview & Deliverables
 
-Designed for **Dr. Simi**, a clinical geneticist evaluating hereditary cancer VUS reports, this platform provides:
-1. **Interactive Clinical Dossiers (`reports/*.html`)**: Self-contained, responsive medical dashboards with multi-head signal attribution, ACMG/AMP evidence code assignments, and tumor board recommendations.
-2. **Empirical Reliability Calibration**: Translates raw foundation model scores into 5 statistical confidence bins with calibrated Positive Predictive Values (PPV) and 95% Confidence Intervals.
-3. **Plain-Language Patient Letter Generator**: Empathetic, clear patient communication translating complex molecular genomics into non-technical language.
-4. **Master Showcase Dashboard (`reports/index.html`)**: Interactive landing page comparing three distinct clinical archetypes with side-by-side benchmark metrics.
+Engineered specifically for **Dr. Simi**, Clinical Cancer Geneticist and Molecular Tumor Board Lead, this platform provides:
+1. **Interactive Clinical Cockpits (`reports/*.html`)**: Self-contained, responsive medical dossiers featuring hero KPI metric cards, inline SVG splicing tracks, empirical 5-bin calibration, prioritized peer-reviewed literature citations, and ACMG/AMP evidence code assignments.
+2. **Embedded AI Copilot Chat Drawer (`#chatDrawer`)**: A sliding client-side AI chat copilot built with zero external API fees (pure vanilla JS) that answers complex clinical questions on calibration PPV, splicing biology, ACMG criteria, and tumor board surveillance.
+3. **Antigravity Workspace Skill (`.agents/skills/dr-simi-copilot/SKILL.md`)**: A reusable local AI agent skill enabling conversational variant triage, batch evaluation, and clinical pipeline orchestration directly within Antigravity / Gemini CLI.
+4. **Prioritized Peer-Reviewed Literature Citations**: 2–3 curated, clickable citations per variant (with active PubMed IDs and DOIs) linking to experimental evidence, saturation mutagenesis, and foundation model studies.
+5. **Master Showcase Dashboard (`reports/index.html`)**: Landing page highlighting the 446-variant benchmark metrics (ROC AUC 0.980, Intronic 0.993) and direct access to all 3 archetype cases.
+6. **100% Clinician Pivot (Zero Patient Letters)**: Strictly focused on medical genetics, laboratory directors, and tumor boards, eliminating direct-to-patient communications.
 
 ```mermaid
 flowchart LR
-    A["Patient Variant (VUS)"] --> B["SpliceVarDB Lab Evidence"]
-    A --> C["AlphaGenome 100 kb Prediction"]
-    B --> D["Clinical Interpretation Agent<br/>(clinical_agent.py)"]
+    A["Patient Variant (VUS)"] --> B["SpliceVarDB Experimental Evidence"]
+    A --> C["AlphaGenome 100 kb Context Model"]
+    B --> D["Clinical Agent &amp; Benchmark Engine<br/>(clinical_agent.py)"]
     C --> D
-    E["446-Variant Calibration Table<br/>(PPV Bins 1–5)"] --> D
-    D --> F["Interactive HTML Dossier<br/>&amp; Patient Letter (reports/)"]
+    E["446-Variant Calibration Table<br/>(Empirical PPV Bins 1–5)"] --> D
+    F["Prioritized Literature Citations<br/>(AJHG, Nature, Cancer Res)"] --> D
+    D --> G["Interactive Visual Cockpits<br/>with AI Copilot Drawer (reports/)"]
+    D --> H["Antigravity Workspace Skill<br/>(.agents/skills/dr-simi-copilot/)"]
 ```
 
 ---
@@ -39,28 +43,78 @@ Across 446 single nucleotide variants in *BRCA1* evaluated against experimental 
 
 ---
 
-## 🧬 Three Clinical Archetype Demonstrations
+## 🧬 Sarah Jenkins: HBOC-30 Multigene Panel Triage
 
-| Case | Variant | Biological Scenario | AlphaGenome Score | Reliability Calibration | Clinical Action |
+Instead of fragmented, unrelated patients, the platform unifies all evidence around **Sarah Jenkins** (39-year-old female, personal history of DCIS at age 38, maternal breast/ovarian history) who underwent a 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30). Dr. Simi triages all 3 of Sarah's panel findings:
+
+| Finding | Variant | Clinical Role & Scenario | AlphaGenome Score | Reliability Calibration | Clinical Action |
 | :--- | :--- | :--- | :---: | :---: | :--- |
-| **[Case 1: Canonical Pathogenic](reports/case1_pathogenic.html)** | `NM_007294.4:c.4986+1G>T` | Exon 16 invariant donor site destruction | `2.297` | **Bin 5: 100% PPV** | Reclassify VUS to **Likely Pathogenic**; initiate high-risk breast/ovarian surveillance. |
-| **[Case 2: Benign Splice Mimic](reports/case2_benign.html)** | `NM_007294.4:c.2077G>A` | Exonic substitution near splice junction | `0.016` | **Bin 1: <1.5% PPV** | **De-prioritize splicing**; rule out splicing defect; avoid unnecessary prophylactic surgery. |
-| **[Case 3: Deep-Intronic Cryptic](reports/case3_deep_intronic.html)** | `NM_007294.4:c.4185+4105C>T` | **4,105 bp deep inside intron** (missed by distance tools) | `0.950` | **Bin 4: 72.1% PPV** | **Priority for Functional Assay**; expedite RNA-seq minigene validation. |
+| **[Finding 1: Canonical Pathogenic](reports/case1_pathogenic.html)** | `NM_007294.4:c.4986+1G>T` | **Primary Actionable Driver**: Exon 15 invariant donor collapse | `2.297` | **Bin 5: 100% PPV** | Reclassify VUS to **Likely Pathogenic**; initiate high-risk breast/ovarian surveillance. |
+| **[Finding 2: Benign Splice Mimic](reports/case2_benign.html)** | `NM_007294.4:c.2077G>A` | **Benign Mimic (De-escalate)**: Exonic silent substitution | `0.016` | **Bin 1: 1.5% PPV** | **De-prioritize splicing**; rule out splicing defect; avoid unnecessary prophylactic surgery. |
+| **[Finding 3: Deep-Intronic Cryptic](reports/case3_deep_intronic.html)** | `NM_007294.4:c.4185+4105C>T` | **Actionable Candidate**: 4,105 bp deep inside intron (missed by distance tools) | `0.950` | **Bin 4: 72.1% PPV** | **Priority for Functional Assay**; expedite RNA-seq minigene validation. |
+
+---
+
+## 💬 Option A: Side-by-Side Split Cockpit & AI Copilot
+
+Each report is formatted in a warm off-white editorial theme (`#faf8f5`) with a live, persistent **Dr. Simi Copilot panel** right beside the clinical data:
+- **Zero API Dependency / $0 Cost**: Powered by client-side JavaScript reasoning over Sarah's unified multi-variant knowledge base (`PATIENT_KB`).
+- **10-Second Executive Summary ("In Plain English")**: Conversational clinical takeaway presented at the top of every finding.
+- **Calibrated Risk Thermometer**: Visual 5-segment gauge with active indicator pin mapping directly to empirical PPV.
+- **1-Click "📋 Copy Tumor Board Note"**: Formatted 4-sentence clinical summary ready to paste into EHR/EMR charts.
+- **Interactive Quick-Prompt Chips**:
+  - *"Which variant is Sarah's true actionable driver?"*
+  - *"Can we safely de-escalate Finding #2?"*
+  - *"Why is the deep-intronic variant actionable?"*
+  - *"What are the ACMG codes for Finding #1?"*
+  - *"What is the Tumor Board surveillance plan for Sarah?"*
+- **Dynamic Free-Form Input**: Clinicians can type custom queries into the chat bar and receive instant, clinically grounded guidance.
+
+---
+
+## 🧠 Antigravity Workspace Skill (`dr-simi-copilot`)
+
+The platform integrates directly with Google Antigravity as a workspace skill:
+- **Path**: `.agents/skills/dr-simi-copilot/SKILL.md`
+- **Helper Script**: `.agents/skills/dr-simi-copilot/scripts/query_variant.py`
+- **Capabilities**:
+  ```bash
+  # Query any staged case or HGVS variant directly from CLI
+  python3 .agents/skills/dr-simi-copilot/scripts/query_variant.py --case case3_deep_intronic
+  python3 .agents/skills/dr-simi-copilot/scripts/query_variant.py --hgvs "NM_007294.4:c.4986+1G>T"
+  ```
+
+---
+
+## 🔄 The 10-Iteration Engineering Roadmap
+
+The system was developed and validated across 10 disciplined end-to-end iterations:
+1. **Iteration 1**: Literature Evidence Curation & Data Schema (`stage_case_data.py`).
+2. **Iteration 2**: Strip Patient Letter & Clinician-Centric Pivot (`clinical_agent.py`).
+3. **Iteration 3**: Visual Cockpit & Hero KPI Dashboard Redesign (`generate_clinical_report.py`).
+4. **Iteration 4**: Visual Splicing Signal Tracks & Architecture Diagrams (Inline SVGs).
+5. **Iteration 5**: Interactive 5-Bin Calibration & Baseline Distance Contrast (Wilson 95% CIs).
+6. **Iteration 6**: Embedded Chat UI Architecture (Sliding Drawer `#chatDrawer`).
+7. **Iteration 7**: Client-Side Clinical Agent Reasoning Engine (Vanilla JS `VARIANT_KB`).
+8. **Iteration 8**: Antigravity Workspace Skill (`.agents/skills/dr-simi-copilot/SKILL.md`).
+9. **Iteration 9**: 3-Case Multi-Scenario Stress Testing & Automated Test Suite (`test_clinical_system.py`).
+10. **Iteration 10**: Master Showcase Dashboard (`reports/index.html`), Pipeline Orchestration, & Packaging.
 
 ---
 
 ## 🚀 Quickstart & Pipeline Execution
 
 ### 1. Prerequisites
-- Python 3.11 or 3.12 (macOS / Linux / Windows)
-- AlphaGenome API Key (free for research at [Google DeepMind AlphaGenome Terms](https://deepmind.google.com/science/alphagenome/account/terms))
+- Python 3.10+
+- Google Chrome, Safari, Firefox, or Edge
 
 ### 2. Setup Virtual Environment
 ```bash
-# Clone or navigate to repository
-cd /path/to/AlphaGenome_WomenInAI
+# Clone repository
+git clone https://github.com/ivan-as-o/AlphaGenome_WomenInAI.git
+cd AlphaGenome_WomenInAI
 
-# Create and activate virtual environment
+# Create virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 
@@ -68,14 +122,18 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Run the Clinical Pipeline End-to-End
-To stage case data, run the Clinical Interpretation Agent, and generate all interactive HTML dossiers in one command:
+### 3. Run Pipeline End-to-End
 ```bash
-python run_clinical_pipeline.py
+python3 run_clinical_pipeline.py
+```
+This single command automatically stages case data, executes the clinical agent, renders the visual HTML cockpits, and runs the automated unit test suite.
+
+### 4. Run Test Suite
+```bash
+python3 test_clinical_system.py
 ```
 
-### 4. View the Reports
-Open the generated master dashboard in any browser:
+### 5. Open Master Showcase
 ```bash
 # On macOS:
 open reports/index.html
@@ -89,29 +147,37 @@ xdg-open reports/index.html
 ## 🛠️ Repository File Structure
 
 ```
-├── reports/
-│   ├── index.html                  # Master Judge Showcase Dashboard
-│   ├── case1_pathogenic.html       # Case 1: Canonical donor disruption
-│   ├── case2_benign.html           # Case 2: Benign exonic mimic
-│   └── case3_deep_intronic.html    # Case 3: Deep-intronic cryptic splice
-├── clinical_agent.py               # Phase B: Genomic Interpretation Agent
-├── generate_clinical_report.py     # Phase C: Self-contained HTML/CSS generator
-├── stage_case_data.py              # Case data staging from benchmark CSVs
-├── run_clinical_pipeline.py        # Master pipeline orchestrator
-├── predict_alphagenome.py          # AlphaGenome live API client & scorer
-├── fetch_splicevardb.py            # SpliceVarDB UCSC track downloader
+├── .agents/
+│   └── skills/
+│       └── dr-simi-copilot/
+│           ├── SKILL.md                 # Antigravity Workspace Skill definition
+│           └── scripts/
+│               └── query_variant.py     # CLI helper script for variant lookup
 ├── data/
-│   ├── alphagenome_scores.csv      # AlphaGenome scores for 446 variants
-│   ├── benchmark_reliability.csv   # 5-bin empirical calibration table
-│   ├── variants_to_score.csv       # Filtered BRCA1 SNVs with region & offsets
-│   ├── splicevardb.csv             # SpliceVarDB experimental ground truth
-│   └── staged_cases.json           # Structured JSON for the 3 cases
-├── results/
-│   ├── benchmark_metrics.csv       # ROC AUC and CI for all model heads
-│   ├── benchmark_threshold_metrics.csv # Sensitivity, specificity, precision, F1
-│   ├── roc_curve.png               # ROC curves plot
-│   └── score_by_label.png          # Score distribution plot
-├── CLINICAL_REPORT_PLAN.md         # Full project execution plan
-├── DISCOVERY.md                    # Phase 0 discovery report
-└── requirements.txt                # Pinned dependencies
+│   ├── staged_cases.json                # Staged cases with curated literature
+│   ├── interpreted_cases/               # Clinician JSON dossiers (100% patient letters removed)
+│   │   ├── case1_pathogenic.json
+│   │   ├── case2_benign.json
+│   │   └── case3_deep_intronic.json
+│   ├── alphagenome_scores.csv           # Model inference output across 446 variants
+│   ├── benchmark_metrics.csv            # ROC AUC, PR AUC, Sensitivity, Specificity
+│   └── benchmark_reliability.csv        # 5-Bin empirical calibration table
+├── reports/
+│   ├── index.html                       # Master Showcase Dashboard
+│   ├── case1_pathogenic.html            # Case 1 Cockpit + Embedded AI Chat
+│   ├── case2_benign.html                # Case 2 Cockpit + Embedded AI Chat
+│   └── case3_deep_intronic.html         # Case 3 Cockpit + Embedded AI Chat
+├── clinical_agent.py                    # Genomic Interpretation Agent
+├── generate_clinical_report.py          # Visual Cockpit HTML & Chat Drawer Generator
+├── stage_case_data.py                   # Data staging & literature embedding
+├── run_clinical_pipeline.py             # Master orchestrator & verification runner
+├── test_clinical_system.py              # Automated 6-point test suite
+├── ITERATIVE_EXECUTION_PLAN.md          # 10-Iteration master roadmap
+└── README.md                            # Complete documentation & usage guide
 ```
+
+---
+
+## 📜 Ethical & Clinical Disclaimer
+
+This software is developed strictly for research, educational, and computational demonstration purposes. It is designed to assist qualified medical geneticists and molecular tumor boards. It does not provide medical advice or establish a doctor-patient relationship. All clinical decisions regarding hereditary cancer risk, screening, and surgical prophylaxis must be made by licensed medical practitioners in consultation with the patient.

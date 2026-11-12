@@ -1,8 +1,10 @@
 {
   "case_id": "case3_deep_intronic",
-  "generated_at_utc": "2026-11-11T00:44:22.670525+00:00",
+  "generated_at_utc": "2026-11-11T03:30:14.224928+00:00",
   "target_clinician": "Dr. Simi, Clinical Geneticist",
   "clinical_setting": "Hereditary Breast & Ovarian Cancer Multidisciplinary Review",
+  "plain_english_verdict": "In Plain English: Located 4,105 base pairs deep inside an intron, standard proximity rules completely miss this mutation (scoring it 0.0002). However, AlphaGenome reveals it generates a dangerous 'cryptic' splice site that inserts an unwanted chunk of RNA (pseudoexon) into the gene. Priority candidate for functional RNA confirmation.",
+  "tumor_board_clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #3: NM_007294.4:c.4185+4105C>T\nAlphaGenome Score: 0.950 | Calibration: Bin 4 of 5 (72.1% PPV, 95% CI: [60.4% \u2013 81.3%])\nAssessment: Elevated Splicing Disruption Risk (EXPEDITE FUNCTIONAL RNA-SEQ)\nDirective: ACTION: Prioritize patient blood/tissue sample for expedited RNA-seq minigene functional validation. While current evidence supports 72.1% PPV, standalone clinical reclassification to Pathogenic requires transcriptional confirmation of pseudoexon inclusion. Maintain close clinical surveillance based on family pedigree while functional assay is pending.",
   "risk_classification": {
     "verdict": "Elevated Splicing Disruption Risk",
     "verdict_short": "ACTIONABLE VUS (PRIORITY)",

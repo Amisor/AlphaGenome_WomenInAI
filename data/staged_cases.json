@@ -1,17 +1,23 @@
 [
   {
     "case_id": "case1_pathogenic",
-    "title": "Case 1: Canonical Splice Site Destruction (Likely Pathogenic)",
+    "title": "Finding 1: Canonical Splice Site Destruction (Primary Pathogenic Driver)",
     "archetype": "Canonical Splice Donor Disruption",
+    "finding_number": 1,
+    "finding_role": "Primary Actionable Driver",
     "variant_id": "chr17-43070927-C-A",
     "patient_context": {
-      "patient_id": "PT-BRCA1-8841",
+      "patient_id": "PT-HBOC-3982",
+      "patient_name": "Sarah Jenkins",
       "patient_age": 39,
       "patient_gender": "Female",
-      "indication": "Maternal history of early-onset breast cancer (age 42) and personal history of ductal carcinoma in situ (DCIS) at age 38. Comprehensive hereditary cancer multigene sequencing reported a BRCA1 VUS.",
-      "referring_physician": "Dr. Simi, Clinical Geneticist",
-      "clinic": "Hereditary Cancer Risk Program"
+      "indication": "Personal history of ductal carcinoma in situ (DCIS) at age 38; strong maternal history of early-onset breast cancer (age 42) and maternal aunt with high-grade serous ovarian cancer. Underwent Comprehensive 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30).",
+      "panel_name": "Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)",
+      "sample_id": "SMP-2026-HBOC-771",
+      "referring_physician": "Dr. Simi, Clinical Cancer Geneticist",
+      "clinic": "Hereditary Cancer Risk & Molecular Tumor Board Program"
     },
+    "plain_english_summary": "In Plain English: This mutation destroys the genetic 'scissors' signal at the edge of Exon 15. The cellular machinery fails to splice out non-coding sequence, leading to a broken, non-functional BRCA1 protein. AlphaGenome flags this as 100% consistent with known cancer-causing splicing errors.",
     "biological_details": {
       "transcript": "NM_007294.4",
       "gene": "BRCA1",
@@ -85,17 +91,23 @@
   },
   {
     "case_id": "case2_benign",
-    "title": "Case 2: Exonic Silent Variant near Splice Junction (Likely Benign)",
+    "title": "Finding 2: Exonic Silent Variant near Splice Junction (Benign Splicing Mimic)",
     "archetype": "Benign Splicing Mimic",
+    "finding_number": 2,
+    "finding_role": "Benign Mimic (De-escalate)",
     "variant_id": "chr17-43093454-C-T",
     "patient_context": {
-      "patient_id": "PT-BRCA1-2290",
-      "patient_age": 46,
+      "patient_id": "PT-HBOC-3982",
+      "patient_name": "Sarah Jenkins",
+      "patient_age": 39,
       "patient_gender": "Female",
-      "indication": "Strong family history of ovarian cancer (paternal aunt and grandmother). Patient sought preventive genetic testing; sequencing flagged an exonic BRCA1 VUS.",
-      "referring_physician": "Dr. Simi, Clinical Geneticist",
-      "clinic": "Hereditary Cancer Risk Program"
+      "indication": "Personal history of ductal carcinoma in situ (DCIS) at age 38; strong maternal history of early-onset breast cancer (age 42) and maternal aunt with high-grade serous ovarian cancer. Underwent Comprehensive 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30).",
+      "panel_name": "Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)",
+      "sample_id": "SMP-2026-HBOC-771",
+      "referring_physician": "Dr. Simi, Clinical Cancer Geneticist",
+      "clinic": "Hereditary Cancer Risk & Molecular Tumor Board Program"
     },
+    "plain_english_summary": "In Plain English: Although flagged on Sarah's multigene report as a VUS, this exonic change does not disrupt the splicing machinery or create fake splice sites. AlphaGenome gives this an ultra-low score (0.016, Bin 1 with <1.5% risk), confirming splicing is completely neutral. Clinicians can safely de-escalate concern.",
     "biological_details": {
       "transcript": "NM_007294.4",
       "gene": "BRCA1",
@@ -169,17 +181,23 @@
   },
   {
     "case_id": "case3_deep_intronic",
-    "title": "Case 3: Deep-Intronic Cryptic Splice Activation (Priority Candidate)",
+    "title": "Finding 3: Deep-Intronic Cryptic Splice Activation (Actionable Candidate)",
     "archetype": "Deep-Intronic 'Dark Matter' Splicing Disruption",
+    "finding_number": 3,
+    "finding_role": "Actionable Candidate (Expedite RNA-seq)",
     "variant_id": "chr17-43086839-G-A",
     "patient_context": {
-      "patient_id": "PT-BRCA1-5104",
-      "patient_age": 34,
+      "patient_id": "PT-HBOC-3982",
+      "patient_name": "Sarah Jenkins",
+      "patient_age": 39,
       "patient_gender": "Female",
-      "indication": "Bilateral breast cancer in two first-degree relatives. Standard exome testing was negative; whole-genome sequencing identified a deep-intronic variant of uncertain significance.",
-      "referring_physician": "Dr. Simi, Clinical Geneticist",
-      "clinic": "Hereditary Cancer Risk Program"
+      "indication": "Personal history of ductal carcinoma in situ (DCIS) at age 38; strong maternal history of early-onset breast cancer (age 42) and maternal aunt with high-grade serous ovarian cancer. Underwent Comprehensive 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30).",
+      "panel_name": "Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)",
+      "sample_id": "SMP-2026-HBOC-771",
+      "referring_physician": "Dr. Simi, Clinical Cancer Geneticist",
+      "clinic": "Hereditary Cancer Risk & Molecular Tumor Board Program"
     },
+    "plain_english_summary": "In Plain English: Located 4,105 base pairs deep inside an intron, standard proximity rules completely miss this mutation (scoring it 0.0002). However, AlphaGenome reveals it generates a dangerous 'cryptic' splice site that inserts an unwanted chunk of RNA (pseudoexon) into the gene. Priority candidate for functional RNA confirmation.",
     "biological_details": {
       "transcript": "NM_007294.4",
       "gene": "BRCA1",

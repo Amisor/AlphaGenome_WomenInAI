@@ -38,7 +38,7 @@ def main():
     run_command(f"{sys.executable} clinical_agent.py", "Clinical Interpretation Agent Execution")
 
     # Step 3: Report Generation
-    run_command(f"{sys.executable} generate_clinical_report.py", "Interactive HTML Dossier & Patient Letter Generation")
+    run_command(f"{sys.executable} generate_clinical_report.py", "Interactive Visual Cockpit & AI Copilot Generation")
 
     # Step 4: Verification of deliverables
     expected_files = [
@@ -50,6 +50,7 @@ def main():
         "reports/case2_benign.html",
         "reports/case3_deep_intronic.html",
         "reports/index.html",
+        ".agents/skills/dr-simi-copilot/SKILL.md",
     ]
 
     print("\n" + "=" * 70)
@@ -67,6 +68,9 @@ def main():
             all_ok = False
 
     if all_ok:
+        # Step 5: Run Automated Test Suite
+        run_command(f"{sys.executable} test_clinical_system.py", "Automated Clinical Quality Assurance Test Suite")
+
         print("\n[VERIFIED] All clinical dossiers and dashboard reports exist and are validated.")
         print("To view, open in browser:")
         print(f"  file://{os.path.join(base_dir, 'reports', 'index.html')}")
