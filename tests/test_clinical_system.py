@@ -16,7 +16,7 @@ import re
 import unittest
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 class TestClinicalSystem(unittest.TestCase):
 
@@ -82,18 +82,25 @@ class TestClinicalSystem(unittest.TestCase):
             self.assertIn("Peer-Reviewed Evidence", content)
             self.assertIn("doi.org", content)
 
-            # Check Option A Split-Cockpit & Copilot Panel
+            # Check Option A Split Layout & AI Assistant Panel
             self.assertIn("copilot-panel", content)
-            self.assertIn("Dr. Simi AI Copilot", content)
+            self.assertIn("Clinical AI Assistant", content)
             self.assertIn("PATIENT_KB", content)
             self.assertIn("generateAgentAnswer", content)
 
             # Check Sarah Jenkins unified patient & friendly elements
             self.assertIn("Sarah Jenkins", content)
-            self.assertIn("10-Second Executive Verdict", content)
+            self.assertIn("Executive Clinical Verdict", content)
             self.assertIn("Calibrated Risk Thermometer", content)
             self.assertIn("Copy Tumor Board Note", content)
             self.assertIn("#faf8f5", content)
+
+            # Strict doctor-agnostic, professional tone, and emoji-free checks
+            self.assertNotIn("Dr. Simi", content)
+            self.assertNotIn("Dr.Simi", content)
+            self.assertNotIn("In Plain English", content)
+            for emoji in ['🧬', '🩺', '⚠️', '⚡', '✅', '💡', '💬', '📋']:
+                self.assertNotIn(emoji, content, f"Emoji {emoji} must not be present in {cid}.html")
 
     def test_04_archetype_distinctiveness(self):
         """Ensure all 3 cases have distinct biological parameters, scores, and directives."""
@@ -139,12 +146,23 @@ class TestClinicalSystem(unittest.TestCase):
         self.assertTrue(index_file.exists(), "Master index.html must exist")
         content = index_file.read_text(encoding="utf-8")
 
+        self.assertIn("<h1>Multigene Panel Review</h1>", content)
         self.assertIn("AlphaGenome", content)
         self.assertIn("SpliceVarDB", content)
         self.assertIn("case1_pathogenic.html", content)
         self.assertIn("case2_benign.html", content)
         self.assertIn("case3_deep_intronic.html", content)
         self.assertIn("ROC AUC", content)
+        self.assertIn("Open Report", content)
+
+        # Ensure removal of internal architecture section and hero tag
+        self.assertNotIn("Dr. Simi", content)
+        self.assertNotIn("Dr.Simi", content)
+        self.assertNotIn("Clinical Decision Cockpit • Option A Split View", content)
+        self.assertNotIn("Dr. Simi AI Copilot & System Architecture", content)
+        self.assertNotIn("In Plain English", content)
+        for emoji in ['🧬', '🩺', '⚠️', '⚡', '✅', '💡', '💬', '📋']:
+            self.assertNotIn(emoji, content, f"Emoji {emoji} must not be present in index.html")
 
 if __name__ == "__main__":
     unittest.main()

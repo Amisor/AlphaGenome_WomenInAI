@@ -52,7 +52,10 @@ FALLBACK_TEST_HGVS = "NM_007294.4:c.4986+1G>T"
 FALLBACK_TEST_POS = 43_070_927
 
 
-def fetch_splicevardb_brca1(cache_dir: str = "data") -> list[dict]:
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+
+def fetch_splicevardb_brca1(cache_dir: str = DATA_DIR) -> list[dict]:
     """Fetch BRCA1 variants from UCSC SpliceVarDB track or local cache."""
     os.makedirs(cache_dir, exist_ok=True)
     cache_file = os.path.join(cache_dir, "splicevardb_brca1_raw.json")
@@ -188,14 +191,13 @@ def main():
     # 4. Verify primary test case and select fallback
     test_result = verify_test_cases(df)
 
-    # 5. Save output CSVs
-    output_paths = ["brca1_variants.csv", os.path.join("data", "brca1_variants.csv")]
-    for path in output_paths:
-        df.to_csv(path, index=False)
-        print(f"Saved: {path} ({total_count} rows)")
+    # 5. Save output CSV
+    output_path = os.path.join(DATA_DIR, "brca1_variants.csv")
+    df.to_csv(output_path, index=False)
+    print(f"Saved: {output_path} ({total_count} rows)")
 
     # Save selected test variant info for predict_alphagenome.py
-    test_info_path = os.path.join("data", "selected_test_variant.json")
+    test_info_path = os.path.join(DATA_DIR, "selected_test_variant.json")
     with open(test_info_path, "w") as f:
         json.dump(test_result, f, indent=2)
     print(f"Saved test case metadata: {test_info_path}")

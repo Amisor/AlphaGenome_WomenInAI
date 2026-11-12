@@ -1,9 +1,9 @@
 {
   "case_id": "case1_pathogenic",
-  "generated_at_utc": "2026-11-11T03:30:14.224132+00:00",
-  "target_clinician": "Dr. Simi, Clinical Geneticist",
+  "generated_at_utc": "2026-11-12T07:44:32.446298+00:00",
+  "target_clinician": "Attending Clinical Genetics Review",
   "clinical_setting": "Hereditary Breast & Ovarian Cancer Multidisciplinary Review",
-  "plain_english_verdict": "In Plain English: This mutation destroys the genetic 'scissors' signal at the edge of Exon 15. The cellular machinery fails to splice out non-coding sequence, leading to a broken, non-functional BRCA1 protein. AlphaGenome flags this as 100% consistent with known cancer-causing splicing errors.",
+  "executive_clinical_summary": "This mutation destroys the canonical splice recognition signal at the edge of Exon 15. The cellular spliceosome machinery fails to excise the intron, resulting in complete exon skipping, open reading frame frameshift, and premature termination. AlphaGenome and experimental ground truth confirm 100% loss of function.",
   "tumor_board_clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #1: NM_007294.4:c.4986+1G>T\nAlphaGenome Score: 2.297 | Calibration: Bin 5 of 5 (100.0% PPV, 95% CI: [94.7% \u2013 100.0%])\nAssessment: High Splicing Disruption Risk (CLINICAL SURVEILLANCE & RECLASSIFICATION)\nDirective: ACTION: Recommend reclassification from Variant of Uncertain Significance (VUS) to Likely Pathogenic (ACMG Class 4). Initiate high-risk hereditary breast and ovarian cancer clinical pathway: annual breast MRI alternating with mammography (starting at age 25\u201330), counseling regarding risk-reducing bilateral salpingo-oophorectomy (RRSO) between ages 35\u201340, and offer cascade genetic testing to at-risk relatives.",
   "risk_classification": {
     "verdict": "High Splicing Disruption Risk",
@@ -12,7 +12,7 @@
     "badge_bg": "#fee2e2",
     "badge_text": "#991b1b",
     "border_color": "#ef4444",
-    "icon": "\u26a0\ufe0f",
+    "icon": "",
     "acmg_trend": "Likely Pathogenic (Class 4)",
     "action_type": "CLINICAL SURVEILLANCE & RECLASSIFICATION",
     "summary": "Score 2.297 places variant in Calibration Bin 5 with 100% empirical Positive Predictive Value (PPV) in BRCA1."

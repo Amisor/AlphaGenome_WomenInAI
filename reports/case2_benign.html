@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Jenkins (39F) — Finding 2: Exonic Silent Variant near Splice Junction (Benign Splicing Mimic) — Clinical Decision Cockpit</title>
+  <title>Finding 2: Exonic Silent Variant near Splice Junction (Benign Splicing Mimic) — Clinical Decision Report</title>
   <style>
     :root {
       --bg: #faf8f5;           /* Warm Alabaster / Off-White */
@@ -68,15 +68,17 @@
     }
     .patient-main { display: flex; align-items: center; gap: 16px; }
     .patient-avatar {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: #f5f5f4;
       border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #44403c;
     }
     .patient-name { font-size: 18px; font-weight: 800; color: #1c1917; }
     .patient-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
@@ -122,7 +124,7 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
 
-    /* Option A: Split-Cockpit Layout */
+    /* Option A: Split View Layout */
     .split-layout {
       display: grid;
       grid-template-columns: 1fr 440px;
@@ -133,7 +135,7 @@
     /* Left Column (Clinical Dossier) */
     .cockpit-left { display: flex; flex-direction: column; gap: 20px; }
 
-    /* Plain-English 10-Second Executive Summary Card */
+    /* Executive Clinical Verdict Card */
     .plain-english-card {
       background: #ffffff;
       border: 1px solid #fed7aa;
@@ -150,7 +152,7 @@
       letter-spacing: 0.5px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: space-between;
       margin-bottom: 6px;
     }
     .pe-text { font-size: 13.5px; color: #292524; line-height: 1.6; font-weight: 500; }
@@ -181,7 +183,6 @@
     .status-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
       font-size: 12.5px;
       font-weight: 800;
       color: #166534;
@@ -326,7 +327,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .copilot-title { font-size: 13.5px; font-weight: 800; color: #1c1917; display: flex; align-items: center; gap: 8px; }
+    .copilot-title { font-size: 13.5px; font-weight: 800; color: #1c1917; }
     .copilot-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: #e7e5e4; color: #44403c; }
     
     .copilot-body {
@@ -424,13 +425,12 @@
   <!-- Top Sticky Navigation -->
   <nav class="topbar">
     <a href="index.html" class="brand">
-      <span style="font-size:16px;">🧬</span>
-      <span>Dr. Simi Copilot</span>
+      <span style="font-weight:700; color:#1c1917;">Genomic Decision Support</span>
       <span class="brand-tag">Clinical Cancer Genetics</span>
     </a>
     <div style="display:flex; align-items:center; gap:12px;">
       <span style="font-size:12px; color:var(--text-muted); font-weight:600;">Patient: Sarah Jenkins (39F)</span>
-      <a href="index.html" class="dashboard-link">&larr; Patient Master Panel</a>
+      <a href="index.html" class="dashboard-link">&larr; Multigene Panel Review</a>
     </div>
   </nav>
 
@@ -439,7 +439,7 @@
     <!-- Patient Header Hero -->
     <header class="patient-hero">
       <div class="patient-main">
-        <div class="patient-avatar">🩺</div>
+        <div class="patient-avatar">PT</div>
         <div>
           <div class="patient-name">Sarah Jenkins <span style="font-size:13px; font-weight:600; color:#78716c;">(Age 39, Female)</span></div>
           <div class="patient-sub">
@@ -450,7 +450,7 @@
       <div class="patient-badges">
         <div class="badge-pill"><strong>Panel:</strong> Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)</div>
         <div class="badge-pill"><strong>Sample:</strong> SMP-2026-HBOC-771</div>
-        <div class="badge-pill"><strong>Ref MD:</strong> Dr. Simi, Clinical Cancer Geneticist</div>
+        <div class="badge-pill"><strong>Clinic:</strong> Hereditary Cancer Risk & Molecular Tumor Board Program</div>
       </div>
     </header>
 
@@ -477,20 +477,20 @@
         
     </nav>
 
-    <!-- Option A: Split-Cockpit Layout -->
+    <!-- Option A: Split View Layout -->
     <div class="split-layout">
 
       <!-- LEFT COLUMN: Clinical Dossier & Evidence -->
       <div class="cockpit-left">
 
-        <!-- 10-Second Executive Summary Card -->
+        <!-- Executive Clinical Verdict Card -->
         <div class="plain-english-card">
           <div class="pe-label">
-            <span>💡 10-Second Executive Verdict for Dr. Simi</span>
+            <span>Executive Clinical Verdict</span>
             <span style="font-size:10px; background:#ffedd5; color:#c2410c; padding:2px 6px; border-radius:4px;">Finding #2 of 3</span>
           </div>
           <div class="pe-text">
-            In Plain English: Although flagged on Sarah's multigene report as a VUS, this exonic change does not disrupt the splicing machinery or create fake splice sites. AlphaGenome gives this an ultra-low score (0.016, Bin 1 with <1.5% risk), confirming splicing is completely neutral. Clinicians can safely de-escalate concern.
+            Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Bin 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.
           </div>
         </div>
 
@@ -500,7 +500,6 @@
             <div>
               <div class="kpi-label">Risk Classification</div>
               <div class="status-badge">
-                <span>✅</span>
                 <span>Low Splicing Disruption Risk</span>
               </div>
             </div>
@@ -547,7 +546,7 @@
       <div style="display:flex; gap:6px; align-items:stretch;">
         
         <div style="flex:1; background:#dcfce7; border:2px solid #15803d; border-radius:6px; padding:8px 4px; text-align:center; position:relative; transform: scale(1.02); z-index:2;">
-          <div style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); background:#15803d; color:#ffffff; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px; white-space:nowrap; box-shadow:0 2px 4px rgba(0,0,0,0.15);">▲ SARAH'S VARIANT</div>
+          <div style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); background:#15803d; color:#ffffff; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px; white-space:nowrap; box-shadow:0 2px 4px rgba(0,0,0,0.15);">ACTIVE VARIANT</div>
           <div style="font-size:11px; font-weight:800; color:#15803d;">Bin 1: Minimal</div>
           <div style="font-size:12px; font-weight:800; color:#15803d; margin-top:2px;"><1.5% PPV</div>
         </div>
@@ -653,8 +652,8 @@
         <!-- ACMG Evidence & Directive -->
         <div class="card">
           <div class="card-title">
-            <span>ACMG/AMP Evidence &amp; Directive for Dr. Simi</span>
-            <button class="copy-btn" onclick="copyTumorBoardNote()">📋 Copy Tumor Board Note</button>
+            <span>ACMG/AMP Evidence &amp; Clinical Management Directive</span>
+            <button class="copy-btn" onclick="copyTumorBoardNote()">Copy Tumor Board Note</button>
           </div>
           
           <div class="acmg-grid">
@@ -730,19 +729,18 @@
       <aside class="copilot-panel" id="chatDrawer">
         <div class="copilot-header">
           <div class="copilot-title">
-            <span>💬</span>
-            <span>Dr. Simi AI Copilot</span>
+            <span>Clinical AI Assistant</span>
           </div>
           <div class="copilot-badge">Finding #2 Active</div>
         </div>
 
         <div class="copilot-body" id="chatMessages">
           <div class="chat-bubble bot">
-            Hello Dr. Simi. I'm your Clinical Genomic Copilot for <strong>Sarah Jenkins (39F)</strong>.
+            Hello. I am your Clinical Decision Assistant for this HBOC-30 multigene panel review.
             <br><br>
-            Sarah's HBOC-30 panel returned 3 variants. You are currently inspecting <strong>Finding #2: NM_007294.4:c.2077G>A</strong> (Benign Mimic (De-escalate)).
+            The panel identified 3 variants for this patient. You are currently evaluating <strong>Finding #2: NM_007294.4:c.2077G>A</strong> (Benign Mimic (De-escalate)).
             <br><br>
-            Ask me any clinical question or click a prompt chip below.
+            Select any clinical inquiry chip below or enter a specific question.
           </div>
         </div>
 
@@ -751,11 +749,11 @@
           <button class="chip-btn" onclick="askCopilot(&quot;Why is this variant classified as Low Splicing Disruption Risk?&quot;)">Risk Rationale</button>
           <button class="chip-btn" onclick="askCopilot(&quot;What papers support this finding?&quot;)">Literature</button>
           <button class="chip-btn" onclick="askCopilot(&quot;How does AlphaGenome compare to distance heuristics here?&quot;)">Distance Heuristic</button>
-          <button class="chip-btn" onclick="askCopilot(&quot;What clinical action should Dr. Simi recommend for Sarah?&quot;)">Surveillance Plan</button>
+          <button class="chip-btn" onclick="askCopilot(&quot;What clinical management is recommended for Sarah?&quot;)">Surveillance Plan</button>
         </div>
 
         <div class="copilot-input-bar">
-          <input type="text" id="chatInput" class="chat-input" placeholder="Ask Dr. Simi about Sarah's panel..." onkeydown="handleChatKey(event)">
+          <input type="text" id="chatInput" class="chat-input" placeholder="Ask about this variant or the patient's panel..." onkeydown="handleChatKey(event)">
           <button class="chat-send-btn" onclick="sendUserMessage()">Send</button>
         </div>
       </aside>
@@ -764,9 +762,11 @@
 
   </main>
 
+  <div id="toastNotification" class="toast-notification"></div>
+
   <!-- Client-Side Reasoning Engine & Patient KB -->
   <script>
-    const PATIENT_KB = {"patient_name": "Sarah Jenkins", "patient_id": "PT-HBOC-3982", "patient_age": 39, "indication": "Personal history of ductal carcinoma in situ (DCIS) at age 38; strong maternal history of early-onset breast cancer (age 42) and maternal aunt with high-grade serous ovarian cancer. Underwent Comprehensive 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30).", "panel_name": "Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)", "active_case_id": "case2_benign", "active_finding_number": 2, "active_variant": "NM_007294.4:c.2077G>A", "findings": [{"case_id": "case1_pathogenic", "finding_number": 1, "role": "Primary Actionable Driver", "variant": "NM_007294.4:c.4986+1G>T", "score": 2.2973, "bin": 5, "ppv": 100.0, "ci": "[94.7% \u2013 100.0%]", "splicevardb": "Splice-altering", "plain_english": "In Plain English: This mutation destroys the genetic 'scissors' signal at the edge of Exon 15. The cellular machinery fails to splice out non-coding sequence, leading to a broken, non-functional BRCA1 protein. AlphaGenome flags this as 100% consistent with known cancer-causing splicing errors."}, {"case_id": "case2_benign", "finding_number": 2, "role": "Benign Mimic (De-escalate)", "variant": "NM_007294.4:c.2077G>A", "score": 0.0165, "bin": 1, "ppv": 1.5, "ci": "[0.3% \u2013 7.9%]", "splicevardb": "Not splice-altering", "plain_english": "In Plain English: Although flagged on Sarah's multigene report as a VUS, this exonic change does not disrupt the splicing machinery or create fake splice sites. AlphaGenome gives this an ultra-low score (0.016, Bin 1 with <1.5% risk), confirming splicing is completely neutral. Clinicians can safely de-escalate concern."}, {"case_id": "case3_deep_intronic", "finding_number": 3, "role": "Actionable Candidate (Expedite RNA-seq)", "variant": "NM_007294.4:c.4185+4105C>T", "score": 0.9502, "bin": 4, "ppv": 72.1, "ci": "[60.4% \u2013 81.3%]", "splicevardb": "Splice-altering", "plain_english": "In Plain English: Located 4,105 base pairs deep inside an intron, standard proximity rules completely miss this mutation (scoring it 0.0002). However, AlphaGenome reveals it generates a dangerous 'cryptic' splice site that inserts an unwanted chunk of RNA (pseudoexon) into the gene. Priority candidate for functional RNA confirmation."}], "active_detail": {"variant": "NM_007294.4:c.2077G>A", "chrom_pos": "chr17:43093454 C>T", "risk_verdict": "Low Splicing Disruption Risk", "action_type": "DE-PRIORITIZE SPLICING", "score": 0.0165, "bin": 1, "ppv": 1.5, "ci": "[0.3% \u2013 7.9%]", "splicevardb_label": "Not splice-altering", "molecular_mechanism": "Normal Splicing Kinetics Maintained", "impact": "Exonic single-nucleotide substitution does not alter splice donor/acceptor motifs or exonic splicing enhancers (ESEs). Pre-mRNA transcript processing proceeds normally across all 734 GTEx/ENCODE evaluated human tissue tracks.", "acmg_codes": ["BS3 (Strong Functional Evidence): SpliceVarDB experimental assays demonstrate intact normal splicing.", "BP4 (Strong In Silico Support): AlphaGenome score 0.016 falls in Bin 1 (<1.5% empirical PPV) with no splice site alteration."], "recommendation": "ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. Patient should NOT undergo invasive risk-reducing prophylactic surgeries on the basis of this variant. Cancer screening should be managed based on personal clinical history and family pedigree alone.", "tumor_board_summary": "Negative for Splicing Disruption. No indication for prophylactic surgery based on this variant.", "clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #2: NM_007294.4:c.2077G>A\nAlphaGenome Score: 0.017 | Calibration: Bin 1 of 5 (1.5% PPV, 95% CI: [0.3% \u2013 7.9%])\nAssessment: Low Splicing Disruption Risk (DE-PRIORITIZE SPLICING)\nDirective: ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. Patient should NOT undergo invasive risk-reducing prophylactic surgeries on the basis of this variant. Cancer screening should be managed based on personal clinical history and family pedigree alone.", "literature": ["SpliceVarDB Consortium. (2024). SpliceVarDB: A comprehensive database of experimentally validated human splicing variants. (Am J Hum Genet) \u2014 High-throughput functional splicing screen confirms normal transcript ratios with zero evidence of aberrant splicing or exon exclusion.", "Davy, G., et al. (2017). Assessment of splicing alterations for BRCA1/2 exonic variants. (Hum Mutat) \u2014 Comprehensive minigene evaluation demonstrates that exonic alterations in central Exon 10 lack exonic splicing enhancer (ESE) disruptive effects.", "Avsec, \u017d., et al. (2026). Advancing regulatory variant effect prediction with AlphaGenome. (Nature) \u2014 AlphaGenome scores this variant in Bin 1 (Score 0.016), reflecting <1.5% empirical risk of splicing disruption across 734 RNA-seq tissue tracks."]}};
+    const PATIENT_KB = {"patient_name": "Sarah Jenkins", "patient_id": "PT-HBOC-3982", "patient_age": 39, "indication": "Personal history of ductal carcinoma in situ (DCIS) at age 38; strong maternal history of early-onset breast cancer (age 42) and maternal aunt with high-grade serous ovarian cancer. Underwent Comprehensive 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30).", "panel_name": "Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)", "active_case_id": "case2_benign", "active_finding_number": 2, "active_variant": "NM_007294.4:c.2077G>A", "findings": [{"case_id": "case1_pathogenic", "finding_number": 1, "role": "Primary Actionable Driver", "variant": "NM_007294.4:c.4986+1G>T", "score": 2.2973, "bin": 5, "ppv": 100.0, "ci": "[94.7% \u2013 100.0%]", "splicevardb": "Splice-altering", "plain_english": "This mutation destroys the canonical splice recognition signal at the edge of Exon 15. The cellular spliceosome machinery fails to excise the intron, resulting in complete exon skipping, open reading frame frameshift, and premature termination. AlphaGenome and experimental ground truth confirm 100% loss of function."}, {"case_id": "case2_benign", "finding_number": 2, "role": "Benign Mimic (De-escalate)", "variant": "NM_007294.4:c.2077G>A", "score": 0.0165, "bin": 1, "ppv": 1.5, "ci": "[0.3% \u2013 7.9%]", "splicevardb": "Not splice-altering", "plain_english": "Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Bin 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded."}, {"case_id": "case3_deep_intronic", "finding_number": 3, "role": "Actionable Candidate (Expedite RNA-seq)", "variant": "NM_007294.4:c.4185+4105C>T", "score": 0.9502, "bin": 4, "ppv": 72.1, "ci": "[60.4% \u2013 81.3%]", "splicevardb": "Splice-altering", "plain_english": "Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at 72.1% PPV, this variant is prioritized for functional RNA minigene validation."}], "active_detail": {"variant": "NM_007294.4:c.2077G>A", "chrom_pos": "chr17:43093454 C>T", "risk_verdict": "Low Splicing Disruption Risk", "action_type": "DE-PRIORITIZE SPLICING", "score": 0.0165, "bin": 1, "ppv": 1.5, "ci": "[0.3% \u2013 7.9%]", "splicevardb_label": "Not splice-altering", "molecular_mechanism": "Normal Splicing Kinetics Maintained", "impact": "Exonic single-nucleotide substitution does not alter splice donor/acceptor motifs or exonic splicing enhancers (ESEs). Pre-mRNA transcript processing proceeds normally across all 734 GTEx/ENCODE evaluated human tissue tracks.", "acmg_codes": ["BS3 (Strong Functional Evidence): SpliceVarDB experimental assays demonstrate intact normal splicing.", "BP4 (Strong In Silico Support): AlphaGenome score 0.016 falls in Bin 1 (<1.5% empirical PPV) with no splice site alteration."], "recommendation": "ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. Patient should NOT undergo invasive risk-reducing prophylactic surgeries on the basis of this variant. Cancer screening should be managed based on personal clinical history and family pedigree alone.", "tumor_board_summary": "Negative for Splicing Disruption. No indication for prophylactic surgery based on this variant.", "clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #2: NM_007294.4:c.2077G>A\nAlphaGenome Score: 0.017 | Calibration: Bin 1 of 5 (1.5% PPV, 95% CI: [0.3% \u2013 7.9%])\nAssessment: Low Splicing Disruption Risk (DE-PRIORITIZE SPLICING)\nDirective: ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. Patient should NOT undergo invasive risk-reducing prophylactic surgeries on the basis of this variant. Cancer screening should be managed based on personal clinical history and family pedigree alone.", "literature": ["SpliceVarDB Consortium. (2024). SpliceVarDB: A comprehensive database of experimentally validated human splicing variants. (Am J Hum Genet) \u2014 High-throughput functional splicing screen confirms normal transcript ratios with zero evidence of aberrant splicing or exon exclusion.", "Davy, G., et al. (2017). Assessment of splicing alterations for BRCA1/2 exonic variants. (Hum Mutat) \u2014 Comprehensive minigene evaluation demonstrates that exonic alterations in central Exon 10 lack exonic splicing enhancer (ESE) disruptive effects.", "Avsec, \u017d., et al. (2026). Advancing regulatory variant effect prediction with AlphaGenome. (Nature) \u2014 AlphaGenome scores this variant in Bin 1 (Score 0.016), reflecting <1.5% empirical risk of splicing disruption across 734 RNA-seq tissue tracks."]}};
 
     function handleChatKey(e) {
       if (e.key === 'Enter') {
@@ -812,15 +812,15 @@
 
       // Patient-level driver triage question
       if (q.includes('driver') || q.includes('which variant') || q.includes('overall') || q.includes('sarah')) {
-        let res = `<strong>Sarah Jenkins Multi-Variant Triage Summary:</strong><br>` +
-                  `Sarah carries 3 distinct findings on her HBOC-30 panel:<br>` +
+        let res = `<strong>Multi-Variant Triage Summary:</strong><br>` +
+                  `The patient carries 3 distinct findings on this HBOC-30 panel:<br>` +
                   `<ol style="padding-left:18px; margin:6px 0;">`;
         pk.findings.forEach(f => {
           res += `<li><strong>Finding #${f.finding_number} (${f.variant}):</strong> ${f.role} (Score: ${f.score}, <strong>${f.ppv}% PPV</strong>).</li>`;
         });
         res += `</ol>` +
-               `<strong>Primary Conclusion:</strong> Finding #1 (<code>c.4986+1G>T</code>) is Sarah's <em>sole pathogenic driver</em> (100% PPV). ` +
-               `Finding #2 is benign (<1.5% PPV) and should be de-escalated, while Finding #3 is a deep-intronic cryptic site (72.1% PPV) flagged for RNA confirmation.`;
+               `<strong>Primary Conclusion:</strong> Finding #1 (<code>c.4986+1G>T</code>) is the <em>sole pathogenic driver</em> (100% PPV). ` +
+               `Finding #2 is benign (<1.5% PPV) and should be de-escalated, while Finding #3 is a deep-intronic cryptic site (72.1% PPV) flagged for functional RNA confirmation.`;
         return res;
       }
 
@@ -863,7 +863,7 @@
 
       // Surveillance / Tumor Board Directive
       if (q.includes('action') || q.includes('surveillance') || q.includes('recommend') || q.includes('tumor board') || q.includes('next step') || q.includes('management')) {
-        return `<strong>Tumor Board Directive for Sarah Jenkins:</strong><br>${ak.recommendation}<br><br>` +
+        return `<strong>Clinical Management Directive:</strong><br>${ak.recommendation}<br><br>` +
                `<strong>Summary Note:</strong> ${ak.tumor_board_summary}`;
       }
 
@@ -871,7 +871,7 @@
       if (q.includes('parp') || q.includes('olaparib') || q.includes('talazoparib') || q.includes('therapy') || q.includes('drug') || q.includes('treatment')) {
         return `<strong>Targeted Therapy &amp; PARP Inhibitor Eligibility:</strong><br>` +
                `Because Finding #1 (<code>c.4986+1G>T</code>) causes complete loss of function in BRCA1, tumors harboring this mutation are deficient in Homologous Recombination Repair (HRD). ` +
-               `In the setting of invasive recurrent or metastatic disease, Sarah would be eligible for <strong>PARP inhibitors (e.g., olaparib, talazoparib)</strong> per FDA/EMA oncology indications. ` +
+               `In the setting of invasive recurrent or metastatic disease, the patient would be eligible for <strong>PARP inhibitors (e.g., olaparib, talazoparib)</strong> per FDA/EMA oncology indications. ` +
                `Prophylactic and surgical decisions should follow NCCN Genetic/Familial High-Risk guidelines.`;
       }
 
@@ -896,14 +896,14 @@
       return `For <strong>Finding #${pk.active_finding_number} (${ak.variant})</strong>, our calibrated model assigns a score of <strong>${ak.score}</strong> ` +
              `(Bin ${ak.bin}, <strong>${ak.ppv}% PPV</strong>). ` +
              `Biological Mechanism: <em>${ak.molecular_mechanism}</em>. ` +
-             `Click any prompt chip above or ask specifically about Sarah's driver triage, PARP inhibitors, ACMG codes, or surveillance.`;
+             `Click any prompt chip above or ask specifically about driver triage, PARP inhibitors, ACMG codes, or surveillance.`;
     }
 
     function copyTumorBoardNote() {
       const note = PATIENT_KB.active_detail.clipboard_note;
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(note).then(() => {
-          showToast("✅ Copied Tumor Board Note to clipboard!");
+          showToast("Copied Tumor Board Note to clipboard.");
         }).catch(() => {
           fallbackCopy(note);
         });
@@ -919,7 +919,7 @@
       ta.select();
       document.execCommand("copy");
       document.body.removeChild(ta);
-      showToast("✅ Copied Tumor Board Note to clipboard!");
+      showToast("Copied Tumor Board Note to clipboard.");
     }
 
     function showToast(msg) {
@@ -936,8 +936,6 @@
         toast.classList.remove("show");
       }, 2600);
     }
-  </script>
-  <div id="toastNotification" class="toast-notification"></div>
   </script>
 </body>
 </html>

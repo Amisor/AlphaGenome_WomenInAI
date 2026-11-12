@@ -1,9 +1,9 @@
 {
   "case_id": "case2_benign",
-  "generated_at_utc": "2026-11-11T03:30:14.224718+00:00",
-  "target_clinician": "Dr. Simi, Clinical Geneticist",
+  "generated_at_utc": "2026-11-12T07:44:32.446989+00:00",
+  "target_clinician": "Attending Clinical Genetics Review",
   "clinical_setting": "Hereditary Breast & Ovarian Cancer Multidisciplinary Review",
-  "plain_english_verdict": "In Plain English: Although flagged on Sarah's multigene report as a VUS, this exonic change does not disrupt the splicing machinery or create fake splice sites. AlphaGenome gives this an ultra-low score (0.016, Bin 1 with <1.5% risk), confirming splicing is completely neutral. Clinicians can safely de-escalate concern.",
+  "executive_clinical_summary": "Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Bin 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.",
   "tumor_board_clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #2: NM_007294.4:c.2077G>A\nAlphaGenome Score: 0.017 | Calibration: Bin 1 of 5 (1.5% PPV, 95% CI: [0.3% \u2013 7.9%])\nAssessment: Low Splicing Disruption Risk (DE-PRIORITIZE SPLICING)\nDirective: ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. Patient should NOT undergo invasive risk-reducing prophylactic surgeries on the basis of this variant. Cancer screening should be managed based on personal clinical history and family pedigree alone.",
   "risk_classification": {
     "verdict": "Low Splicing Disruption Risk",
@@ -12,7 +12,7 @@
     "badge_bg": "#dcfce7",
     "badge_text": "#166534",
     "border_color": "#22c55e",
-    "icon": "\u2705",
+    "icon": "",
     "acmg_trend": "Likely Benign for Splicing (Class 2)",
     "action_type": "DE-PRIORITIZE SPLICING",
     "summary": "Score 0.017 places variant in Calibration Bin 1 with <1.5% empirical PPV. Splicing mechanism effectively excluded."

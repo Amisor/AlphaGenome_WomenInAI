@@ -96,20 +96,21 @@ Dr. Simi operates across two coupled surfaces:
 Execute the clinical decision pipeline using the workspace orchestrator:
 
 ```bash
-# Run complete end-to-end pipeline (Staging -> Agent Interpretation -> Cockpit Reports -> QA)
-python3 run_clinical_pipeline.py
+# Run complete end-to-end pipeline (Staging -> Agent Interpretation -> Reports -> QA)
+python3 run_pipeline.py
+# or: python3 scripts/run_clinical_pipeline.py
 ```
 
 ### Individual Pipeline Steps:
 ```bash
 # 1. Stage clinical case data with literature references
-python3 stage_case_data.py
+python3 scripts/stage_case_data.py
 
 # 2. Run Genomic Interpretation Agent (generates clinician JSON schemas)
-python3 clinical_agent.py
+python3 scripts/clinical_agent.py
 
-# 3. Render visual cockpit HTML reports with embedded chat drawer
-python3 generate_clinical_report.py
+# 3. Render visual HTML reports with embedded AI assistant
+python3 scripts/generate_clinical_report.py
 ```
 
 ### Viewing the Output:

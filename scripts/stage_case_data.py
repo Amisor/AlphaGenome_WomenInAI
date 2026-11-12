@@ -10,7 +10,7 @@ import json
 import pandas as pd
 
 def stage_cases():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     variants_path = os.path.join(base_dir, "data", "variants_to_score.csv")
     scores_path = os.path.join(base_dir, "data", "alphagenome_scores.csv")
     reliability_path = os.path.join(base_dir, "data", "benchmark_reliability.csv")
@@ -34,7 +34,7 @@ def stage_cases():
         "indication": "Personal history of ductal carcinoma in situ (DCIS) at age 38; strong maternal history of early-onset breast cancer (age 42) and maternal aunt with high-grade serous ovarian cancer. Underwent Comprehensive 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30).",
         "panel_name": "Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)",
         "sample_id": "SMP-2026-HBOC-771",
-        "referring_physician": "Dr. Simi, Clinical Cancer Geneticist",
+        "referring_physician": "Hereditary Cancer Genetics Clinic",
         "clinic": "Hereditary Cancer Risk & Molecular Tumor Board Program"
     }
 
@@ -47,7 +47,7 @@ def stage_cases():
             "finding_role": "Primary Actionable Driver",
             "variant_id": "chr17-43070927-C-A",
             "patient_context": shared_patient,
-            "plain_english_summary": "In Plain English: This mutation destroys the genetic 'scissors' signal at the edge of Exon 15. The cellular machinery fails to splice out non-coding sequence, leading to a broken, non-functional BRCA1 protein. AlphaGenome flags this as 100% consistent with known cancer-causing splicing errors.",
+            "plain_english_summary": "This mutation destroys the canonical splice recognition signal at the edge of Exon 15. The cellular spliceosome machinery fails to excise the intron, resulting in complete exon skipping, open reading frame frameshift, and premature termination. AlphaGenome and experimental ground truth confirm 100% loss of function.",
             "biological_details": {
                 "transcript": "NM_007294.4",
                 "gene": "BRCA1",
@@ -92,7 +92,7 @@ def stage_cases():
             "finding_role": "Benign Mimic (De-escalate)",
             "variant_id": "chr17-43093454-C-T",
             "patient_context": shared_patient,
-            "plain_english_summary": "In Plain English: Although flagged on Sarah's multigene report as a VUS, this exonic change does not disrupt the splicing machinery or create fake splice sites. AlphaGenome gives this an ultra-low score (0.016, Bin 1 with <1.5% risk), confirming splicing is completely neutral. Clinicians can safely de-escalate concern.",
+            "plain_english_summary": "Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Bin 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.",
             "biological_details": {
                 "transcript": "NM_007294.4",
                 "gene": "BRCA1",
@@ -137,7 +137,7 @@ def stage_cases():
             "finding_role": "Actionable Candidate (Expedite RNA-seq)",
             "variant_id": "chr17-43086839-G-A",
             "patient_context": shared_patient,
-            "plain_english_summary": "In Plain English: Located 4,105 base pairs deep inside an intron, standard proximity rules completely miss this mutation (scoring it 0.0002). However, AlphaGenome reveals it generates a dangerous 'cryptic' splice site that inserts an unwanted chunk of RNA (pseudoexon) into the gene. Priority candidate for functional RNA confirmation.",
+            "plain_english_summary": "Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at 72.1% PPV, this variant is prioritized for functional RNA minigene validation.",
             "biological_details": {
                 "transcript": "NM_007294.4",
                 "gene": "BRCA1",

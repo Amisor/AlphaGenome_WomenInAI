@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Jenkins (39F) — HBOC-30 Multigene Panel Decision Cockpit</title>
+  <title>Multigene Panel Review — Hereditary Cancer Report</title>
   <style>
     :root {
       --bg: #faf8f5;           /* Warm Alabaster Off-White */
@@ -25,22 +25,9 @@
     .hero {
       background: #ffffff;
       border-bottom: 1px solid var(--border);
-      padding: 44px 20px;
+      padding: 40px 20px 32px 20px;
       text-align: center;
       box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-    }
-    .hero-tag {
-      background: #f5f5f4;
-      border: 1px solid var(--border);
-      color: #44403c;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      display: inline-block;
-      margin-bottom: 12px;
     }
     .hero h1 { font-size: 28px; font-weight: 800; color: #1c1917; margin-bottom: 8px; }
     .hero p { font-size: 14px; color: var(--text-muted); max-width: 720px; margin: 0 auto; line-height: 1.6; }
@@ -69,7 +56,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #44403c;
     }
     .patient-name { font-size: 17px; font-weight: 800; color: #1c1917; }
     .patient-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
@@ -189,9 +178,8 @@
 <body>
 
   <header class="hero">
-    <div class="hero-tag">Clinical Decision Cockpit &bull; Option A Split View</div>
-    <h1>Sarah Jenkins &bull; HBOC-30 Multigene Panel Review</h1>
-    <p>Empirical foundation model benchmark (446 BRCA1 variants, ROC AUC 0.980) powering multi-variant triage and Dr. Simi's live interactive AI Copilot.</p>
+    <h1>Multigene Panel Review</h1>
+    <p>Empirical foundation model benchmark (446 BRCA1 variants, ROC AUC 0.980) powering multi-variant splicing triage and clinical decision support.</p>
   </header>
 
   <main class="container">
@@ -199,7 +187,7 @@
     <!-- Patient Header Strip -->
     <div class="patient-strip">
       <div class="patient-main">
-        <div class="patient-avatar">🩺</div>
+        <div class="patient-avatar">PT</div>
         <div>
           <div class="patient-name">Sarah Jenkins <span style="font-size:12.5px; font-weight:600; color:#78716c;">(Age 39, Female)</span></div>
           <div class="patient-sub">
@@ -217,12 +205,12 @@
     <div style="background:#ffffff; border:1px solid #fed7aa; border-left:5px solid #ea580c; border-radius:10px; padding:18px 22px; margin-bottom:28px; box-shadow:0 1px 3px rgba(0,0,0,0.02);">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
         <div style="font-size:11.5px; font-weight:800; color:#9a3412; text-transform:uppercase; letter-spacing:0.5px;">
-          💡 Molecular Tumor Board Executive Triage for Sarah Jenkins
+          Molecular Tumor Board Executive Triage
         </div>
-        <button class="copy-btn" onclick="copyMasterTumorBoardSummary()">📋 Copy Master Tumor Board Summary</button>
+        <button class="copy-btn" onclick="copyMasterTumorBoardSummary()">Copy Master Tumor Board Summary</button>
       </div>
       <p style="font-size:13.5px; color:#292524; line-height:1.6; font-weight:500;">
-        <strong>The Bottom Line:</strong> Out of 3 variants returned on Sarah's HBOC-30 panel, <strong>Finding #1 (<code>c.4986+1G>T</code>)</strong> is her sole pathogenic driver with <strong>100% calibrated PPV</strong> (consensus donor collapse), indicating immediate high-risk surveillance and RRSO counseling. <strong>Finding #2</strong> is functionally splicing neutral (&lt;1.5% PPV) and should be safely de-escalated, while <strong>Finding #3</strong> is a deep-intronic cryptic activation (72.1% PPV) flagged for functional RNA minigene confirmation.
+        <strong>The Bottom Line:</strong> Out of 3 variants returned on this HBOC-30 panel, <strong>Finding #1 (<code>c.4986+1G>T</code>)</strong> is the sole pathogenic driver with <strong>100% calibrated PPV</strong> (consensus donor collapse), indicating immediate high-risk surveillance and RRSO counseling. <strong>Finding #2</strong> is functionally splicing neutral (&lt;1.5% PPV) and should be safely de-escalated, while <strong>Finding #3</strong> is a deep-intronic cryptic activation (72.1% PPV) flagged for functional RNA minigene confirmation.
       </p>
     </div>
 
@@ -252,8 +240,8 @@
 
     <!-- 3 Cases Grid -->
     <section>
-      <h2 class="section-title">Sarah's 3-Variant Panel Triage Cards</h2>
-      <p class="section-sub">Select any finding below to open Sarah's interactive Split-Cockpit and chat with Dr. Simi's Copilot.</p>
+      <h2 class="section-title">Multigene Panel Findings</h2>
+      <p class="section-sub">Select any finding below to open the interactive clinical report and query the AI assistant.</p>
       
       <div class="cases-grid">
         
@@ -269,8 +257,8 @@
             <div><strong>SpliceVarDB:</strong> Splice-altering</div>
             <div><strong>Calibration:</strong> Bin 5 of 5 (<strong>100.0% PPV</strong>)</div>
           </div>
-          <p class="case-desc">In Plain English: This mutation destroys the genetic 'scissors' signal at the edge of Exon 15. The cellular machinery fails to splice out non-coding sequence, leading to a broken, non-functional BRCA1 protein. AlphaGenome flags this as 100% consistent with known cancer-causing splicing errors.</p>
-          <a href="case1_pathogenic.html" class="case-action">Open Split-Cockpit &amp; Copilot Chat &rarr;</a>
+          <p class="case-desc">This mutation destroys the canonical splice recognition signal at the edge of Exon 15. The cellular spliceosome machinery fails to excise the intron, resulting in complete exon skipping, open reading frame frameshift, and premature termination. AlphaGenome and experimental ground truth confirm 100% loss of function.</p>
+          <a href="case1_pathogenic.html" class="case-action">Open Report &rarr;</a>
         </div>
         
         <div class="case-card">
@@ -285,8 +273,8 @@
             <div><strong>SpliceVarDB:</strong> Not splice-altering</div>
             <div><strong>Calibration:</strong> Bin 1 of 5 (<strong>1.5% PPV</strong>)</div>
           </div>
-          <p class="case-desc">In Plain English: Although flagged on Sarah's multigene report as a VUS, this exonic change does not disrupt the splicing machinery or create fake splice sites. AlphaGenome gives this an ultra-low score (0.016, Bin 1 with <1.5% risk), confirming splicing is completely neutral. Clinicians can safely de-escalate concern.</p>
-          <a href="case2_benign.html" class="case-action">Open Split-Cockpit &amp; Copilot Chat &rarr;</a>
+          <p class="case-desc">Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Bin 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.</p>
+          <a href="case2_benign.html" class="case-action">Open Report &rarr;</a>
         </div>
         
         <div class="case-card">
@@ -301,8 +289,8 @@
             <div><strong>SpliceVarDB:</strong> Splice-altering</div>
             <div><strong>Calibration:</strong> Bin 4 of 5 (<strong>72.1% PPV</strong>)</div>
           </div>
-          <p class="case-desc">In Plain English: Located 4,105 base pairs deep inside an intron, standard proximity rules completely miss this mutation (scoring it 0.0002). However, AlphaGenome reveals it generates a dangerous 'cryptic' splice site that inserts an unwanted chunk of RNA (pseudoexon) into the gene. Priority candidate for functional RNA confirmation.</p>
-          <a href="case3_deep_intronic.html" class="case-action">Open Split-Cockpit &amp; Copilot Chat &rarr;</a>
+          <p class="case-desc">Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at 72.1% PPV, this variant is prioritized for functional RNA minigene validation.</p>
+          <a href="case3_deep_intronic.html" class="case-action">Open Report &rarr;</a>
         </div>
         
       </div>
@@ -311,7 +299,7 @@
     <!-- Multi-Variant Comparative Matrix Section -->
     <section>
       <h2 class="section-title">Multi-Variant Comparative Matrix</h2>
-      <p class="section-sub">Side-by-side comparison of Sarah's 3 panel findings across foundation model metrics, calibration, and directives.</p>
+      <p class="section-sub">Side-by-side comparison of the 3 panel findings across foundation model metrics, calibration, and directives.</p>
       
       <table class="benchmark-table">
         <thead>
@@ -334,7 +322,7 @@
           <td><strong style="color:#b91c1c; font-size:13px;">2.297</strong></td>
           <td><strong>Bin 5</strong> &bull; <span style="font-weight:800; color:#b91c1c;">100.0% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[94.7%–100.0%]</span></td>
           <td style="font-size:11.5px; font-weight:600;">Primary Actionable Driver</td>
-          <td><a href="case1_pathogenic.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Cockpit &rarr;</a></td>
+          <td><a href="case1_pathogenic.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Report &rarr;</a></td>
         </tr>
         
         <tr>
@@ -344,7 +332,7 @@
           <td><strong style="color:#15803d; font-size:13px;">0.017</strong></td>
           <td><strong>Bin 1</strong> &bull; <span style="font-weight:800; color:#15803d;">1.5% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[0.3%–7.9%]</span></td>
           <td style="font-size:11.5px; font-weight:600;">Benign Mimic (De-escalate)</td>
-          <td><a href="case2_benign.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Cockpit &rarr;</a></td>
+          <td><a href="case2_benign.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Report &rarr;</a></td>
         </tr>
         
         <tr>
@@ -354,7 +342,7 @@
           <td><strong style="color:#d97706; font-size:13px;">0.950</strong></td>
           <td><strong>Bin 4</strong> &bull; <span style="font-weight:800; color:#d97706;">72.1% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[60.4%–81.3%]</span></td>
           <td style="font-size:11.5px; font-weight:600;">Actionable Candidate (Expedite RNA-seq)</td>
-          <td><a href="case3_deep_intronic.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Cockpit &rarr;</a></td>
+          <td><a href="case3_deep_intronic.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Report &rarr;</a></td>
         </tr>
         
         </tbody>
@@ -414,31 +402,6 @@
       </table>
     </section>
 
-    <!-- Dr. Simi Copilot Architecture & Antigravity Skill -->
-    <section style="background: #ffffff; border: 1px solid var(--border); border-radius: 10px; padding: 22px; margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
-        <h3 style="font-size: 16px; font-weight: 800; color: #1c1917; margin: 0;">Dr. Simi AI Copilot &amp; System Architecture</h3>
-        <span style="background: #f5f5f4; color: #44403c; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--border);">Option A Split Cockpit &bull; $0 API Cost</span>
-      </div>
-      <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-        This platform delivers clinical geneticist decision support through two synchronized layers without external API fees:
-      </p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-        <div style="background: #faf8f5; border: 1px solid var(--border); border-radius: 8px; padding: 14px;">
-          <div style="font-size: 12.5px; font-weight: 800; color: #1c1917; margin-bottom: 4px;">💬 Option A: Side-by-Side Split Cockpit</div>
-          <p style="font-size: 11.5px; color: #57534e; line-height: 1.5;">
-            Embedded directly inside each report. Operates offline using pure vanilla JavaScript. Answers inquiries on Sarah's driver triage, calibration PPVs, molecular mechanisms, and surveillance recommendations in real time.
-          </p>
-        </div>
-        <div style="background: #faf8f5; border: 1px solid var(--border); border-radius: 8px; padding: 14px;">
-          <div style="font-size: 12.5px; font-weight: 800; color: #1c1917; margin-bottom: 4px;">🧠 Antigravity Workspace Skill</div>
-          <p style="font-size: 11.5px; color: #57534e; line-height: 1.5;">
-            Configured as <code style="background:#e7e5e4; padding:2px 4px; border-radius:4px;">.agents/skills/dr-simi-copilot/SKILL.md</code>. Defines Dr. Simi's clinical methodology, calibration tables, literature retrieval rules, and execution runbooks for automated CLI and agent workflows.
-          </p>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <div id="toastNotification" class="toast-notification"></div>
@@ -460,7 +423,7 @@ FINDINGS TRIAGE:
     function copyMasterTumorBoardSummary() {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(MASTER_TB_SUMMARY).then(() => {
-          showToast("✅ Copied Master Tumor Board Summary to clipboard!");
+          showToast("Copied Master Tumor Board Summary to clipboard.");
         }).catch(() => {
           fallbackCopy(MASTER_TB_SUMMARY);
         });
@@ -476,7 +439,7 @@ FINDINGS TRIAGE:
       ta.select();
       document.execCommand("copy");
       document.body.removeChild(ta);
-      showToast("✅ Copied Master Tumor Board Summary to clipboard!");
+      showToast("Copied Master Tumor Board Summary to clipboard.");
     }
 
     function showToast(msg) {

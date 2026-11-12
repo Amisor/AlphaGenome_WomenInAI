@@ -52,6 +52,10 @@ DEFAULT_ALT = "A"   # Genomic plus strand
 DEFAULT_SPLICING_LABEL = "Splice-altering"
 DEFAULT_SPLICEVARDB_SCORE = 3
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEFAULT_OUTPUT = os.path.join(BASE_DIR, "data", "sample_prediction.json")
+DEFAULT_MOCK_OUTPUT = os.path.join(BASE_DIR, "data", "sample_prediction.mock.json")
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Obtain AlphaGenome prediction for a BRCA1 test variant.")
@@ -63,7 +67,7 @@ def parse_args():
     parser.add_argument("--ref", default=DEFAULT_REF, help=f"Reference base (default: {DEFAULT_REF})")
     parser.add_argument("--alt", default=DEFAULT_ALT, help=f"Alternate base (default: {DEFAULT_ALT})")
     parser.add_argument("--hgvs", default=DEFAULT_HGVS, help=f"HGVS name (default: {DEFAULT_HGVS})")
-    parser.add_argument("--output", default="sample_prediction.json", help="Path to write output JSON")
+    parser.add_argument("--output", default=DEFAULT_OUTPUT, help=f"Path to write output JSON (default: {DEFAULT_OUTPUT})")
     parser.add_argument("--mock", action="store_true", help="Run with clearly labeled synthetic mock data")
     return parser.parse_args()
 
@@ -85,8 +89,11 @@ def run_mock_prediction(variant_meta: dict, output_path: str) -> dict:
     print("!" * 65)
 
     mock_output_path = output_path
-    if not mock_output_path.endswith(".mock.json") and mock_output_path == "sample_prediction.json":
-        mock_output_path = "sample_prediction.mock.json"
+    if not mock_output_path.endswith(".mock.json"):
+        if "sample_prediction.json" in mock_output_path:
+            mock_output_path = mock_output_path.replace("sample_prediction.json", "sample_prediction.mock.json")
+        else:
+            mock_output_path = DEFAULT_MOCK_OUTPUT
 
     result = {
         "is_mock": True,

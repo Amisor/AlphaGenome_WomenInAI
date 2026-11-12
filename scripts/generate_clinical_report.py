@@ -1,26 +1,23 @@
 #!/usr/bin/env python3
 """
-generate_clinical_report.py — Render interactive visual clinical cockpits
-with Option A: Split-Cockpit (Live AI Copilot side-by-side) for patient Sarah Jenkins,
+generate_clinical_report.py — Render interactive visual clinical reports
+with Option A: Split View (Live AI Assistant side-by-side) for Multigene Panel Review,
 styled in a warm editorial off-white palette.
 
-Features:
-  - Warm Off-White / Alabaster Editorial Palette (Zero cold dark-blue blocks)
-  - Unified Patient: Sarah Jenkins (39F) — HBOC-30 Multigene Panel (3 Findings)
-  - Option A: Split-Cockpit layout (Left 62% Clinical Cockpit, Right 38% Sticky Live Copilot)
-  - 10-Second Executive Summary ("In Plain English") for immediate scannability
-  - Visual Risk Thermometer / Confidence Meter (5 calibrated bins with indicator pin)
-  - 1-Click "📋 Copy Tumor Board Note" to clipboard utility
-  - Inline SVG Splicing Signal Tracks in warm neutral tones
-  - Prioritized Peer-Reviewed Literature Citations (Top 2-3 papers with DOI/PubMed links)
-  - Live Dr. Simi Copilot Chat powered by full 3-variant Patient Knowledge Base (PATIENT_KB)
+Clean & Professional Guidelines:
+  - Agnostic of specific doctor names (zero "Dr. Simi")
+  - Professional editorial tone (zero "In Plain English", zero informal phrases)
+  - Zero emojis (clean text monograms, medical tags, and crisp typography)
+  - Terminology: "Report" instead of "Cockpit"
+  - Clear navigation with "Open Report" buttons
+  - Excludes internal system architecture sections from the clinical presentation
 """
 
 import os
 import json
 import pandas as pd
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 RESULTS_DIR = os.path.join(BASE_DIR, "results")
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
@@ -39,7 +36,7 @@ def generate_risk_thermometer(active_bin: int) -> str:
     for b in bins_meta:
         is_active = (b["num"] == active_bin)
         border_style = f"2px solid {b['color']}" if is_active else "1px solid #e7e5e4"
-        indicator = f"""<div style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); background:{b['color']}; color:#ffffff; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px; white-space:nowrap; box-shadow:0 2px 4px rgba(0,0,0,0.15);">▲ SARAH'S VARIANT</div>""" if is_active else ""
+        indicator = f"""<div style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); background:{b['color']}; color:#ffffff; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px; white-space:nowrap; box-shadow:0 2px 4px rgba(0,0,0,0.15);">ACTIVE VARIANT</div>""" if is_active else ""
         font_weight = "800" if is_active else "600"
         scale = "transform: scale(1.02); z-index:2;" if is_active else ""
         
@@ -91,7 +88,7 @@ def generate_svg_splicing_diagram(case_id: str, ag_score: float, delta_sites: fl
           </text>
           
           <!-- Resulting Failure Arrow -->
-          <text x="210" y="102" fill="#b91c1c" font-size="11" font-weight="700">&times; Spliceosome recognition abolished &rarr; Full Exon Skipping &amp; Frameshift</text>
+          <text x="210" y="102" fill="#b91c1c" font-size="11" font-weight="700">Spliceosome recognition abolished &rarr; Full Exon Skipping &amp; Frameshift</text>
         </svg>
         """
     elif case_id == "case3_deep_intronic":
@@ -157,7 +154,7 @@ def generate_svg_splicing_diagram(case_id: str, ag_score: float, delta_sites: fl
         """
 
 def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
-    """Render Sarah Jenkins's clinical report using Option A: Split-Cockpit and warm off-white palette."""
+    """Render the clinical report using Option A: Split View and warm off-white palette."""
     cid = case_data["case_id"]
     pt = case_data["patient_context"]
     gen = case_data["genomic"]
@@ -275,7 +272,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Jenkins (39F) — {case_data['title']} — Clinical Decision Cockpit</title>
+  <title>{case_data['title']} — Clinical Decision Report</title>
   <style>
     :root {{
       --bg: #faf8f5;           /* Warm Alabaster / Off-White */
@@ -340,15 +337,17 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
     }}
     .patient-main {{ display: flex; align-items: center; gap: 16px; }}
     .patient-avatar {{
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: #f5f5f4;
       border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #44403c;
     }}
     .patient-name {{ font-size: 18px; font-weight: 800; color: #1c1917; }}
     .patient-sub {{ font-size: 12px; color: var(--text-muted); margin-top: 2px; }}
@@ -394,7 +393,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }}
 
-    /* Option A: Split-Cockpit Layout */
+    /* Option A: Split View Layout */
     .split-layout {{
       display: grid;
       grid-template-columns: 1fr 440px;
@@ -405,7 +404,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
     /* Left Column (Clinical Dossier) */
     .cockpit-left {{ display: flex; flex-direction: column; gap: 20px; }}
 
-    /* Plain-English 10-Second Executive Summary Card */
+    /* Executive Clinical Verdict Card */
     .plain-english-card {{
       background: #ffffff;
       border: 1px solid #fed7aa;
@@ -422,7 +421,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       letter-spacing: 0.5px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: space-between;
       margin-bottom: 6px;
     }}
     .pe-text {{ font-size: 13.5px; color: #292524; line-height: 1.6; font-weight: 500; }}
@@ -453,7 +452,6 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
     .status-badge {{
       display: inline-flex;
       align-items: center;
-      gap: 6px;
       font-size: 12.5px;
       font-weight: 800;
       color: {risk['badge_text']};
@@ -598,7 +596,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       justify-content: space-between;
       align-items: center;
     }}
-    .copilot-title {{ font-size: 13.5px; font-weight: 800; color: #1c1917; display: flex; align-items: center; gap: 8px; }}
+    .copilot-title {{ font-size: 13.5px; font-weight: 800; color: #1c1917; }}
     .copilot-badge {{ font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: #e7e5e4; color: #44403c; }}
     
     .copilot-body {{
@@ -696,13 +694,12 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
   <!-- Top Sticky Navigation -->
   <nav class="topbar">
     <a href="index.html" class="brand">
-      <span style="font-size:16px;">🧬</span>
-      <span>Dr. Simi Copilot</span>
+      <span style="font-weight:700; color:#1c1917;">Genomic Decision Support</span>
       <span class="brand-tag">Clinical Cancer Genetics</span>
     </a>
     <div style="display:flex; align-items:center; gap:12px;">
       <span style="font-size:12px; color:var(--text-muted); font-weight:600;">Patient: Sarah Jenkins (39F)</span>
-      <a href="index.html" class="dashboard-link">&larr; Patient Master Panel</a>
+      <a href="index.html" class="dashboard-link">&larr; Multigene Panel Review</a>
     </div>
   </nav>
 
@@ -711,7 +708,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
     <!-- Patient Header Hero -->
     <header class="patient-hero">
       <div class="patient-main">
-        <div class="patient-avatar">🩺</div>
+        <div class="patient-avatar">PT</div>
         <div>
           <div class="patient-name">{pt['patient_name']} <span style="font-size:13px; font-weight:600; color:#78716c;">(Age {pt['patient_age']}, {pt['patient_gender']})</span></div>
           <div class="patient-sub">
@@ -722,7 +719,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       <div class="patient-badges">
         <div class="badge-pill"><strong>Panel:</strong> {pt['panel_name']}</div>
         <div class="badge-pill"><strong>Sample:</strong> {pt['sample_id']}</div>
-        <div class="badge-pill"><strong>Ref MD:</strong> {pt['referring_physician']}</div>
+        <div class="badge-pill"><strong>Clinic:</strong> {pt['clinic']}</div>
       </div>
     </header>
 
@@ -731,16 +728,16 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       {variant_switcher_html}
     </nav>
 
-    <!-- Option A: Split-Cockpit Layout -->
+    <!-- Option A: Split View Layout -->
     <div class="split-layout">
 
       <!-- LEFT COLUMN: Clinical Dossier & Evidence -->
       <div class="cockpit-left">
 
-        <!-- 10-Second Executive Summary Card -->
+        <!-- Executive Clinical Verdict Card -->
         <div class="plain-english-card">
           <div class="pe-label">
-            <span>💡 10-Second Executive Verdict for Dr. Simi</span>
+            <span>Executive Clinical Verdict</span>
             <span style="font-size:10px; background:#ffedd5; color:#c2410c; padding:2px 6px; border-radius:4px;">Finding #{finding_num} of 3</span>
           </div>
           <div class="pe-text">
@@ -754,7 +751,6 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
             <div>
               <div class="kpi-label">Risk Classification</div>
               <div class="status-badge">
-                <span>{risk['icon']}</span>
                 <span>{risk['verdict']}</span>
               </div>
             </div>
@@ -844,8 +840,8 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
         <!-- ACMG Evidence & Directive -->
         <div class="card">
           <div class="card-title">
-            <span>ACMG/AMP Evidence &amp; Directive for Dr. Simi</span>
-            <button class="copy-btn" onclick="copyTumorBoardNote()">📋 Copy Tumor Board Note</button>
+            <span>ACMG/AMP Evidence &amp; Clinical Management Directive</span>
+            <button class="copy-btn" onclick="copyTumorBoardNote()">Copy Tumor Board Note</button>
           </div>
           
           <div class="acmg-grid">
@@ -875,19 +871,18 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       <aside class="copilot-panel" id="chatDrawer">
         <div class="copilot-header">
           <div class="copilot-title">
-            <span>💬</span>
-            <span>Dr. Simi AI Copilot</span>
+            <span>Clinical AI Assistant</span>
           </div>
           <div class="copilot-badge">Finding #{finding_num} Active</div>
         </div>
 
         <div class="copilot-body" id="chatMessages">
           <div class="chat-bubble bot">
-            Hello Dr. Simi. I'm your Clinical Genomic Copilot for <strong>Sarah Jenkins (39F)</strong>.
+            Hello. I am your Clinical Decision Assistant for this HBOC-30 multigene panel review.
             <br><br>
-            Sarah's HBOC-30 panel returned 3 variants. You are currently inspecting <strong>Finding #{finding_num}: {gen['hgvs']}</strong> ({finding_role}).
+            The panel identified 3 variants for this patient. You are currently evaluating <strong>Finding #{finding_num}: {gen['hgvs']}</strong> ({finding_role}).
             <br><br>
-            Ask me any clinical question or click a prompt chip below.
+            Select any clinical inquiry chip below or enter a specific question.
           </div>
         </div>
 
@@ -896,11 +891,11 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
           <button class="chip-btn" onclick="askCopilot(&quot;Why is this variant classified as {risk['verdict']}?&quot;)">Risk Rationale</button>
           <button class="chip-btn" onclick="askCopilot(&quot;What papers support this finding?&quot;)">Literature</button>
           <button class="chip-btn" onclick="askCopilot(&quot;How does AlphaGenome compare to distance heuristics here?&quot;)">Distance Heuristic</button>
-          <button class="chip-btn" onclick="askCopilot(&quot;What clinical action should Dr. Simi recommend for Sarah?&quot;)">Surveillance Plan</button>
+          <button class="chip-btn" onclick="askCopilot(&quot;What clinical management is recommended for Sarah?&quot;)">Surveillance Plan</button>
         </div>
 
         <div class="copilot-input-bar">
-          <input type="text" id="chatInput" class="chat-input" placeholder="Ask Dr. Simi about Sarah's panel..." onkeydown="handleChatKey(event)">
+          <input type="text" id="chatInput" class="chat-input" placeholder="Ask about this variant or the patient's panel..." onkeydown="handleChatKey(event)">
           <button class="chat-send-btn" onclick="sendUserMessage()">Send</button>
         </div>
       </aside>
@@ -908,6 +903,8 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
     </div>
 
   </main>
+
+  <div id="toastNotification" class="toast-notification"></div>
 
   <!-- Client-Side Reasoning Engine & Patient KB -->
   <script>
@@ -957,15 +954,15 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
 
       // Patient-level driver triage question
       if (q.includes('driver') || q.includes('which variant') || q.includes('overall') || q.includes('sarah')) {{
-        let res = `<strong>Sarah Jenkins Multi-Variant Triage Summary:</strong><br>` +
-                  `Sarah carries 3 distinct findings on her HBOC-30 panel:<br>` +
+        let res = `<strong>Multi-Variant Triage Summary:</strong><br>` +
+                  `The patient carries 3 distinct findings on this HBOC-30 panel:<br>` +
                   `<ol style="padding-left:18px; margin:6px 0;">`;
         pk.findings.forEach(f => {{
           res += `<li><strong>Finding #${{f.finding_number}} (${{f.variant}}):</strong> ${{f.role}} (Score: ${{f.score}}, <strong>${{f.ppv}}% PPV</strong>).</li>`;
         }});
         res += `</ol>` +
-               `<strong>Primary Conclusion:</strong> Finding #1 (<code>c.4986+1G>T</code>) is Sarah's <em>sole pathogenic driver</em> (100% PPV). ` +
-               `Finding #2 is benign (<1.5% PPV) and should be de-escalated, while Finding #3 is a deep-intronic cryptic site (72.1% PPV) flagged for RNA confirmation.`;
+               `<strong>Primary Conclusion:</strong> Finding #1 (<code>c.4986+1G>T</code>) is the <em>sole pathogenic driver</em> (100% PPV). ` +
+               `Finding #2 is benign (<1.5% PPV) and should be de-escalated, while Finding #3 is a deep-intronic cryptic site (72.1% PPV) flagged for functional RNA confirmation.`;
         return res;
       }}
 
@@ -1008,7 +1005,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
 
       // Surveillance / Tumor Board Directive
       if (q.includes('action') || q.includes('surveillance') || q.includes('recommend') || q.includes('tumor board') || q.includes('next step') || q.includes('management')) {{
-        return `<strong>Tumor Board Directive for Sarah Jenkins:</strong><br>${{ak.recommendation}}<br><br>` +
+        return `<strong>Clinical Management Directive:</strong><br>${{ak.recommendation}}<br><br>` +
                `<strong>Summary Note:</strong> ${{ak.tumor_board_summary}}`;
       }}
 
@@ -1016,7 +1013,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       if (q.includes('parp') || q.includes('olaparib') || q.includes('talazoparib') || q.includes('therapy') || q.includes('drug') || q.includes('treatment')) {{
         return `<strong>Targeted Therapy &amp; PARP Inhibitor Eligibility:</strong><br>` +
                `Because Finding #1 (<code>c.4986+1G>T</code>) causes complete loss of function in BRCA1, tumors harboring this mutation are deficient in Homologous Recombination Repair (HRD). ` +
-               `In the setting of invasive recurrent or metastatic disease, Sarah would be eligible for <strong>PARP inhibitors (e.g., olaparib, talazoparib)</strong> per FDA/EMA oncology indications. ` +
+               `In the setting of invasive recurrent or metastatic disease, the patient would be eligible for <strong>PARP inhibitors (e.g., olaparib, talazoparib)</strong> per FDA/EMA oncology indications. ` +
                `Prophylactic and surgical decisions should follow NCCN Genetic/Familial High-Risk guidelines.`;
       }}
 
@@ -1041,14 +1038,14 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       return `For <strong>Finding #${{pk.active_finding_number}} (${{ak.variant}})</strong>, our calibrated model assigns a score of <strong>${{ak.score}}</strong> ` +
              `(Bin ${{ak.bin}}, <strong>${{ak.ppv}}% PPV</strong>). ` +
              `Biological Mechanism: <em>${{ak.molecular_mechanism}}</em>. ` +
-             `Click any prompt chip above or ask specifically about Sarah's driver triage, PARP inhibitors, ACMG codes, or surveillance.`;
+             `Click any prompt chip above or ask specifically about driver triage, PARP inhibitors, ACMG codes, or surveillance.`;
     }}
 
     function copyTumorBoardNote() {{
       const note = PATIENT_KB.active_detail.clipboard_note;
       if (navigator.clipboard && navigator.clipboard.writeText) {{
         navigator.clipboard.writeText(note).then(() => {{
-          showToast("✅ Copied Tumor Board Note to clipboard!");
+          showToast("Copied Tumor Board Note to clipboard.");
         }}).catch(() => {{
           fallbackCopy(note);
         }});
@@ -1064,7 +1061,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       ta.select();
       document.execCommand("copy");
       document.body.removeChild(ta);
-      showToast("✅ Copied Tumor Board Note to clipboard!");
+      showToast("Copied Tumor Board Note to clipboard.");
     }}
 
     function showToast(msg) {{
@@ -1082,15 +1079,13 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       }}, 2600);
     }}
   </script>
-  <div id="toastNotification" class="toast-notification"></div>
-  </script>
 </body>
 </html>
 """
     return html
 
 def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df: pd.DataFrame) -> str:
-    """Render the Grand Master Patient Dashboard for Sarah Jenkins in warm off-white palette."""
+    """Render the Grand Master Patient Dashboard in warm off-white palette."""
     pt = all_cases[0]["patient_context"]
 
     cases_cards_html = ""
@@ -1122,7 +1117,7 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
             <div><strong>Calibration:</strong> Bin {cal['bin_number']} of 5 (<strong>{cal['ppv_percent']}% PPV</strong>)</div>
           </div>
           <p class="case-desc">{pe}</p>
-          <a href="{cid}.html" class="case-action">Open Split-Cockpit &amp; Copilot Chat &rarr;</a>
+          <a href="{cid}.html" class="case-action">Open Report &rarr;</a>
         </div>
         """
 
@@ -1149,7 +1144,7 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
           <td><strong style="color:{score_color}; font-size:13px;">{score:.3f}</strong></td>
           <td><strong>Bin {cal['bin_number']}</strong> &bull; <span style="font-weight:800; color:{score_color};">{cal['ppv_percent']}% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[{cal['ci_low_percent']}%–{cal['ci_high_percent']}%]</span></td>
           <td style="font-size:11.5px; font-weight:600;">{role}</td>
-          <td><a href="{cid}.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Cockpit &rarr;</a></td>
+          <td><a href="{cid}.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Report &rarr;</a></td>
         </tr>
         """
 
@@ -1158,7 +1153,7 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Jenkins (39F) — HBOC-30 Multigene Panel Decision Cockpit</title>
+  <title>Multigene Panel Review — Hereditary Cancer Report</title>
   <style>
     :root {{
       --bg: #faf8f5;           /* Warm Alabaster Off-White */
@@ -1180,22 +1175,9 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
     .hero {{
       background: #ffffff;
       border-bottom: 1px solid var(--border);
-      padding: 44px 20px;
+      padding: 40px 20px 32px 20px;
       text-align: center;
       box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-    }}
-    .hero-tag {{
-      background: #f5f5f4;
-      border: 1px solid var(--border);
-      color: #44403c;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      display: inline-block;
-      margin-bottom: 12px;
     }}
     .hero h1 {{ font-size: 28px; font-weight: 800; color: #1c1917; margin-bottom: 8px; }}
     .hero p {{ font-size: 14px; color: var(--text-muted); max-width: 720px; margin: 0 auto; line-height: 1.6; }}
@@ -1224,7 +1206,9 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #44403c;
     }}
     .patient-name {{ font-size: 17px; font-weight: 800; color: #1c1917; }}
     .patient-sub {{ font-size: 12px; color: var(--text-muted); margin-top: 2px; }}
@@ -1344,9 +1328,8 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
 <body>
 
   <header class="hero">
-    <div class="hero-tag">Clinical Decision Cockpit &bull; Option A Split View</div>
-    <h1>Sarah Jenkins &bull; HBOC-30 Multigene Panel Review</h1>
-    <p>Empirical foundation model benchmark (446 BRCA1 variants, ROC AUC 0.980) powering multi-variant triage and Dr. Simi's live interactive AI Copilot.</p>
+    <h1>Multigene Panel Review</h1>
+    <p>Empirical foundation model benchmark (446 BRCA1 variants, ROC AUC 0.980) powering multi-variant splicing triage and clinical decision support.</p>
   </header>
 
   <main class="container">
@@ -1354,7 +1337,7 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
     <!-- Patient Header Strip -->
     <div class="patient-strip">
       <div class="patient-main">
-        <div class="patient-avatar">🩺</div>
+        <div class="patient-avatar">PT</div>
         <div>
           <div class="patient-name">{pt['patient_name']} <span style="font-size:12.5px; font-weight:600; color:#78716c;">(Age {pt['patient_age']}, {pt['patient_gender']})</span></div>
           <div class="patient-sub">
@@ -1372,12 +1355,12 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
     <div style="background:#ffffff; border:1px solid #fed7aa; border-left:5px solid #ea580c; border-radius:10px; padding:18px 22px; margin-bottom:28px; box-shadow:0 1px 3px rgba(0,0,0,0.02);">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
         <div style="font-size:11.5px; font-weight:800; color:#9a3412; text-transform:uppercase; letter-spacing:0.5px;">
-          💡 Molecular Tumor Board Executive Triage for Sarah Jenkins
+          Molecular Tumor Board Executive Triage
         </div>
-        <button class="copy-btn" onclick="copyMasterTumorBoardSummary()">📋 Copy Master Tumor Board Summary</button>
+        <button class="copy-btn" onclick="copyMasterTumorBoardSummary()">Copy Master Tumor Board Summary</button>
       </div>
       <p style="font-size:13.5px; color:#292524; line-height:1.6; font-weight:500;">
-        <strong>The Bottom Line:</strong> Out of 3 variants returned on Sarah's HBOC-30 panel, <strong>Finding #1 (<code>c.4986+1G>T</code>)</strong> is her sole pathogenic driver with <strong>100% calibrated PPV</strong> (consensus donor collapse), indicating immediate high-risk surveillance and RRSO counseling. <strong>Finding #2</strong> is functionally splicing neutral (&lt;1.5% PPV) and should be safely de-escalated, while <strong>Finding #3</strong> is a deep-intronic cryptic activation (72.1% PPV) flagged for functional RNA minigene confirmation.
+        <strong>The Bottom Line:</strong> Out of 3 variants returned on this HBOC-30 panel, <strong>Finding #1 (<code>c.4986+1G>T</code>)</strong> is the sole pathogenic driver with <strong>100% calibrated PPV</strong> (consensus donor collapse), indicating immediate high-risk surveillance and RRSO counseling. <strong>Finding #2</strong> is functionally splicing neutral (&lt;1.5% PPV) and should be safely de-escalated, while <strong>Finding #3</strong> is a deep-intronic cryptic activation (72.1% PPV) flagged for functional RNA minigene confirmation.
       </p>
     </div>
 
@@ -1407,8 +1390,8 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
 
     <!-- 3 Cases Grid -->
     <section>
-      <h2 class="section-title">Sarah's 3-Variant Panel Triage Cards</h2>
-      <p class="section-sub">Select any finding below to open Sarah's interactive Split-Cockpit and chat with Dr. Simi's Copilot.</p>
+      <h2 class="section-title">Multigene Panel Findings</h2>
+      <p class="section-sub">Select any finding below to open the interactive clinical report and query the AI assistant.</p>
       
       <div class="cases-grid">
         {cases_cards_html}
@@ -1418,7 +1401,7 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
     <!-- Multi-Variant Comparative Matrix Section -->
     <section>
       <h2 class="section-title">Multi-Variant Comparative Matrix</h2>
-      <p class="section-sub">Side-by-side comparison of Sarah's 3 panel findings across foundation model metrics, calibration, and directives.</p>
+      <p class="section-sub">Side-by-side comparison of the 3 panel findings across foundation model metrics, calibration, and directives.</p>
       
       <table class="benchmark-table">
         <thead>
@@ -1491,31 +1474,6 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
       </table>
     </section>
 
-    <!-- Dr. Simi Copilot Architecture & Antigravity Skill -->
-    <section style="background: #ffffff; border: 1px solid var(--border); border-radius: 10px; padding: 22px; margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
-        <h3 style="font-size: 16px; font-weight: 800; color: #1c1917; margin: 0;">Dr. Simi AI Copilot &amp; System Architecture</h3>
-        <span style="background: #f5f5f4; color: #44403c; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--border);">Option A Split Cockpit &bull; $0 API Cost</span>
-      </div>
-      <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-        This platform delivers clinical geneticist decision support through two synchronized layers without external API fees:
-      </p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-        <div style="background: #faf8f5; border: 1px solid var(--border); border-radius: 8px; padding: 14px;">
-          <div style="font-size: 12.5px; font-weight: 800; color: #1c1917; margin-bottom: 4px;">💬 Option A: Side-by-Side Split Cockpit</div>
-          <p style="font-size: 11.5px; color: #57534e; line-height: 1.5;">
-            Embedded directly inside each report. Operates offline using pure vanilla JavaScript. Answers inquiries on Sarah's driver triage, calibration PPVs, molecular mechanisms, and surveillance recommendations in real time.
-          </p>
-        </div>
-        <div style="background: #faf8f5; border: 1px solid var(--border); border-radius: 8px; padding: 14px;">
-          <div style="font-size: 12.5px; font-weight: 800; color: #1c1917; margin-bottom: 4px;">🧠 Antigravity Workspace Skill</div>
-          <p style="font-size: 11.5px; color: #57534e; line-height: 1.5;">
-            Configured as <code style="background:#e7e5e4; padding:2px 4px; border-radius:4px;">.agents/skills/dr-simi-copilot/SKILL.md</code>. Defines Dr. Simi's clinical methodology, calibration tables, literature retrieval rules, and execution runbooks for automated CLI and agent workflows.
-          </p>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <div id="toastNotification" class="toast-notification"></div>
@@ -1537,7 +1495,7 @@ FINDINGS TRIAGE:
     function copyMasterTumorBoardSummary() {{
       if (navigator.clipboard && navigator.clipboard.writeText) {{
         navigator.clipboard.writeText(MASTER_TB_SUMMARY).then(() => {{
-          showToast("✅ Copied Master Tumor Board Summary to clipboard!");
+          showToast("Copied Master Tumor Board Summary to clipboard.");
         }}).catch(() => {{
           fallbackCopy(MASTER_TB_SUMMARY);
         }});
@@ -1553,7 +1511,7 @@ FINDINGS TRIAGE:
       ta.select();
       document.execCommand("copy");
       document.body.removeChild(ta);
-      showToast("✅ Copied Master Tumor Board Summary to clipboard!");
+      showToast("Copied Master Tumor Board Summary to clipboard.");
     }}
 
     function showToast(msg) {{
@@ -1601,14 +1559,14 @@ def main():
         out_file = os.path.join(REPORTS_DIR, f"{cid}.html")
         with open(out_file, "w", encoding="utf-8") as f:
             f.write(html_content)
-        print(f"[OPTION A DONE] Rendered Split-Cockpit with Copilot: {out_file}")
+        print(f"[REPORT RENDERED] {out_file}")
 
     # Render Master Index
     index_html = render_master_index(staged_cases, metrics_df, threshold_df)
     index_path = os.path.join(REPORTS_DIR, "index.html")
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(index_html)
-    print(f"[OPTION A DONE] Rendered Sarah Jenkins Master Dashboard: {index_path}")
+    print(f"[REPORT RENDERED] {index_path}")
 
 if __name__ == "__main__":
     main()

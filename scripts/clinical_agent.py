@@ -22,7 +22,8 @@ class ClinicalInterpretationAgent:
     """Genomic Variant Interpretation Agent for Hereditary Cancer VUS evaluation."""
 
     def __init__(self, benchmark_metrics_file=None, reliability_file=None, threshold_file=None):
-        base_dir = os.path.dirname(os.path.abspath(__file__))
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.base_dir = base_dir
         self.metrics_file = benchmark_metrics_file or os.path.join(base_dir, "results", "benchmark_metrics.csv")
         self.reliability_file = reliability_file or os.path.join(base_dir, "data", "benchmark_reliability.csv")
         self.threshold_file = threshold_file or os.path.join(base_dir, "results", "benchmark_threshold_metrics.csv")
@@ -62,9 +63,9 @@ class ClinicalInterpretationAgent:
         interpretation = {
             "case_id": case_id,
             "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-            "target_clinician": "Dr. Simi, Clinical Geneticist",
+            "target_clinician": "Attending Clinical Genetics Review",
             "clinical_setting": "Hereditary Breast & Ovarian Cancer Multidisciplinary Review",
-            "plain_english_verdict": case_data.get("plain_english_summary", ""),
+            "executive_clinical_summary": case_data.get("plain_english_summary", ""),
             "tumor_board_clipboard_note": tb_note,
             "risk_classification": risk_info,
             "molecular_evaluation": molecular_eval,
@@ -87,7 +88,7 @@ class ClinicalInterpretationAgent:
                 "badge_bg": "#fee2e2",
                 "badge_text": "#991b1b",
                 "border_color": "#ef4444",
-                "icon": "⚠️",
+                "icon": "",
                 "acmg_trend": "Likely Pathogenic (Class 4)",
                 "action_type": "CLINICAL SURVEILLANCE & RECLASSIFICATION",
                 "summary": f"Score {score:.3f} places variant in Calibration Bin 5 with 100% empirical Positive Predictive Value (PPV) in BRCA1.",
@@ -100,7 +101,7 @@ class ClinicalInterpretationAgent:
                 "badge_bg": "#fef3c7",
                 "badge_text": "#92400e",
                 "border_color": "#f59e0b",
-                "icon": "⚡",
+                "icon": "",
                 "acmg_trend": "VUS — Priority Laboratory Validation",
                 "action_type": "EXPEDITE FUNCTIONAL RNA-SEQ",
                 "summary": f"Score {score:.3f} places variant in Calibration Bin 4 with 72.1% empirical PPV. Strongly indicated for RNA confirmation.",
@@ -113,7 +114,7 @@ class ClinicalInterpretationAgent:
                 "badge_bg": "#dcfce7",
                 "badge_text": "#166534",
                 "border_color": "#22c55e",
-                "icon": "✅",
+                "icon": "",
                 "acmg_trend": "Likely Benign for Splicing (Class 2)",
                 "action_type": "DE-PRIORITIZE SPLICING",
                 "summary": f"Score {score:.3f} places variant in Calibration Bin 1 with <1.5% empirical PPV. Splicing mechanism effectively excluded.",
@@ -242,13 +243,16 @@ class ClinicalInterpretationAgent:
 
 if __name__ == "__main__":
     agent = ClinicalInterpretationAgent()
-    with open("data/staged_cases.json", "r") as f:
+    base_dir = agent.base_dir
+    staged_path = os.path.join(base_dir, "data", "staged_cases.json")
+    with open(staged_path, "r") as f:
         cases = json.load(f)
 
-    os.makedirs("data/interpreted_cases", exist_ok=True)
+    out_dir = os.path.join(base_dir, "data", "interpreted_cases")
+    os.makedirs(out_dir, exist_ok=True)
     for c in cases:
         res = agent.interpret_case(c)
-        out_path = f"data/interpreted_cases/{c['case_id']}.json"
+        out_path = os.path.join(out_dir, f"{c['case_id']}.json")
         with open(out_path, "w") as f:
             json.dump(res, f, indent=2)
-        print(f"[ITERATION 2 DONE] Interpreted {c['case_id']} (100% Clinician Pivot) -> {out_path}")
+        print(f"[SUCCESS] Interpreted {c['case_id']} -> {out_path}")

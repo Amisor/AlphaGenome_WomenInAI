@@ -46,7 +46,7 @@ def lookup_by_hgvs(hgvs: str):
 def print_case_summary(case: dict):
     pt = case.get("patient_context", {})
     print("=" * 65)
-    print(f" DR. SIMI CLINICAL COPILOT: {case.get('title')}")
+    print(f" CLINICAL DECISION ASSISTANT: {case.get('title')}")
     print("=" * 65)
     print(f" Patient      : {pt.get('patient_name', 'Sarah Jenkins')} ({pt.get('patient_age', 39)}{pt.get('patient_gender', 'F')[0]}) — {pt.get('patient_id', '')}")
     print(f" Panel Test   : {pt.get('panel_name', 'HBOC-30 Multigene Panel')}")
@@ -58,7 +58,7 @@ def print_case_summary(case: dict):
     cal = case.get("calibration_bin", {})
     print(f" Calibration  : Bin {cal.get('bin_number')} of {cal.get('total_bins')} | PPV = {cal.get('ppv_percent')}% (95% CI: [{cal.get('ci_low_percent')}% - {cal.get('ci_high_percent')}%])")
     if case.get("plain_english_summary"):
-        print(f"\n Plain English Verdict:\n  {case.get('plain_english_summary')}")
+        print(f"\n Executive Clinical Verdict:\n  {case.get('plain_english_summary')}")
     print("\n Top Literature Citations:")
     for lit in case.get("literature_references", []):
         print(f"  • {lit.get('citation')} ({lit.get('journal')})")

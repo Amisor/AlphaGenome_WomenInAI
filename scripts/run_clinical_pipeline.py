@@ -24,7 +24,7 @@ def run_command(cmd, desc):
     print(f"[SUCCESS] {desc} completed.")
 
 def main():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     os.chdir(base_dir)
 
     print("=" * 70)
@@ -32,13 +32,13 @@ def main():
     print("=" * 70)
 
     # Step 1: Stage Data
-    run_command(f"{sys.executable} stage_case_data.py", "Staging Clinical Archetype Cases")
+    run_command(f"{sys.executable} scripts/stage_case_data.py", "Staging Clinical Archetype Cases")
 
     # Step 2: Agent Interpretation
-    run_command(f"{sys.executable} clinical_agent.py", "Clinical Interpretation Agent Execution")
+    run_command(f"{sys.executable} scripts/clinical_agent.py", "Clinical Interpretation Agent Execution")
 
     # Step 3: Report Generation
-    run_command(f"{sys.executable} generate_clinical_report.py", "Interactive Visual Cockpit & AI Copilot Generation")
+    run_command(f"{sys.executable} scripts/generate_clinical_report.py", "Interactive Visual Report Generation")
 
     # Step 4: Verification of deliverables
     expected_files = [
@@ -62,14 +62,14 @@ def main():
         full_path = os.path.join(base_dir, ef)
         if os.path.exists(full_path) and os.path.getsize(full_path) > 0:
             size_kb = os.path.getsize(full_path) / 1024
-            print(f"  ✅ {ef:<45} ({size_kb:6.1f} KB)")
+            print(f"  [OK]   {ef:<45} ({size_kb:6.1f} KB)")
         else:
-            print(f"  ❌ MISSING OR EMPTY: {ef}")
+            print(f"  [FAIL] MISSING OR EMPTY: {ef}")
             all_ok = False
 
     if all_ok:
         # Step 5: Run Automated Test Suite
-        run_command(f"{sys.executable} test_clinical_system.py", "Automated Clinical Quality Assurance Test Suite")
+        run_command(f"{sys.executable} -m unittest discover tests", "Automated Clinical Quality Assurance Test Suite")
 
         print("\n[VERIFIED] All clinical dossiers and dashboard reports exist and are validated.")
         print("To view, open in browser:")
