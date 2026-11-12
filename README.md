@@ -15,7 +15,7 @@ A research-grade clinical decision support platform integrating **Google DeepMin
 - [The Clinical Challenge & Innovation](#the-clinical-challenge--innovation)
 - [Clinical Decision Workflow Architecture](#clinical-decision-workflow-architecture)
 - [Benchmark Performance (446 BRCA1 Variants)](#benchmark-performance-446-brca1-variants)
-  - [5-Bin Empirical Calibration Table](#5-bin-empirical-calibration-table)
+  - [5-Tier Empirical Calibration Table](#5-tier-empirical-calibration-table)
 - [Unified Clinical Scenario: Sarah Jenkins (HBOC-30 Panel)](#unified-clinical-scenario-sarah-jenkins-hboc-30-panel)
   - [Multi-Variant Comparative Matrix](#multi-variant-comparative-matrix)
 - [Clinical Decision Reports & Features](#clinical-decision-reports--features)
@@ -45,7 +45,7 @@ A substantial proportion of pathogenic mutations disrupt pre-mRNA splicing throu
 ### How This Platform Solves It:
 - **100 kb Context Foundation Modeling**: Uses AlphaGenome's sequence context to evaluate long-range splice donor and acceptor disruptions across entire loci.
 - **Experimental Ground Truth**: Calibrated against SpliceVarDB multi-assay experimental validation (minigene assays and patient RNA-seq).
-- **Empirical 5-Bin Calibration**: Converts continuous deep-learning scores into calibrated Positive Predictive Values (PPV) with Wilson 95% confidence intervals.
+- **Empirical 5-Tier Calibration**: Converts continuous deep-learning scores into calibrated Positive Predictive Values (PPV) with Wilson 95% confidence intervals.
 - **Interactive Side-by-Side Decision Reports**: Clean off-white editorial layout with inline SVG splice tracks, 1-click tumor board notes, and a client-side AI assistant running with zero external API fees ($0 operating cost).
 
 ---
@@ -60,7 +60,7 @@ flowchart LR
     B --> D["Clinical Interpretation Engine<br/>(scripts/clinical_agent.py)"]
     C --> D
     
-    E["446-Variant Benchmark Table<br/>(5-Bin Empirical Calibration)"] --> D
+    E["446-Variant Benchmark Table<br/>(5-Tier Empirical Calibration)"] --> D
     F["Prioritized Literature Citations<br/>(AJHG, Nature, Cancer Res)"] --> D
     
     D --> G["Interactive HTML Reports<br/>Side-by-Side Split View (reports/)"]
@@ -82,19 +82,19 @@ Across 446 single nucleotide variants in *BRCA1* evaluated against experimental 
 | **Exonic ROC AUC** | **`0.946`** | `[0.888 – 0.987]` | Reliably identifies benign exonic mimics and silent substitutions. |
 | **Optimal Threshold Sensitivity** | **`94.3%`** | — | At cutoff `0.276` ($116 / 123$ true positives correctly identified). |
 | **Optimal Threshold Specificity** | **`95.8%`** | — | At cutoff `0.276` ($207 / 216$ true negatives verified). |
-| **Bin 5 Positive Predictive Value** | **`100.0%`** | `[94.7% – 100.0%]` | $68 / 68$ variants with score $> 2.164$ were experimentally verified to cause complete splice disruption. |
+| **Tier 5 Positive Predictive Value** | **`100.0%`** | `[94.7% – 100.0%]` | $68 / 68$ variants with score $> 2.164$ were experimentally verified to cause complete splice disruption. |
 
-### 5-Bin Empirical Calibration Table
+### 5-Tier Empirical Calibration Table
 
 Raw foundation model scores are calibrated into 5 empirical probability tiers using SpliceVarDB experimental frequencies and Wilson score 95% confidence intervals:
 
 | Calibration Tier | Score Range | Altering / Total | Empirical PPV | Wilson 95% CI | Clinical Management Directive |
 | :---: | :---: | :---: | :---: | :---: | :--- |
-| **Bin 1: Minimal Risk** | `< 0.057` | $1 / 67$ | **`1.5%`** | `[0.3% – 7.9%]` | **De-escalate**: Splicing disruption excluded; rule out splicing as disease mechanism. |
-| **Bin 2: Low Risk** | `0.057 – 0.276` | $6 / 68$ | **`8.8%`** | `[3.8% – 18.9%]` | **Low Disruption Risk**: Observe standard population screening; splicing unlikely. |
-| **Bin 3: Indeterminate** | `0.276 – 0.781` | $27 / 68$ | **`39.7%`** | `[28.8% – 51.7%]` | **Equivocal**: Intermediate score; requires functional RNA testing before action. |
-| **Bin 4: High Risk** | `0.781 – 2.164` | $49 / 68$ | **`72.1%`** | `[60.4% – 81.3%]` | **Prioritize for Assay**: Strong candidate; expedite targeted RNA-seq minigene validation. |
-| **Bin 5: Definitive Risk** | `> 2.164` | $68 / 68$ | **`100.0%`** | `[94.7% – 100.0%]` | **Likely Pathogenic**: Definitive disruption; initiate high-risk surveillance and cascade testing. |
+| **Tier 1: Minimal Risk** | `< 0.057` | $1 / 67$ | **`1.5%`** | `[0.3% – 7.9%]` | **De-escalate**: Splicing disruption excluded; rule out splicing as disease mechanism. |
+| **Tier 2: Low Risk** | `0.057 – 0.276` | $6 / 68$ | **`8.8%`** | `[3.8% – 18.9%]` | **Low Disruption Risk**: Observe standard population screening; splicing unlikely. |
+| **Tier 3: Indeterminate** | `0.276 – 0.781` | $27 / 68$ | **`39.7%`** | `[28.8% – 51.7%]` | **Equivocal**: Intermediate score; requires functional RNA testing before action. |
+| **Tier 4: High Risk** | `0.781 – 2.164` | $49 / 68$ | **`72.1%`** | `[60.4% – 81.3%]` | **Prioritize for Assay**: Strong candidate; expedite targeted RNA-seq minigene validation. |
+| **Tier 5: Definitive Risk** | `> 2.164` | $68 / 68$ | **`100.0%`** | `[94.7% – 100.0%]` | **Likely Pathogenic**: Definitive disruption; initiate high-risk surveillance and cascade testing. |
 
 ---
 
@@ -106,9 +106,9 @@ The panel revealed 3 distinct *BRCA1* findings representing critical clinical ar
 
 ```
 HBOC-30 Panel Findings for Sarah Jenkins (39F)
-├── Finding #1: c.4986+1G>T  ──► Canonical Donor Loss ──► Bin 5 (100% PPV) ──► Reclassify to Likely Pathogenic
-├── Finding #2: c.2077G>A    ──► Exonic Silent Mimic  ──► Bin 1 (1.5% PPV)  ──► De-escalate Splicing Risk
-└── Finding #3: c.4185+4105C>T ──► Deep-Intronic Site ──► Bin 4 (72.1% PPV) ──► Expedite Functional RNA Assay
+├── Finding #1: c.4986+1G>T  ──► Canonical Donor Loss ──► Tier 5 (100% PPV) ──► Reclassify to Likely Pathogenic
+├── Finding #2: c.2077G>A    ──► Exonic Silent Mimic  ──► Tier 1 (1.5% PPV)  ──► De-escalate Splicing Risk
+└── Finding #3: c.4185+4105C>T ──► Deep-Intronic Site ──► Tier 4 (72.1% PPV) ──► Expedite Functional RNA Assay
 ```
 
 ### Multi-Variant Comparative Matrix
@@ -121,7 +121,7 @@ HBOC-30 Panel Findings for Sarah Jenkins (39F)
 | **Locus / Region** | Exon 15 / Intron 15 Boundary | Exon 10 (Internal Coding) | Intron 10 (+4,105 bp deep) |
 | **SpliceVarDB Evidence** | Splice-altering (in vitro verified) | Not splice-altering (in vitro verified) | Splice-altering (in vitro verified) |
 | **AlphaGenome Combined Score** | **`2.297`** (Loss of donor) | **`0.016`** (Silent exonic) | **`0.950`** (De novo donor creation) |
-| **Calibration Reliability** | **Bin 5: 100.0% PPV** `[94.7%–100%]` | **Bin 1: 1.5% PPV** `[0.3%–7.9%]` | **Bin 4: 72.1% PPV** `[60.4%–81.3%]` |
+| **Calibration Reliability** | **Tier 5: 100.0% PPV** `[94.7%–100%]` | **Tier 1: 1.5% PPV** `[0.3%–7.9%]` | **Tier 4: 72.1% PPV** `[60.4%–81.3%]` |
 | **Distance Baseline Score** | `1.0000` | `0.0000` | `0.0002` (Failed by distance baseline) |
 | **ACMG/AMP Evidence Codes** | **PVS1, PS3, PP3** | **BS3, BP4, BP7** | **PS3, PP3, PM2_Supporting** |
 | **Molecular Consequence** | Complete Exon 15 skipping, frameshift | Normal transcript splicing preserved | 68 bp pseudoexon inclusion, frameshift |
@@ -208,6 +208,7 @@ AlphaGenome_WomenInAI/
 │   └── README.md                        # Benchmark results description
 │
 ├── docs/                                # Project documentation & historical archive
+│   ├── PRESENTATION_SPEECH.md           # 7-slide non-technical presentation speech & slide guide
 │   ├── CLINICAL_REPORT_PLAN.md          # Architecture specification for clinical reports
 │   ├── DISCOVERY.md                     # Phase 0 discovery report (SpliceVarDB & API)
 │   ├── INSTRUCTIONS.md                  # Original challenge requirements & scope
@@ -328,8 +329,8 @@ The interpretation engine maps foundation model outputs and experimental splicin
 | **`PVS1`** | Very Strong | Null variant (canonical $+1/+2$ or $-1/-2$ splice donor/acceptor disruption) in a gene where loss-of-function is an established disease mechanism (*BRCA1*). Applied to Finding #1. |
 | **`PS3`** | Strong | Well-established in vitro or in vivo functional studies confirm damaging splicing alteration (SpliceVarDB minigene or patient RNA-seq). Applied to Findings #1 and #3. |
 | **`BS3`** | Strong | Well-established functional studies show no damaging effect on splicing (SpliceVarDB in vitro assay confirms normal splicing). Applied to Finding #2. |
-| **`PP3`** | Supporting | Multiple lines of computational evidence predict a deleterious effect on splicing (AlphaGenome score in Bin 4 or Bin 5, calibrated PPV $\ge 72.1\%$). Applied to Findings #1 and #3. |
-| **`BP4`** | Supporting | Multiple lines of computational evidence suggest no impact on splicing (AlphaGenome score in Bin 1, calibrated PPV $< 1.5\%$). Applied to Finding #2. |
+| **`PP3`** | Supporting | Multiple lines of computational evidence predict a deleterious effect on splicing (AlphaGenome score in Tier 4 or Tier 5, calibrated PPV $\ge 72.1\%$). Applied to Findings #1 and #3. |
+| **`BP4`** | Supporting | Multiple lines of computational evidence suggest no impact on splicing (AlphaGenome score in Tier 1, calibrated PPV $< 1.5\%$). Applied to Finding #2. |
 | **`BP7`** | Supporting | Synonymous (silent) exonic variant with no predicted effect on splice consensus or exonic splicing enhancers. Applied to Finding #2. |
 
 ---

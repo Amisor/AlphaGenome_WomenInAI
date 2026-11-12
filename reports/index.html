@@ -25,12 +25,11 @@
     .hero {
       background: #ffffff;
       border-bottom: 1px solid var(--border);
-      padding: 40px 20px 32px 20px;
+      padding: 32px 20px;
       text-align: center;
       box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     }
-    .hero h1 { font-size: 28px; font-weight: 800; color: #1c1917; margin-bottom: 8px; }
-    .hero p { font-size: 14px; color: var(--text-muted); max-width: 720px; margin: 0 auto; line-height: 1.6; }
+    .hero h1 { font-size: 28px; font-weight: 800; color: #1c1917; margin: 0; }
 
     .container { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
 
@@ -179,7 +178,6 @@
 
   <header class="hero">
     <h1>Multigene Panel Review</h1>
-    <p>Empirical foundation model benchmark (446 BRCA1 variants, ROC AUC 0.980) powering multi-variant splicing triage and clinical decision support.</p>
   </header>
 
   <main class="container">
@@ -233,7 +231,7 @@
       </div>
       <div class="stat-card">
         <div class="stat-val" style="color: #b91c1c;">100%</div>
-        <div class="stat-label">Bin 5 Precision (PPV)</div>
+        <div class="stat-label">Tier 5 Precision (PPV)</div>
         <div class="stat-sub">68 / 68 True Positives</div>
       </div>
     </section>
@@ -255,7 +253,7 @@
             <div><strong>Variant:</strong> NM_007294.4:c.4986+1G>T</div>
             <div><strong>Coordinates:</strong> chr17:43070927 C&gt;A</div>
             <div><strong>SpliceVarDB:</strong> Splice-altering</div>
-            <div><strong>Calibration:</strong> Bin 5 of 5 (<strong>100.0% PPV</strong>)</div>
+            <div><strong>Calibration:</strong> Tier 5 of 5 (<strong>100.0% PPV</strong>)</div>
           </div>
           <p class="case-desc">This mutation destroys the canonical splice recognition signal at the edge of Exon 15. The cellular spliceosome machinery fails to excise the intron, resulting in complete exon skipping, open reading frame frameshift, and premature termination. AlphaGenome and experimental ground truth confirm 100% loss of function.</p>
           <a href="case1_pathogenic.html" class="case-action">Open Report &rarr;</a>
@@ -271,9 +269,9 @@
             <div><strong>Variant:</strong> NM_007294.4:c.2077G>A</div>
             <div><strong>Coordinates:</strong> chr17:43093454 C&gt;T</div>
             <div><strong>SpliceVarDB:</strong> Not splice-altering</div>
-            <div><strong>Calibration:</strong> Bin 1 of 5 (<strong>1.5% PPV</strong>)</div>
+            <div><strong>Calibration:</strong> Tier 1 of 5 (<strong>1.5% PPV</strong>)</div>
           </div>
-          <p class="case-desc">Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Bin 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.</p>
+          <p class="case-desc">Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Tier 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.</p>
           <a href="case2_benign.html" class="case-action">Open Report &rarr;</a>
         </div>
         
@@ -287,9 +285,9 @@
             <div><strong>Variant:</strong> NM_007294.4:c.4185+4105C>T</div>
             <div><strong>Coordinates:</strong> chr17:43086839 G&gt;A</div>
             <div><strong>SpliceVarDB:</strong> Splice-altering</div>
-            <div><strong>Calibration:</strong> Bin 4 of 5 (<strong>72.1% PPV</strong>)</div>
+            <div><strong>Calibration:</strong> Tier 4 of 5 (<strong>72.1% PPV</strong>)</div>
           </div>
-          <p class="case-desc">Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at 72.1% PPV, this variant is prioritized for functional RNA minigene validation.</p>
+          <p class="case-desc">Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at Tier 4 (72.1% PPV), this variant is prioritized for functional RNA minigene validation.</p>
           <a href="case3_deep_intronic.html" class="case-action">Open Report &rarr;</a>
         </div>
         
@@ -320,7 +318,7 @@
           <td><strong>NM_007294.4:c.4986+1G>T</strong><br><span style="font-size:11px; color:#78716c;">chr17:43070927 (C&gt;A)</span></td>
           <td style="font-size:11.5px; color:#44403c;">Canonical splice donor substitution (+1G>T)</td>
           <td><strong style="color:#b91c1c; font-size:13px;">2.297</strong></td>
-          <td><strong>Bin 5</strong> &bull; <span style="font-weight:800; color:#b91c1c;">100.0% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[94.7%–100.0%]</span></td>
+          <td><strong>Tier 5</strong> &bull; <span style="font-weight:800; color:#b91c1c;">100.0% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[94.7%–100.0%]</span></td>
           <td style="font-size:11.5px; font-weight:600;">Primary Actionable Driver</td>
           <td><a href="case1_pathogenic.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Report &rarr;</a></td>
         </tr>
@@ -330,7 +328,7 @@
           <td><strong>NM_007294.4:c.2077G>A</strong><br><span style="font-size:11px; color:#78716c;">chr17:43093454 (C&gt;T)</span></td>
           <td style="font-size:11.5px; color:#44403c;">Exonic single-nucleotide substitution (c.2077G>A)</td>
           <td><strong style="color:#15803d; font-size:13px;">0.017</strong></td>
-          <td><strong>Bin 1</strong> &bull; <span style="font-weight:800; color:#15803d;">1.5% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[0.3%–7.9%]</span></td>
+          <td><strong>Tier 1</strong> &bull; <span style="font-weight:800; color:#15803d;">1.5% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[0.3%–7.9%]</span></td>
           <td style="font-size:11.5px; font-weight:600;">Benign Mimic (De-escalate)</td>
           <td><a href="case2_benign.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Report &rarr;</a></td>
         </tr>
@@ -340,7 +338,7 @@
           <td><strong>NM_007294.4:c.4185+4105C>T</strong><br><span style="font-size:11px; color:#78716c;">chr17:43086839 (G&gt;A)</span></td>
           <td style="font-size:11.5px; color:#44403c;">Deep-intronic single-nucleotide substitution (c.4185+4105C>T)</td>
           <td><strong style="color:#d97706; font-size:13px;">0.950</strong></td>
-          <td><strong>Bin 4</strong> &bull; <span style="font-weight:800; color:#d97706;">72.1% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[60.4%–81.3%]</span></td>
+          <td><strong>Tier 4</strong> &bull; <span style="font-weight:800; color:#d97706;">72.1% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[60.4%–81.3%]</span></td>
           <td style="font-size:11.5px; font-weight:600;">Actionable Candidate (Expedite RNA-seq)</td>
           <td><a href="case3_deep_intronic.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Report &rarr;</a></td>
         </tr>
@@ -413,11 +411,11 @@ Indication: Ductal carcinoma in situ (DCIS) at age 38; strong maternal history o
 Test: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)
 
 FINDINGS TRIAGE:
-1. BRCA1 c.4986+1G>T (Canonical Donor Loss) -> ACTIONABLE PATHOGENIC DRIVER (Bin 5, 100% PPV).
+1. BRCA1 c.4986+1G>T (Canonical Donor Loss) -> ACTIONABLE PATHOGENIC DRIVER (Tier 5, 100% PPV).
    Directive: Reclassify to Likely Pathogenic (Class 4). Initiate high-risk breast/ovarian surveillance protocol and RRSO counseling.
-2. BRCA1 c.2077G>A (Exonic Silent Variant) -> BENIGN SPLICING MIMIC (Bin 1, <1.5% PPV).
+2. BRCA1 c.2077G>A (Exonic Silent Variant) -> BENIGN SPLICING MIMIC (Tier 1, <1.5% PPV).
    Directive: Splicing neutral. Safely de-escalate. Do not base prophylactic surgery on this variant.
-3. BRCA1 c.4185+4105C>T (Deep-Intronic Pseudoexon) -> ACTIONABLE CANDIDATE (Bin 4, 72.1% PPV).
+3. BRCA1 c.4185+4105C>T (Deep-Intronic Pseudoexon) -> ACTIONABLE CANDIDATE (Tier 4, 72.1% PPV).
    Directive: Sits 4,105 bp deep in intron. Expedite targeted RNA-seq minigene validation before final reclassification.`;
 
     function copyMasterTumorBoardSummary() {

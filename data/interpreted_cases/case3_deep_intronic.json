@@ -1,10 +1,10 @@
 {
   "case_id": "case3_deep_intronic",
-  "generated_at_utc": "2026-11-12T07:44:32.447212+00:00",
+  "generated_at_utc": "2026-11-12T07:53:50.063692+00:00",
   "target_clinician": "Attending Clinical Genetics Review",
   "clinical_setting": "Hereditary Breast & Ovarian Cancer Multidisciplinary Review",
-  "executive_clinical_summary": "Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at 72.1% PPV, this variant is prioritized for functional RNA minigene validation.",
-  "tumor_board_clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #3: NM_007294.4:c.4185+4105C>T\nAlphaGenome Score: 0.950 | Calibration: Bin 4 of 5 (72.1% PPV, 95% CI: [60.4% \u2013 81.3%])\nAssessment: Elevated Splicing Disruption Risk (EXPEDITE FUNCTIONAL RNA-SEQ)\nDirective: ACTION: Prioritize patient blood/tissue sample for expedited RNA-seq minigene functional validation. While current evidence supports 72.1% PPV, standalone clinical reclassification to Pathogenic requires transcriptional confirmation of pseudoexon inclusion. Maintain close clinical surveillance based on family pedigree while functional assay is pending.",
+  "executive_clinical_summary": "Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at Tier 4 (72.1% PPV), this variant is prioritized for functional RNA minigene validation.",
+  "tumor_board_clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #3: NM_007294.4:c.4185+4105C>T\nAlphaGenome Score: 0.950 | Calibration: Tier 4 of 5 (72.1% PPV, 95% CI: [60.4% \u2013 81.3%])\nAssessment: Elevated Splicing Disruption Risk (EXPEDITE FUNCTIONAL RNA-SEQ)\nDirective: ACTION: Prioritize patient blood/tissue sample for expedited RNA-seq minigene functional validation. While current evidence supports 72.1% PPV, standalone clinical reclassification to Pathogenic requires transcriptional confirmation of pseudoexon inclusion. Maintain close clinical surveillance based on family pedigree while functional assay is pending.",
   "risk_classification": {
     "verdict": "Elevated Splicing Disruption Risk",
     "verdict_short": "ACTIONABLE VUS (PRIORITY)",
@@ -15,7 +15,7 @@
     "icon": "",
     "acmg_trend": "VUS \u2014 Priority Laboratory Validation",
     "action_type": "EXPEDITE FUNCTIONAL RNA-SEQ",
-    "summary": "Score 0.950 places variant in Calibration Bin 4 with 72.1% empirical PPV. Strongly indicated for RNA confirmation."
+    "summary": "Score 0.950 places variant in Calibration Tier 4 with 72.1% empirical PPV. Strongly indicated for RNA confirmation."
   },
   "molecular_evaluation": {
     "primary_mechanism": "De Novo Cryptic Splice Site Activation (Deep Intronic)",
@@ -28,12 +28,12 @@
     }
   },
   "benchmark_evaluation": {
-    "bin_display": "Bin 4 of 5",
+    "bin_display": "Tier 4 of 5",
     "ppv_display": "72.1%",
     "ci_95": "[60.4% \u2013 81.3%]",
     "threshold_context": "Empirical Decision Threshold: 0.276 (Sensitivity: 94.3%, Specificity: 95.8%, F1: 93.5%)",
     "baseline_comparison": "Baseline distance heuristic (1/distance = 0.00024) fails because the variant is 4105 bp deep in the intron. AlphaGenome's intronic ROC AUC (0.993) substantially outperforms the distance baseline (0.914), capturing this deep-intronic defect.",
-    "benchmark_validation_stat": "49 of 68 benchmark variants in this bin were experimentally splice-altering"
+    "benchmark_validation_stat": "49 of 68 benchmark variants in this tier were experimentally splice-altering"
   },
   "clinical_management": {
     "acmg_codes": [
@@ -43,7 +43,7 @@
       },
       {
         "code": "PP3 (Moderate-to-Strong)",
-        "rule": "AlphaGenome score 0.950 indicates deep-intronic cryptic activation (Bin 4: 72.1% empirical PPV)."
+        "rule": "AlphaGenome score 0.950 indicates deep-intronic cryptic activation (Tier 4: 72.1% empirical PPV)."
       }
     ],
     "clinical_directive": "ACTION: Prioritize patient blood/tissue sample for expedited RNA-seq minigene functional validation. While current evidence supports 72.1% PPV, standalone clinical reclassification to Pathogenic requires transcriptional confirmation of pseudoexon inclusion. Maintain close clinical surveillance based on family pedigree while functional assay is pending.",

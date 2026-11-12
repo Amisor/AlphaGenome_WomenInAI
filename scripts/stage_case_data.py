@@ -92,7 +92,7 @@ def stage_cases():
             "finding_role": "Benign Mimic (De-escalate)",
             "variant_id": "chr17-43093454-C-T",
             "patient_context": shared_patient,
-            "plain_english_summary": "Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Bin 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.",
+            "plain_english_summary": "Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Tier 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.",
             "biological_details": {
                 "transcript": "NM_007294.4",
                 "gene": "BRCA1",
@@ -125,7 +125,7 @@ def stage_cases():
                     "year": "2026",
                     "doi": "10.1038/s41586-025-10014-0",
                     "evidence_tier": "Tier 2 (Foundation Model Validation)",
-                    "clinical_takeaway": "AlphaGenome scores this variant in Bin 1 (Score 0.016), reflecting <1.5% empirical risk of splicing disruption across 734 RNA-seq tissue tracks."
+                    "clinical_takeaway": "AlphaGenome scores this variant in Tier 1 (Score 0.016), reflecting <1.5% empirical risk of splicing disruption across 734 RNA-seq tissue tracks."
                 }
             ]
         },
@@ -137,7 +137,7 @@ def stage_cases():
             "finding_role": "Actionable Candidate (Expedite RNA-seq)",
             "variant_id": "chr17-43086839-G-A",
             "patient_context": shared_patient,
-            "plain_english_summary": "Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at 72.1% PPV, this variant is prioritized for functional RNA minigene validation.",
+            "plain_english_summary": "Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at Tier 4 (72.1% PPV), this variant is prioritized for functional RNA minigene validation.",
             "biological_details": {
                 "transcript": "NM_007294.4",
                 "gene": "BRCA1",

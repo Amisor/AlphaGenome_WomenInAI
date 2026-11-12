@@ -1,10 +1,10 @@
 {
   "case_id": "case2_benign",
-  "generated_at_utc": "2026-11-12T07:44:32.446989+00:00",
+  "generated_at_utc": "2026-11-12T07:53:50.063447+00:00",
   "target_clinician": "Attending Clinical Genetics Review",
   "clinical_setting": "Hereditary Breast & Ovarian Cancer Multidisciplinary Review",
-  "executive_clinical_summary": "Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Bin 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.",
-  "tumor_board_clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #2: NM_007294.4:c.2077G>A\nAlphaGenome Score: 0.017 | Calibration: Bin 1 of 5 (1.5% PPV, 95% CI: [0.3% \u2013 7.9%])\nAssessment: Low Splicing Disruption Risk (DE-PRIORITIZE SPLICING)\nDirective: ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. Patient should NOT undergo invasive risk-reducing prophylactic surgeries on the basis of this variant. Cancer screening should be managed based on personal clinical history and family pedigree alone.",
+  "executive_clinical_summary": "Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Tier 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded.",
+  "tumor_board_clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #2: NM_007294.4:c.2077G>A\nAlphaGenome Score: 0.017 | Calibration: Tier 1 of 5 (1.5% PPV, 95% CI: [0.3% \u2013 7.9%])\nAssessment: Low Splicing Disruption Risk (DE-PRIORITIZE SPLICING)\nDirective: ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. Patient should NOT undergo invasive risk-reducing prophylactic surgeries on the basis of this variant. Cancer screening should be managed based on personal clinical history and family pedigree alone.",
   "risk_classification": {
     "verdict": "Low Splicing Disruption Risk",
     "verdict_short": "LIKELY BENIGN / NEUTRAL",
@@ -15,7 +15,7 @@
     "icon": "",
     "acmg_trend": "Likely Benign for Splicing (Class 2)",
     "action_type": "DE-PRIORITIZE SPLICING",
-    "summary": "Score 0.017 places variant in Calibration Bin 1 with <1.5% empirical PPV. Splicing mechanism effectively excluded."
+    "summary": "Score 0.017 places variant in Calibration Tier 1 with <1.5% empirical PPV. Splicing mechanism effectively excluded."
   },
   "molecular_evaluation": {
     "primary_mechanism": "Normal Splicing Kinetics Maintained",
@@ -28,12 +28,12 @@
     }
   },
   "benchmark_evaluation": {
-    "bin_display": "Bin 1 of 5",
+    "bin_display": "Tier 1 of 5",
     "ppv_display": "1.5%",
     "ci_95": "[0.3% \u2013 7.9%]",
     "threshold_context": "Empirical Decision Threshold: 0.276 (Sensitivity: 94.3%, Specificity: 95.8%, F1: 93.5%)",
     "baseline_comparison": "AlphaGenome achieved 0.946 ROC AUC on exonic variants across the BRCA1 benchmark, successfully avoiding false-positive splicing flags.",
-    "benchmark_validation_stat": "1 of 68 benchmark variants in this bin were experimentally splice-altering"
+    "benchmark_validation_stat": "1 of 68 benchmark variants in this tier were experimentally splice-altering"
   },
   "clinical_management": {
     "acmg_codes": [
@@ -43,7 +43,7 @@
       },
       {
         "code": "BP4 (Strong In Silico Support)",
-        "rule": "AlphaGenome score 0.016 falls in Bin 1 (<1.5% empirical PPV) with no splice site alteration."
+        "rule": "AlphaGenome score 0.016 falls in Tier 1 (<1.5% empirical PPV) with no splice site alteration."
       }
     ],
     "clinical_directive": "ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. Patient should NOT undergo invasive risk-reducing prophylactic surgeries on the basis of this variant. Cancer screening should be managed based on personal clinical history and family pedigree alone.",
@@ -74,7 +74,7 @@
       "year": "2026",
       "doi": "10.1038/s41586-025-10014-0",
       "evidence_tier": "Tier 2 (Foundation Model Validation)",
-      "clinical_takeaway": "AlphaGenome scores this variant in Bin 1 (Score 0.016), reflecting <1.5% empirical risk of splicing disruption across 734 RNA-seq tissue tracks."
+      "clinical_takeaway": "AlphaGenome scores this variant in Tier 1 (Score 0.016), reflecting <1.5% empirical risk of splicing disruption across 734 RNA-seq tissue tracks."
     }
   ]
 }

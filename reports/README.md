@@ -11,9 +11,9 @@ Each HTML report is completely self-contained (inline styles, inline SVG signal 
 | Order | File | Title | Variant (HGVS) | Clinical Role | Calibration PPV |
 | :---: | :--- | :--- | :--- | :--- | :---: |
 | **0** | [**`index.html`**](index.html) | **Multigene Panel Review (Master Dashboard)** | Multi-variant matrix | Panel overview, benchmark KPIs & multi-variant comparative matrix | — |
-| **1** | [**`case1_pathogenic.html`**](case1_pathogenic.html) | **Finding #1: Canonical Donor Destruction** | `NM_007294.4:c.4986+1G>T` | **Primary Actionable Driver** (Exon 15 canonical splice donor loss-of-function) | **Bin 5: 100.0% PPV** |
-| **2** | [**`case2_benign.html`**](case2_benign.html) | **Finding #2: Benign Splice Mimic** | `NM_007294.4:c.2077G>A` | **Benign Mimic (De-escalate)** (Exonic substitution, splicing-neutral) | **Bin 1: 1.5% PPV** |
-| **3** | [**`case3_deep_intronic.html`**](case3_deep_intronic.html) | **Finding #3: Deep-Intronic Cryptic Donor** | `NM_007294.4:c.4185+4105C>T` | **Actionable Candidate** (4,105 bp deep inside Intron 10; priority for RNA-seq) | **Bin 4: 72.1% PPV** |
+| **1** | [**`case1_pathogenic.html`**](case1_pathogenic.html) | **Finding #1: Canonical Donor Destruction** | `NM_007294.4:c.4986+1G>T` | **Primary Actionable Driver** (Exon 15 canonical splice donor loss-of-function) | **Tier 5: 100.0% PPV** |
+| **2** | [**`case2_benign.html`**](case2_benign.html) | **Finding #2: Benign Splice Mimic** | `NM_007294.4:c.2077G>A` | **Benign Mimic (De-escalate)** (Exonic substitution, splicing-neutral) | **Tier 1: 1.5% PPV** |
+| **3** | [**`case3_deep_intronic.html`**](case3_deep_intronic.html) | **Finding #3: Deep-Intronic Cryptic Donor** | `NM_007294.4:c.4185+4105C>T` | **Actionable Candidate** (4,105 bp deep inside Intron 10; priority for RNA-seq) | **Tier 4: 72.1% PPV** |
 
 ---
 

@@ -490,7 +490,7 @@
             <span style="font-size:10px; background:#ffedd5; color:#c2410c; padding:2px 6px; border-radius:4px;">Finding #3 of 3</span>
           </div>
           <div class="pe-text">
-            Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at 72.1% PPV, this variant is prioritized for functional RNA minigene validation.
+            Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at Tier 4 (72.1% PPV), this variant is prioritized for functional RNA minigene validation.
           </div>
         </div>
 
@@ -531,7 +531,7 @@
               <div class="kpi-label">Calibrated PPV</div>
               <div class="kpi-value">72.1%</div>
             </div>
-            <div class="kpi-sub">Bin 4 of 5 (95% CI: [60.4%–81.3%%])</div>
+            <div class="kpi-sub">Tier 4 of 5 (95% CI: [60.4%–81.3%%])</div>
           </div>
         </div>
 
@@ -547,31 +547,31 @@
         
         <div style="flex:1; background:#dcfce7; border:1px solid #e7e5e4; border-radius:6px; padding:8px 4px; text-align:center; position:relative; ">
           
-          <div style="font-size:11px; font-weight:600; color:#15803d;">Bin 1: Minimal</div>
+          <div style="font-size:11px; font-weight:600; color:#15803d;">Tier 1: Minimal</div>
           <div style="font-size:12px; font-weight:800; color:#15803d; margin-top:2px;"><1.5% PPV</div>
         </div>
         
         <div style="flex:1; background:#f0fdf4; border:1px solid #e7e5e4; border-radius:6px; padding:8px 4px; text-align:center; position:relative; ">
           
-          <div style="font-size:11px; font-weight:600; color:#16a34a;">Bin 2: Low</div>
+          <div style="font-size:11px; font-weight:600; color:#16a34a;">Tier 2: Low</div>
           <div style="font-size:12px; font-weight:800; color:#16a34a; margin-top:2px;">8.8% PPV</div>
         </div>
         
         <div style="flex:1; background:#fef9c3; border:1px solid #e7e5e4; border-radius:6px; padding:8px 4px; text-align:center; position:relative; ">
           
-          <div style="font-size:11px; font-weight:600; color:#ca8a04;">Bin 3: Indeterminate</div>
+          <div style="font-size:11px; font-weight:600; color:#ca8a04;">Tier 3: Indeterminate</div>
           <div style="font-size:12px; font-weight:800; color:#ca8a04; margin-top:2px;">39.7% PPV</div>
         </div>
         
         <div style="flex:1; background:#ffedd5; border:2px solid #ea580c; border-radius:6px; padding:8px 4px; text-align:center; position:relative; transform: scale(1.02); z-index:2;">
           <div style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); background:#ea580c; color:#ffffff; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px; white-space:nowrap; box-shadow:0 2px 4px rgba(0,0,0,0.15);">ACTIVE VARIANT</div>
-          <div style="font-size:11px; font-weight:800; color:#ea580c;">Bin 4: High</div>
+          <div style="font-size:11px; font-weight:800; color:#ea580c;">Tier 4: High</div>
           <div style="font-size:12px; font-weight:800; color:#ea580c; margin-top:2px;">72.1% PPV</div>
         </div>
         
         <div style="flex:1; background:#fee2e2; border:1px solid #e7e5e4; border-radius:6px; padding:8px 4px; text-align:center; position:relative; ">
           
-          <div style="font-size:11px; font-weight:600; color:#b91c1c;">Bin 5: Definitive</div>
+          <div style="font-size:11px; font-weight:600; color:#b91c1c;">Tier 5: Definitive</div>
           <div style="font-size:12px; font-weight:800; color:#b91c1c; margin-top:2px;">100% PPV</div>
         </div>
         
@@ -674,7 +674,7 @@
         
         <div class="acmg-card">
           <div class="acmg-code">PP3 (Moderate-to-Strong)</div>
-          <div class="acmg-desc">AlphaGenome score 0.950 indicates deep-intronic cryptic activation (Bin 4: 72.1% empirical PPV).</div>
+          <div class="acmg-desc">AlphaGenome score 0.950 indicates deep-intronic cryptic activation (Tier 4: 72.1% empirical PPV).</div>
         </div>
         
           </div>
@@ -775,7 +775,7 @@
 
   <!-- Client-Side Reasoning Engine & Patient KB -->
   <script>
-    const PATIENT_KB = {"patient_name": "Sarah Jenkins", "patient_id": "PT-HBOC-3982", "patient_age": 39, "indication": "Personal history of ductal carcinoma in situ (DCIS) at age 38; strong maternal history of early-onset breast cancer (age 42) and maternal aunt with high-grade serous ovarian cancer. Underwent Comprehensive 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30).", "panel_name": "Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)", "active_case_id": "case3_deep_intronic", "active_finding_number": 3, "active_variant": "NM_007294.4:c.4185+4105C>T", "findings": [{"case_id": "case1_pathogenic", "finding_number": 1, "role": "Primary Actionable Driver", "variant": "NM_007294.4:c.4986+1G>T", "score": 2.2973, "bin": 5, "ppv": 100.0, "ci": "[94.7% \u2013 100.0%]", "splicevardb": "Splice-altering", "plain_english": "This mutation destroys the canonical splice recognition signal at the edge of Exon 15. The cellular spliceosome machinery fails to excise the intron, resulting in complete exon skipping, open reading frame frameshift, and premature termination. AlphaGenome and experimental ground truth confirm 100% loss of function."}, {"case_id": "case2_benign", "finding_number": 2, "role": "Benign Mimic (De-escalate)", "variant": "NM_007294.4:c.2077G>A", "score": 0.0165, "bin": 1, "ppv": 1.5, "ci": "[0.3% \u2013 7.9%]", "splicevardb": "Not splice-altering", "plain_english": "Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Bin 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded."}, {"case_id": "case3_deep_intronic", "finding_number": 3, "role": "Actionable Candidate (Expedite RNA-seq)", "variant": "NM_007294.4:c.4185+4105C>T", "score": 0.9502, "bin": 4, "ppv": 72.1, "ci": "[60.4% \u2013 81.3%]", "splicevardb": "Splice-altering", "plain_english": "Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at 72.1% PPV, this variant is prioritized for functional RNA minigene validation."}], "active_detail": {"variant": "NM_007294.4:c.4185+4105C>T", "chrom_pos": "chr17:43086839 G>A", "risk_verdict": "Elevated Splicing Disruption Risk", "action_type": "EXPEDITE FUNCTIONAL RNA-SEQ", "score": 0.9502, "bin": 4, "ppv": 72.1, "ci": "[60.4% \u2013 81.3%]", "splicevardb_label": "Splice-altering", "molecular_mechanism": "De Novo Cryptic Splice Site Activation (Deep Intronic)", "impact": "Located 4105 bp into the intron, standard distance heuristics score this 0.0002. AlphaGenome's 100 kb sequence backbone identifies de novo 5' donor site generation (delta 0.6522), activating an out-of-frame pseudoexon insertion that disrupts the BRCA1 mRNA open reading frame.", "acmg_codes": ["PS3_Moderate: SpliceVarDB experimental catalogue notes splicing involvement.", "PP3 (Moderate-to-Strong): AlphaGenome score 0.950 indicates deep-intronic cryptic activation (Bin 4: 72.1% empirical PPV)."], "recommendation": "ACTION: Prioritize patient blood/tissue sample for expedited RNA-seq minigene functional validation. While current evidence supports 72.1% PPV, standalone clinical reclassification to Pathogenic requires transcriptional confirmation of pseudoexon inclusion. Maintain close clinical surveillance based on family pedigree while functional assay is pending.", "tumor_board_summary": "High Priority Laboratory Escalation: Expedite functional RNA minigene assay. Maintain proactive clinical surveillance.", "clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #3: NM_007294.4:c.4185+4105C>T\nAlphaGenome Score: 0.950 | Calibration: Bin 4 of 5 (72.1% PPV, 95% CI: [60.4% \u2013 81.3%])\nAssessment: Elevated Splicing Disruption Risk (EXPEDITE FUNCTIONAL RNA-SEQ)\nDirective: ACTION: Prioritize patient blood/tissue sample for expedited RNA-seq minigene functional validation. While current evidence supports 72.1% PPV, standalone clinical reclassification to Pathogenic requires transcriptional confirmation of pseudoexon inclusion. Maintain close clinical surveillance based on family pedigree while functional assay is pending.", "literature": ["SpliceVarDB Consortium. (2024). SpliceVarDB: A comprehensive database of experimentally validated human splicing variants. (Am J Hum Genet) \u2014 SpliceVarDB catalogues this deep-intronic substitution as an active splice-altering variant identified via targeted transcript sequencing.", "Fraile-Bethencourt, E., et al. (2019). De novo cryptic splice site activation in deep intronic regions of cancer predisposition genes. (Cancer Res) \u2014 Deep intronic SNVs in BRCA1 can generate high-affinity 5' donor motifs that incorporate out-of-frame pseudoexons, causing loss of tumor suppressor function.", "Avsec, \u017d., et al. (2026). Advancing regulatory variant effect prediction with AlphaGenome. (Nature) \u2014 AlphaGenome's long context window flags this variant with high delta (0.652 site delta), outperforming standard distance tools (ROC AUC 0.993 vs. 0.914)."]}};
+    const PATIENT_KB = {"patient_name": "Sarah Jenkins", "patient_id": "PT-HBOC-3982", "patient_age": 39, "indication": "Personal history of ductal carcinoma in situ (DCIS) at age 38; strong maternal history of early-onset breast cancer (age 42) and maternal aunt with high-grade serous ovarian cancer. Underwent Comprehensive 30-Gene Hereditary Breast and Ovarian Cancer Panel (HBOC-30).", "panel_name": "Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)", "active_case_id": "case3_deep_intronic", "active_finding_number": 3, "active_variant": "NM_007294.4:c.4185+4105C>T", "findings": [{"case_id": "case1_pathogenic", "finding_number": 1, "role": "Primary Actionable Driver", "variant": "NM_007294.4:c.4986+1G>T", "score": 2.2973, "bin": 5, "ppv": 100.0, "ci": "[94.7% \u2013 100.0%]", "splicevardb": "Splice-altering", "plain_english": "This mutation destroys the canonical splice recognition signal at the edge of Exon 15. The cellular spliceosome machinery fails to excise the intron, resulting in complete exon skipping, open reading frame frameshift, and premature termination. AlphaGenome and experimental ground truth confirm 100% loss of function."}, {"case_id": "case2_benign", "finding_number": 2, "role": "Benign Mimic (De-escalate)", "variant": "NM_007294.4:c.2077G>A", "score": 0.0165, "bin": 1, "ppv": 1.5, "ci": "[0.3% \u2013 7.9%]", "splicevardb": "Not splice-altering", "plain_english": "Although reported on this multigene panel as a VUS, this exonic single-nucleotide variant does not disrupt donor or acceptor motifs or alter exonic splicing enhancers. AlphaGenome predicts minimal splicing impact (0.016, Tier 1 with <1.5% empirical risk), indicating normal transcript processing. Splicing-mediated pathogenicity is excluded."}, {"case_id": "case3_deep_intronic", "finding_number": 3, "role": "Actionable Candidate (Expedite RNA-seq)", "variant": "NM_007294.4:c.4185+4105C>T", "score": 0.9502, "bin": 4, "ppv": 72.1, "ci": "[60.4% \u2013 81.3%]", "splicevardb": "Splice-altering", "plain_english": "Located 4,105 base pairs deep inside Intron 10, conventional proximity heuristics score this near zero (0.0002). AlphaGenome's 100 kb sequence backbone reveals de novo cryptic donor activation (delta 0.6522), driving out-of-frame pseudoexon inclusion. Calibrated at Tier 4 (72.1% PPV), this variant is prioritized for functional RNA minigene validation."}], "active_detail": {"variant": "NM_007294.4:c.4185+4105C>T", "chrom_pos": "chr17:43086839 G>A", "risk_verdict": "Elevated Splicing Disruption Risk", "action_type": "EXPEDITE FUNCTIONAL RNA-SEQ", "score": 0.9502, "bin": 4, "ppv": 72.1, "ci": "[60.4% \u2013 81.3%]", "splicevardb_label": "Splice-altering", "molecular_mechanism": "De Novo Cryptic Splice Site Activation (Deep Intronic)", "impact": "Located 4105 bp into the intron, standard distance heuristics score this 0.0002. AlphaGenome's 100 kb sequence backbone identifies de novo 5' donor site generation (delta 0.6522), activating an out-of-frame pseudoexon insertion that disrupts the BRCA1 mRNA open reading frame.", "acmg_codes": ["PS3_Moderate: SpliceVarDB experimental catalogue notes splicing involvement.", "PP3 (Moderate-to-Strong): AlphaGenome score 0.950 indicates deep-intronic cryptic activation (Tier 4: 72.1% empirical PPV)."], "recommendation": "ACTION: Prioritize patient blood/tissue sample for expedited RNA-seq minigene functional validation. While current evidence supports 72.1% PPV, standalone clinical reclassification to Pathogenic requires transcriptional confirmation of pseudoexon inclusion. Maintain close clinical surveillance based on family pedigree while functional assay is pending.", "tumor_board_summary": "High Priority Laboratory Escalation: Expedite functional RNA minigene assay. Maintain proactive clinical surveillance.", "clipboard_note": "MOLECULAR TUMOR BOARD SUMMARY \u2014 PATIENT: Sarah Jenkins (Age 39)\nTest: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30) | Finding #3: NM_007294.4:c.4185+4105C>T\nAlphaGenome Score: 0.950 | Calibration: Tier 4 of 5 (72.1% PPV, 95% CI: [60.4% \u2013 81.3%])\nAssessment: Elevated Splicing Disruption Risk (EXPEDITE FUNCTIONAL RNA-SEQ)\nDirective: ACTION: Prioritize patient blood/tissue sample for expedited RNA-seq minigene functional validation. While current evidence supports 72.1% PPV, standalone clinical reclassification to Pathogenic requires transcriptional confirmation of pseudoexon inclusion. Maintain close clinical surveillance based on family pedigree while functional assay is pending.", "literature": ["SpliceVarDB Consortium. (2024). SpliceVarDB: A comprehensive database of experimentally validated human splicing variants. (Am J Hum Genet) \u2014 SpliceVarDB catalogues this deep-intronic substitution as an active splice-altering variant identified via targeted transcript sequencing.", "Fraile-Bethencourt, E., et al. (2019). De novo cryptic splice site activation in deep intronic regions of cancer predisposition genes. (Cancer Res) \u2014 Deep intronic SNVs in BRCA1 can generate high-affinity 5' donor motifs that incorporate out-of-frame pseudoexons, causing loss of tumor suppressor function.", "Avsec, \u017d., et al. (2026). Advancing regulatory variant effect prediction with AlphaGenome. (Nature) \u2014 AlphaGenome's long context window flags this variant with high delta (0.652 site delta), outperforming standard distance tools (ROC AUC 0.993 vs. 0.914)."]}};
 
     function handleChatKey(e) {
       if (e.key === 'Enter') {
@@ -836,8 +836,8 @@
       // Risk rationale
       if (q.includes('why') || q.includes('verdict') || q.includes('risk') || q.includes('rationale') || q.includes('classif')) {
         return `<strong>Risk Rationale for Finding #${pk.active_finding_number} (<code>${ak.variant}</code>):</strong><br>` +
-               `AlphaGenome combined score is <strong>${ak.score}</strong>, placing it in <strong>Calibration Bin ${ak.bin}</strong>. ` +
-               `In our 446-variant BRCA1 benchmark, this bin has an empirical Positive Predictive Value of <strong>${ak.ppv}%</strong> (95% CI: ${ak.ci}). ` +
+               `AlphaGenome combined score is <strong>${ak.score}</strong>, placing it in <strong>Calibration Tier ${ak.bin}</strong>. ` +
+               `In our 446-variant BRCA1 benchmark, this tier has an empirical Positive Predictive Value of <strong>${ak.ppv}%</strong> (95% CI: ${ak.ci}). ` +
                `SpliceVarDB experimental assays classify it as <em>${ak.splicevardb_label}</em>.<br><br>` +
                `<strong>Clinical Role:</strong> ${ak.action_type}.`;
       }
@@ -896,14 +896,14 @@
       // Calibration & Wilson Confidence Intervals
       if (q.includes('wilson') || q.includes('confidence') || q.includes('interval') || q.includes('calibration') || q.includes('benchmark')) {
         return `<strong>Empirical Calibration &amp; Statistical Reliability:</strong><br>` +
-               `Our calibration maps AlphaGenome scores against 446 experimental SpliceVarDB BRCA1 variants into 5 empirical bins. ` +
-               `For this variant in <strong>Bin ${ak.bin}</strong>, the empirical PPV is <strong>${ak.ppv}%</strong> with a 95% Wilson Score Interval of <strong>${ak.ci}</strong>. ` +
+               `Our calibration maps AlphaGenome scores against 446 experimental SpliceVarDB BRCA1 variants into 5 empirical calibration tiers. ` +
+               `For this variant in <strong>Tier ${ak.bin}</strong>, the empirical PPV is <strong>${ak.ppv}%</strong> with a 95% Wilson Score Interval of <strong>${ak.ci}</strong>. ` +
                `The overall benchmark achieved an ROC AUC of <strong>0.980</strong> globally and <strong>0.993</strong> across intronic variants, validating high clinical reliability.`;
       }
 
       // General fallback answer
       return `For <strong>Finding #${pk.active_finding_number} (${ak.variant})</strong>, our calibrated model assigns a score of <strong>${ak.score}</strong> ` +
-             `(Bin ${ak.bin}, <strong>${ak.ppv}% PPV</strong>). ` +
+             `(Tier ${ak.bin}, <strong>${ak.ppv}% PPV</strong>). ` +
              `Biological Mechanism: <em>${ak.molecular_mechanism}</em>. ` +
              `Click any prompt chip above or ask specifically about driver triage, PARP inhibitors, ACMG codes, or surveillance.`;
     }

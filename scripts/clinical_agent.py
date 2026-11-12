@@ -91,7 +91,7 @@ class ClinicalInterpretationAgent:
                 "icon": "",
                 "acmg_trend": "Likely Pathogenic (Class 4)",
                 "action_type": "CLINICAL SURVEILLANCE & RECLASSIFICATION",
-                "summary": f"Score {score:.3f} places variant in Calibration Bin 5 with 100% empirical Positive Predictive Value (PPV) in BRCA1.",
+                "summary": f"Score {score:.3f} places variant in Calibration Tier 5 with 100% empirical Positive Predictive Value (PPV) in BRCA1.",
             }
         elif bin_num == 4:
             return {
@@ -104,7 +104,7 @@ class ClinicalInterpretationAgent:
                 "icon": "",
                 "acmg_trend": "VUS — Priority Laboratory Validation",
                 "action_type": "EXPEDITE FUNCTIONAL RNA-SEQ",
-                "summary": f"Score {score:.3f} places variant in Calibration Bin 4 with 72.1% empirical PPV. Strongly indicated for RNA confirmation.",
+                "summary": f"Score {score:.3f} places variant in Calibration Tier 4 with 72.1% empirical PPV. Strongly indicated for RNA confirmation.",
             }
         else:
             return {
@@ -117,7 +117,7 @@ class ClinicalInterpretationAgent:
                 "icon": "",
                 "acmg_trend": "Likely Benign for Splicing (Class 2)",
                 "action_type": "DE-PRIORITIZE SPLICING",
-                "summary": f"Score {score:.3f} places variant in Calibration Bin 1 with <1.5% empirical PPV. Splicing mechanism effectively excluded.",
+                "summary": f"Score {score:.3f} places variant in Calibration Tier 1 with <1.5% empirical PPV. Splicing mechanism effectively excluded.",
             }
 
     def _evaluate_molecular_mechanism(self, case: dict) -> dict:
@@ -187,12 +187,12 @@ class ClinicalInterpretationAgent:
             baseline_comparison = "AlphaGenome achieved 0.946 ROC AUC on exonic variants across the BRCA1 benchmark, successfully avoiding false-positive splicing flags."
 
         return {
-            "bin_display": f"Bin {bin_num} of 5",
+            "bin_display": f"Tier {bin_num} of 5",
             "ppv_display": f"{ppv}%",
             "ci_95": f"[{ci_low}% – {ci_high}%]",
             "threshold_context": "Empirical Decision Threshold: 0.276 (Sensitivity: 94.3%, Specificity: 95.8%, F1: 93.5%)",
             "baseline_comparison": baseline_comparison,
-            "benchmark_validation_stat": f"{calib['n_positive']} of {calib['n_total']} benchmark variants in this bin were experimentally splice-altering",
+            "benchmark_validation_stat": f"{calib['n_positive']} of {calib['n_total']} benchmark variants in this tier were experimentally splice-altering",
         }
 
     def _formulate_clinical_actions(self, case: dict, risk_info: dict) -> dict:
@@ -203,7 +203,7 @@ class ClinicalInterpretationAgent:
         if bin_num == 5:
             acmg_codes = [
                 {"code": "PS3 (Strong Functional Evidence)", "rule": "SpliceVarDB multi-assay experimental validation confirms splice alteration (Splice-altering)."},
-                {"code": "PP3 (Very Strong In Silico)", "rule": "AlphaGenome score 2.297 falls in Calibration Bin 5 (100% empirical PPV [95% CI: 94.7%–100%])."},
+                {"code": "PP3 (Very Strong In Silico)", "rule": "AlphaGenome score 2.297 falls in Calibration Tier 5 (100% empirical PPV [95% CI: 94.7%–100%])."},
                 {"code": "PVS1 (Strong Supporting)", "rule": "Canonical +1 splice donor loss-of-function is an established pathogenic mechanism in BRCA1."}
             ]
             directive = (
@@ -215,7 +215,7 @@ class ClinicalInterpretationAgent:
         elif bin_num == 4:
             acmg_codes = [
                 {"code": "PS3_Moderate", "rule": "SpliceVarDB experimental catalogue notes splicing involvement."},
-                {"code": "PP3 (Moderate-to-Strong)", "rule": "AlphaGenome score 0.950 indicates deep-intronic cryptic activation (Bin 4: 72.1% empirical PPV)."},
+                {"code": "PP3 (Moderate-to-Strong)", "rule": "AlphaGenome score 0.950 indicates deep-intronic cryptic activation (Tier 4: 72.1% empirical PPV)."},
             ]
             directive = (
                 "ACTION: Prioritize patient blood/tissue sample for expedited RNA-seq minigene functional validation. "
@@ -226,7 +226,7 @@ class ClinicalInterpretationAgent:
         else:
             acmg_codes = [
                 {"code": "BS3 (Strong Functional Evidence)", "rule": "SpliceVarDB experimental assays demonstrate intact normal splicing."},
-                {"code": "BP4 (Strong In Silico Support)", "rule": "AlphaGenome score 0.016 falls in Bin 1 (<1.5% empirical PPV) with no splice site alteration."},
+                {"code": "BP4 (Strong In Silico Support)", "rule": "AlphaGenome score 0.016 falls in Tier 1 (<1.5% empirical PPV) with no splice site alteration."},
             ]
             directive = (
                 "ACTION: Splicing disruption is excluded as a disease mechanism. De-prioritize splicing defect. "

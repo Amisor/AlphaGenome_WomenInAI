@@ -25,11 +25,11 @@ REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 def generate_risk_thermometer(active_bin: int) -> str:
     """Generate visual 5-segment risk thermometer with active pin indicator."""
     bins_meta = [
-        {"num": 1, "label": "Bin 1: Minimal", "ppv": "<1.5% PPV", "color": "#15803d", "bg": "#dcfce7"},
-        {"num": 2, "label": "Bin 2: Low", "ppv": "8.8% PPV", "color": "#16a34a", "bg": "#f0fdf4"},
-        {"num": 3, "label": "Bin 3: Indeterminate", "ppv": "39.7% PPV", "color": "#ca8a04", "bg": "#fef9c3"},
-        {"num": 4, "label": "Bin 4: High", "ppv": "72.1% PPV", "color": "#ea580c", "bg": "#ffedd5"},
-        {"num": 5, "label": "Bin 5: Definitive", "ppv": "100% PPV", "color": "#b91c1c", "bg": "#fee2e2"},
+        {"num": 1, "label": "Tier 1: Minimal", "ppv": "<1.5% PPV", "color": "#15803d", "bg": "#dcfce7"},
+        {"num": 2, "label": "Tier 2: Low", "ppv": "8.8% PPV", "color": "#16a34a", "bg": "#f0fdf4"},
+        {"num": 3, "label": "Tier 3: Indeterminate", "ppv": "39.7% PPV", "color": "#ca8a04", "bg": "#fef9c3"},
+        {"num": 4, "label": "Tier 4: High", "ppv": "72.1% PPV", "color": "#ea580c", "bg": "#ffedd5"},
+        {"num": 5, "label": "Tier 5: Definitive", "ppv": "100% PPV", "color": "#b91c1c", "bg": "#fee2e2"},
     ]
     
     segments_html = ""
@@ -782,7 +782,7 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
               <div class="kpi-label">Calibrated PPV</div>
               <div class="kpi-value">{calib['ppv_percent']}%</div>
             </div>
-            <div class="kpi-sub">Bin {calib['bin_number']} of 5 (95% CI: [{calib['ci_low_percent']}%–{calib['ci_high_percent']}%%])</div>
+            <div class="kpi-sub">Tier {calib['bin_number']} of 5 (95% CI: [{calib['ci_low_percent']}%–{calib['ci_high_percent']}%%])</div>
           </div>
         </div>
 
@@ -969,8 +969,8 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       // Risk rationale
       if (q.includes('why') || q.includes('verdict') || q.includes('risk') || q.includes('rationale') || q.includes('classif')) {{
         return `<strong>Risk Rationale for Finding #${{pk.active_finding_number}} (<code>${{ak.variant}}</code>):</strong><br>` +
-               `AlphaGenome combined score is <strong>${{ak.score}}</strong>, placing it in <strong>Calibration Bin ${{ak.bin}}</strong>. ` +
-               `In our 446-variant BRCA1 benchmark, this bin has an empirical Positive Predictive Value of <strong>${{ak.ppv}}%</strong> (95% CI: ${{ak.ci}}). ` +
+               `AlphaGenome combined score is <strong>${{ak.score}}</strong>, placing it in <strong>Calibration Tier ${{ak.bin}}</strong>. ` +
+               `In our 446-variant BRCA1 benchmark, this tier has an empirical Positive Predictive Value of <strong>${{ak.ppv}}%</strong> (95% CI: ${{ak.ci}}). ` +
                `SpliceVarDB experimental assays classify it as <em>${{ak.splicevardb_label}}</em>.<br><br>` +
                `<strong>Clinical Role:</strong> ${{ak.action_type}}.`;
       }}
@@ -1029,14 +1029,14 @@ def render_case_report(case_data: dict, interp: dict, all_cases: list) -> str:
       // Calibration & Wilson Confidence Intervals
       if (q.includes('wilson') || q.includes('confidence') || q.includes('interval') || q.includes('calibration') || q.includes('benchmark')) {{
         return `<strong>Empirical Calibration &amp; Statistical Reliability:</strong><br>` +
-               `Our calibration maps AlphaGenome scores against 446 experimental SpliceVarDB BRCA1 variants into 5 empirical bins. ` +
-               `For this variant in <strong>Bin ${{ak.bin}}</strong>, the empirical PPV is <strong>${{ak.ppv}}%</strong> with a 95% Wilson Score Interval of <strong>${{ak.ci}}</strong>. ` +
+               `Our calibration maps AlphaGenome scores against 446 experimental SpliceVarDB BRCA1 variants into 5 empirical calibration tiers. ` +
+               `For this variant in <strong>Tier ${{ak.bin}}</strong>, the empirical PPV is <strong>${{ak.ppv}}%</strong> with a 95% Wilson Score Interval of <strong>${{ak.ci}}</strong>. ` +
                `The overall benchmark achieved an ROC AUC of <strong>0.980</strong> globally and <strong>0.993</strong> across intronic variants, validating high clinical reliability.`;
       }}
 
       // General fallback answer
       return `For <strong>Finding #${{pk.active_finding_number}} (${{ak.variant}})</strong>, our calibrated model assigns a score of <strong>${{ak.score}}</strong> ` +
-             `(Bin ${{ak.bin}}, <strong>${{ak.ppv}}% PPV</strong>). ` +
+             `(Tier ${{ak.bin}}, <strong>${{ak.ppv}}% PPV</strong>). ` +
              `Biological Mechanism: <em>${{ak.molecular_mechanism}}</em>. ` +
              `Click any prompt chip above or ask specifically about driver triage, PARP inhibitors, ACMG codes, or surveillance.`;
     }}
@@ -1114,7 +1114,7 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
             <div><strong>Variant:</strong> {hgvs}</div>
             <div><strong>Coordinates:</strong> {c['genomic']['chrom']}:{c['genomic']['pos']} {c['genomic']['ref']}&gt;{c['genomic']['alt']}</div>
             <div><strong>SpliceVarDB:</strong> {sv_class}</div>
-            <div><strong>Calibration:</strong> Bin {cal['bin_number']} of 5 (<strong>{cal['ppv_percent']}% PPV</strong>)</div>
+            <div><strong>Calibration:</strong> Tier {cal['bin_number']} of 5 (<strong>{cal['ppv_percent']}% PPV</strong>)</div>
           </div>
           <p class="case-desc">{pe}</p>
           <a href="{cid}.html" class="case-action">Open Report &rarr;</a>
@@ -1142,7 +1142,7 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
           <td><strong>{hgvs}</strong><br><span style="font-size:11px; color:#78716c;">{c['genomic']['chrom']}:{c['genomic']['pos']} ({c['genomic']['ref']}&gt;{c['genomic']['alt']})</span></td>
           <td style="font-size:11.5px; color:#44403c;">{mech}</td>
           <td><strong style="color:{score_color}; font-size:13px;">{score:.3f}</strong></td>
-          <td><strong>Bin {cal['bin_number']}</strong> &bull; <span style="font-weight:800; color:{score_color};">{cal['ppv_percent']}% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[{cal['ci_low_percent']}%–{cal['ci_high_percent']}%]</span></td>
+          <td><strong>Tier {cal['bin_number']}</strong> &bull; <span style="font-weight:800; color:{score_color};">{cal['ppv_percent']}% PPV</span><br><span style="font-size:10.5px; color:#78716c;">[{cal['ci_low_percent']}%–{cal['ci_high_percent']}%]</span></td>
           <td style="font-size:11.5px; font-weight:600;">{role}</td>
           <td><a href="{cid}.html" class="case-action" style="padding:5px 10px; font-size:11px;">Open Report &rarr;</a></td>
         </tr>
@@ -1175,12 +1175,11 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
     .hero {{
       background: #ffffff;
       border-bottom: 1px solid var(--border);
-      padding: 40px 20px 32px 20px;
+      padding: 32px 20px;
       text-align: center;
       box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     }}
-    .hero h1 {{ font-size: 28px; font-weight: 800; color: #1c1917; margin-bottom: 8px; }}
-    .hero p {{ font-size: 14px; color: var(--text-muted); max-width: 720px; margin: 0 auto; line-height: 1.6; }}
+    .hero h1 {{ font-size: 28px; font-weight: 800; color: #1c1917; margin: 0; }}
 
     .container {{ max-width: 1240px; margin: 0 auto; padding: 0 20px; }}
 
@@ -1329,7 +1328,6 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
 
   <header class="hero">
     <h1>Multigene Panel Review</h1>
-    <p>Empirical foundation model benchmark (446 BRCA1 variants, ROC AUC 0.980) powering multi-variant splicing triage and clinical decision support.</p>
   </header>
 
   <main class="container">
@@ -1383,7 +1381,7 @@ def render_master_index(all_cases: list, metrics_df: pd.DataFrame, threshold_df:
       </div>
       <div class="stat-card">
         <div class="stat-val" style="color: #b91c1c;">100%</div>
-        <div class="stat-label">Bin 5 Precision (PPV)</div>
+        <div class="stat-label">Tier 5 Precision (PPV)</div>
         <div class="stat-sub">68 / 68 True Positives</div>
       </div>
     </section>
@@ -1485,11 +1483,11 @@ Indication: Ductal carcinoma in situ (DCIS) at age 38; strong maternal history o
 Test: Comprehensive 30-Gene Hereditary Breast & Ovarian Cancer Panel (HBOC-30)
 
 FINDINGS TRIAGE:
-1. BRCA1 c.4986+1G>T (Canonical Donor Loss) -> ACTIONABLE PATHOGENIC DRIVER (Bin 5, 100% PPV).
+1. BRCA1 c.4986+1G>T (Canonical Donor Loss) -> ACTIONABLE PATHOGENIC DRIVER (Tier 5, 100% PPV).
    Directive: Reclassify to Likely Pathogenic (Class 4). Initiate high-risk breast/ovarian surveillance protocol and RRSO counseling.
-2. BRCA1 c.2077G>A (Exonic Silent Variant) -> BENIGN SPLICING MIMIC (Bin 1, <1.5% PPV).
+2. BRCA1 c.2077G>A (Exonic Silent Variant) -> BENIGN SPLICING MIMIC (Tier 1, <1.5% PPV).
    Directive: Splicing neutral. Safely de-escalate. Do not base prophylactic surgery on this variant.
-3. BRCA1 c.4185+4105C>T (Deep-Intronic Pseudoexon) -> ACTIONABLE CANDIDATE (Bin 4, 72.1% PPV).
+3. BRCA1 c.4185+4105C>T (Deep-Intronic Pseudoexon) -> ACTIONABLE CANDIDATE (Tier 4, 72.1% PPV).
    Directive: Sits 4,105 bp deep in intron. Expedite targeted RNA-seq minigene validation before final reclassification.`;
 
     function copyMasterTumorBoardSummary() {{
